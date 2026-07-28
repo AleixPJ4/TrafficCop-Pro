@@ -1,0 +1,102 @@
+[
+  {
+    "id": "demo-mobile",
+    "norma": "DEMO",
+    "norma_completa": "Registro demostrativo",
+    "articulo": "00.0",
+    "opcion": "A",
+    "titulo": "Uso del teléfono móvil durante la conducción",
+    "descripcion": "Concepto de muestra. Debe reemplazarse por la redacción oficial vigente.",
+    "importe": 0,
+    "puntos": 0,
+    "responsable": "Conductor",
+    "calificacion": "DEMO",
+    "reduccion": false,
+    "vigencia": "No operativa",
+    "fuente": "Sin fuente jurídica — DEMO",
+    "estado": "demo",
+    "observaciones": "No formular denuncia con esta ficha.",
+    "palabras_clave": [
+      "móvil",
+      "telefono",
+      "conducir",
+      "distracción"
+    ],
+    "categoria": "Móvil"
+  },
+  {
+    "id": "demo-itv",
+    "norma": "DEMO",
+    "norma_completa": "Registro demostrativo",
+    "articulo": "00.0",
+    "opcion": "B",
+    "titulo": "Inspección técnica del vehículo",
+    "descripcion": "Concepto de muestra. Debe reemplazarse por la redacción oficial vigente.",
+    "importe": 0,
+    "puntos": 0,
+    "responsable": "Titular",
+    "calificacion": "DEMO",
+    "reduccion": false,
+    "vigencia": "No operativa",
+    "fuente": "Sin fuente jurídica — DEMO",
+    "estado": "demo",
+    "observaciones": "No formular denuncia con esta ficha.",
+    "palabras_clave": [
+      "ITV",
+      "inspección",
+      "caducada",
+      "desfavorable"
+    ],
+    "categoria": "ITV"
+  },
+  {
+    "id": "demo-matricula",
+    "norma": "DEMO",
+    "norma_completa": "Registro demostrativo",
+    "articulo": "00.0",
+    "opcion": "C",
+    "titulo": "Placas de matrícula",
+    "descripcion": "Concepto de muestra. Debe reemplazarse por la redacción oficial vigente.",
+    "importe": 0,
+    "puntos": 0,
+    "responsable": "Conductor o titular",
+    "calificacion": "DEMO",
+    "reduccion": false,
+    "vigencia": "No operativa",
+    "fuente": "Sin fuente jurídica — DEMO",
+    "estado": "demo",
+    "observaciones": "No formular denuncia con esta ficha.",
+    "palabras_clave": [
+      "matrícula",
+      "placa",
+      "manipulada",
+      "ilegible"
+    ],
+    "categoria": "Matrícula"
+  },
+  {
+    "id": "demo-vmp",
+    "norma": "DEMO",
+    "norma_completa": "Registro demostrativo",
+    "articulo": "00.0",
+    "opcion": "D",
+    "titulo": "Vehículo de movilidad personal",
+    "descripcion": "Concepto de muestra para probar búsquedas relacionadas con VMP.",
+    "importe": 0,
+    "puntos": 0,
+    "responsable": "Conductor",
+    "calificacion": "DEMO",
+    "reduccion": false,
+    "vigencia": "No operativa",
+    "fuente": "Sin fuente jurídica — DEMO",
+    "estado": "demo",
+    "observaciones": "No formular denuncia con esta ficha.",
+    "palabras_clave": [
+      "VMP",
+      "patinete",
+      "casco",
+      "acera"
+    ],
+    "categoria": "VMP"
+  }
+]

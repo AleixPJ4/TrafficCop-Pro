@@ -1,0 +1,23 @@
+{
+  "descripcion": "Esquema de ficha para importar en TrafficCop Pro CAT",
+  "campos": {
+    "id": "Identificador único",
+    "norma": "Sigla de la norma",
+    "norma_completa": "Nombre completo",
+    "articulo": "Artículo y apartado",
+    "opcion": "Código/opción del codificado",
+    "titulo": "Título corto",
+    "descripcion": "Texto denunciable",
+    "importe": "Número",
+    "puntos": "Número",
+    "responsable": "Conductor/titular/etc.",
+    "calificacion": "Leve/grave/muy grave",
+    "reduccion": "true/false",
+    "vigencia": "Fecha o periodo",
+    "fuente": "Fuente oficial",
+    "estado": "verificada/pendiente/demo",
+    "observaciones": "Notas policiales",
+    "palabras_clave": "Array de términos",
+    "categoria": "Categoría rápida"
+  }
+}

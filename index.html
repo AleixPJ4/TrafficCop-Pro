@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TrafficCop">
+  <title>TrafficCop Pro CAT</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="appbar">
+    <div>
+      <div class="kicker">POLICÍA LOCAL · TRÁFICO</div>
+      <h1>TrafficCop <span>Pro CAT</span></h1>
+    </div>
+    <button id="theme" class="round" aria-label="Cambiar tema">◐</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="searchbox">
+        <span>⌕</span>
+        <input id="q" type="search" placeholder="Móvil, ITV, matrícula, artículo, opción…" autocomplete="off">
+        <button id="voice" title="Búsqueda por voz">🎙</button>
+      </div>
+
+      <div id="quick" class="chips"></div>
+
+      <div class="filters">
+        <select id="norma"><option value="">Todas las normas</option></select>
+        <select id="puntos">
+          <option value="">Todos los puntos</option>
+          <option value="0">0 puntos</option>
+          <option value="2">2 puntos</option>
+          <option value="3">3 puntos</option>
+          <option value="4">4 puntos</option>
+          <option value="6">6 puntos</option>
+        </select>
+        <select id="estado">
+          <option value="">Todos los estados</option>
+          <option value="verificada">Verificadas</option>
+          <option value="pendiente">Pendientes</option>
+          <option value="demo">Demo</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <button data-view="all" class="tab active">Todas</button>
+      <button data-view="fav" class="tab">★ Favoritos</button>
+      <button data-view="recent" class="tab">Recientes</button>
+      <span id="count"></span>
+    </section>
+
+    <section id="notice" class="notice">
+      <strong>Versión de prueba.</strong> La estructura ya es funcional, pero la base incluida contiene fichas DEMO.
+      No debe utilizarse para formular denuncias hasta cargar un codificado oficial revisado.
+    </section>
+
+    <section id="results" class="results"></section>
+  </main>
+
+  <nav class="bottom">
+    <button id="homeBtn">⌕<small>Buscar</small></button>
+    <button id="favBtn">★<small>Favoritos</small></button>
+    <button id="toolsBtn">⚙<small>Herramientas</small></button>
+  </nav>
+
+  <dialog id="tools">
+    <form method="dialog" class="sheet">
+      <div class="sheethead"><h2>Herramientas</h2><button class="round">×</button></div>
+      <div class="toolgrid">
+        <button type="button" id="importBtn">Importar base JSON</button>
+        <button type="button" id="exportBtn">Exportar base</button>
+        <button type="button" id="clearLocalBtn">Restaurar DEMO</button>
+        <button type="button" id="installBtn">Instalar aplicación</button>
+      </div>
+      <input type="file" id="fileInput" accept=".json,application/json" hidden>
+      <p class="muted">La base importada queda guardada localmente en el dispositivo. No se envían datos a ningún servidor.</p>
+    </form>
+  </dialog>
+
+  <template id="tpl">
+    <article class="card">
+      <div class="topline">
+        <div><span class="badge norm"></span><span class="badge status"></span></div>
+        <button class="star" aria-label="Favorito">☆</button>
+      </div>
+      <h2 class="title"></h2>
+      <p class="desc"></p>
+      <div class="facts">
+        <div><small>Artículo</small><b class="art"></b></div>
+        <div><small>Opción</small><b class="opt"></b></div>
+        <div><small>Importe</small><b class="amount"></b></div>
+        <div><small>Puntos</small><b class="pts"></b></div>
+      </div>
+      <details>
+        <summary>Ficha profesional</summary>
+        <dl>
+          <dt>Norma</dt><dd class="normfull"></dd>
+          <dt>Responsable</dt><dd class="resp"></dd>
+          <dt>Calificación</dt><dd class="grade"></dd>
+          <dt>Reducción</dt><dd class="red"></dd>
+          <dt>Vigencia</dt><dd class="vig"></dd>
+          <dt>Fuente</dt><dd class="source"></dd>
+          <dt>Observaciones</dt><dd class="notes"></dd>
+        </dl>
+      </details>
+      <div class="actions">
+        <button class="copy">Copiar concepto</button>
+        <button class="share">Compartir</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
