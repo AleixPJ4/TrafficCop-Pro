@@ -1,15 +1,17 @@
-# TrafficCop Pro v0.4 FUNCIONAL
+# TrafficCop Pro v0.5 REPARADA
 
-Esta versión corrige el error de carga de la base de datos en GitHub Pages.
-
-## Importante
-Todos los archivos deben subirse a la raíz del repositorio:
-- index.html
-- styles.css
-- app.js
-- manifest.webmanifest
-- service-worker.js
+Esta versión no utiliza:
+- fetch
 - infracciones.json
+- service worker
+
+La base DEMO está integrada en `app-v05.js`, evitando el error de carga y las versiones antiguas almacenadas en caché.
+
+## Subida
+Sube estos archivos a la raíz:
+- index.html
+- styles-v05.css
+- app-v05.js
 - README.md
 
-La base incluida contiene solo fichas DEMO.
+Puedes dejar los archivos antiguos; esta versión no los utiliza.

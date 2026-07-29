@@ -5,117 +5,75 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="TrafficCop Pro">
   <title>TrafficCop Pro</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-v05.css?v=5">
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <p class="eyebrow">HERRAMIENTA POLICIAL · TRÁFICO</p>
-      <h1>TrafficCop <span>Pro</span></h1>
+<header>
+  <div>
+    <small>HERRAMIENTA POLICIAL · TRÁFICO</small>
+    <h1>TrafficCop <span>Pro</span></h1>
+  </div>
+  <button id="theme">◐</button>
+</header>
+
+<main>
+  <section class="hero">
+    <b>v0.5 · REPARADA</b>
+    <h2>Busca una infracción en segundos</h2>
+    <p>Versión de prueba funcional para iPhone y Android.</p>
+    <div class="search">
+      <span>⌕</span>
+      <input id="q" placeholder="Móvil, ITV, matrícula, VMP…" autocomplete="off">
     </div>
-    <button id="themeButton" class="round" aria-label="Cambiar tema">◐</button>
-  </header>
+    <div class="chips">
+      <button data-q="móvil">📱 Móvil</button>
+      <button data-q="ITV">🧾 ITV</button>
+      <button data-q="VMP">🛴 VMP</button>
+      <button data-q="matrícula">🔢 Matrículas</button>
+    </div>
+  </section>
 
-  <main>
-    <section class="hero">
-      <p class="version">v0.4 · FUNCIONAL</p>
-      <h2>Busca una infracción en segundos</h2>
-      <p class="subtitle">Prototipo instalable en iPhone y Android.</p>
+  <section class="tabs">
+    <button data-view="all" class="active">Todas</button>
+    <button data-view="fav">★ Favoritos</button>
+    <span id="count"></span>
+  </section>
 
-      <div class="searchbox">
-        <span>⌕</span>
-        <input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, VMP…" autocomplete="off">
-        <button id="voiceButton" aria-label="Buscar por voz">🎙</button>
-      </div>
+  <aside><strong>Versión DEMO:</strong> las fichas no sirven todavía para formular denuncias reales.</aside>
+  <section id="results"></section>
+</main>
 
-      <div id="chips" class="chips"></div>
-    </section>
+<nav>
+  <button data-view="all">⌕<small>Buscar</small></button>
+  <button data-view="fav">★<small>Favoritos</small></button>
+  <button id="install">⬇<small>Instalar</small></button>
+</nav>
 
-    <section class="shortcuts">
-      <button data-query="móvil"><b>📱</b><span>Móvil</span></button>
-      <button data-query="ITV"><b>🧾</b><span>ITV</span></button>
-      <button data-query="VMP"><b>🛴</b><span>VMP</span></button>
-      <button data-query="matrícula"><b>🔢</b><span>Matrículas</span></button>
-    </section>
+<template id="tpl">
+  <article>
+    <div class="head">
+      <span class="badge">DEMO</span>
+      <button class="star">☆</button>
+    </div>
+    <h3></h3>
+    <p class="desc"></p>
+    <div class="metrics">
+      <div><small>Artículo</small><b class="art"></b></div>
+      <div><small>Opción</small><b class="opt"></b></div>
+      <div><small>Importe</small><b class="amount"></b></div>
+      <div><small>Puntos</small><b class="pts"></b></div>
+    </div>
+    <details>
+      <summary>Ver ficha completa</summary>
+      <p><strong>Responsable:</strong> <span class="resp"></span></p>
+      <p><strong>Calificación:</strong> <span class="grade"></span></p>
+      <p><strong>Observaciones:</strong> <span class="notes"></span></p>
+    </details>
+    <button class="copy">Copiar concepto</button>
+  </article>
+</template>
 
-    <section class="controls">
-      <div class="filters">
-        <select id="normFilter"><option value="">Todas las normas</option></select>
-        <select id="pointsFilter">
-          <option value="">Todos los puntos</option>
-          <option value="0">0 puntos</option>
-          <option value="2">2 puntos</option>
-          <option value="3">3 puntos</option>
-          <option value="4">4 puntos</option>
-          <option value="6">6 puntos</option>
-        </select>
-      </div>
-
-      <div class="tabs">
-        <button class="tab active" data-view="all">Todas</button>
-        <button class="tab" data-view="favorites">★ Favoritos</button>
-        <button class="tab" data-view="recent">Recientes</button>
-        <span id="count"></span>
-      </div>
-    </section>
-
-    <section class="warning">
-      <strong>Versión de prueba:</strong> estas fichas son DEMO y no deben utilizarse para formular denuncias reales.
-    </section>
-
-    <section id="results" class="results"></section>
-  </main>
-
-  <nav class="bottomnav">
-    <button class="active" data-view="all">⌕<small>Buscar</small></button>
-    <button data-view="favorites">★<small>Favoritos</small></button>
-    <button id="installButton">⬇<small>Instalar</small></button>
-  </nav>
-
-  <template id="cardTemplate">
-    <article class="card">
-      <div class="cardhead">
-        <div>
-          <span class="badge norm"></span>
-          <span class="badge status"></span>
-        </div>
-        <button class="favorite">☆</button>
-      </div>
-
-      <h3 class="title"></h3>
-      <p class="description"></p>
-
-      <div class="metrics">
-        <div><small>Artículo</small><strong class="article"></strong></div>
-        <div><small>Opción</small><strong class="option"></strong></div>
-        <div><small>Importe</small><strong class="amount"></strong></div>
-        <div><small>Puntos</small><strong class="points"></strong></div>
-      </div>
-
-      <details>
-        <summary>Ver ficha completa</summary>
-        <dl>
-          <dt>Norma</dt><dd class="normfull"></dd>
-          <dt>Responsable</dt><dd class="responsible"></dd>
-          <dt>Calificación</dt><dd class="grade"></dd>
-          <dt>Reducción</dt><dd class="reduction"></dd>
-          <dt>Vigencia</dt><dd class="validity"></dd>
-          <dt>Fuente</dt><dd class="source"></dd>
-          <dt>Observaciones</dt><dd class="notes"></dd>
-        </dl>
-      </details>
-
-      <div class="actions">
-        <button class="copy">Copiar concepto</button>
-        <button class="share">Compartir</button>
-      </div>
-    </article>
-  </template>
-
-  <script src="app.js"></script>
+<script src="app-v05.js?v=5"></script>
 </body>
 </html>
