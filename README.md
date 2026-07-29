@@ -1,20 +1,21 @@
-# TrafficCop Pro v0.6 — Catàleg SCT complet
+# TrafficCop Pro v0.7 — Veu + IA local
 
-S’han incorporat **586 conceptes codificats** extrets del document:
+## Novetats
+- Botó de micròfon al cercador.
+- Pantalla TrafficCop AI.
+- Dictat de la descripció dels fets quan el navegador ho permet.
+- Anàlisi intel·ligent local amb sinònims i classificació de coincidències.
+- No envia dades policials a cap servidor.
+- Manté el catàleg SCT de maig de 2026.
 
-- Catàleg d’infraccions
-- Servei Català de Trànsit
-- Barcelona, 20 de maig de 2026
-- 42 pàgines
+## iPhone
+Safari pot limitar l'API de reconeixement de veu segons la versió d'iOS. Quan no estigui disponible, l'app activa el camp de text perquè es pugui utilitzar el micròfon de dictat del teclat de l'iPhone.
 
-## Fitxers que cal pujar a l’arrel de GitHub
+## Fitxers per pujar a GitHub
 - index.html
-- styles-v06.css
+- styles-v07.css
 - app-data-v06.js
-- app-v06.js
+- app-v07.js
 - README.md
 
-La base queda integrada en JavaScript i no utilitza `fetch` ni `service worker`, per evitar els errors de càrrega de versions anteriors.
-
-## Nota de revisió
-L’extracció s’ha fet automàticament de les taules del PDF. Abans d’utilitzar-la operativament, convé revisar mostres de cada norma i els barems gràfics de velocitat i alcoholèmia.
+Els fitxers antics poden quedar al repositori, però `index.html` només carrega els fitxers v0.7.

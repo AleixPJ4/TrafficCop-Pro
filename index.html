@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v06.css?v=6">
+  <link rel="stylesheet" href="styles-v07.css?v=7">
 </head>
 <body>
 <header class="topbar">
@@ -19,15 +19,21 @@
 
 <main>
   <section class="hero">
-    <span class="version">v0.6 · SCT COMPLET</span>
+    <span class="version">v0.7 · VEU + IA LOCAL</span>
     <h2>Consulta el catàleg d’infraccions</h2>
     <p>Busca per concepte, article, norma, import, punts o paraula clau.</p>
 
     <div class="search">
       <span>⌕</span>
       <input id="searchInput" type="search" placeholder="Mòbil, ITV, VMP, matrícula, article…" autocomplete="off">
+      <button id="voiceSearchButton" title="Cerca per veu" aria-label="Cerca per veu">🎙</button>
       <button id="clearButton" title="Esborrar">×</button>
     </div>
+
+    <button id="assistantOpenButton" class="assistant-launch">
+      <span>✨</span>
+      <span><strong>TrafficCop AI</strong><small>Descriu els fets parlant o escrivint</small></span>
+    </button>
 
     <div class="quick">
       <button data-query="mòbil">📱 Mòbil</button>
@@ -117,7 +123,39 @@
   </article>
 </template>
 
-<script src="app-data-v06.js?v=6"></script>
-<script src="app-v06.js?v=6"></script>
+<dialog id="assistantDialog">
+  <section class="assistant-panel">
+    <header class="assistant-head">
+      <div>
+        <p>ASSISTENT INTEL·LIGENT LOCAL</p>
+        <h3>TrafficCop AI</h3>
+      </div>
+      <button id="assistantCloseButton" aria-label="Tancar">×</button>
+    </header>
+
+    <p class="assistant-help">
+      Explica el fet amb llenguatge natural. Exemple:
+      <em>«Conductor utilitzant el mòbil amb la mà»</em>.
+    </p>
+
+    <div class="assistant-input">
+      <textarea id="assistantText" rows="4" placeholder="Descriu aquí els fets observats…"></textarea>
+      <div class="assistant-actions">
+        <button id="assistantMicButton">🎙 Dictar</button>
+        <button id="assistantAnalyzeButton">✨ Analitzar</button>
+      </div>
+    </div>
+
+    <div id="assistantStatus" class="assistant-status"></div>
+    <section id="assistantResults" class="assistant-results"></section>
+
+    <p class="assistant-privacy">
+      Aquesta versió analitza el text dins del dispositiu. No envia dades personals ni fets policials a cap servidor.
+    </p>
+  </section>
+</dialog>
+
+<script src="app-data-v06.js?v=7"></script>
+<script src="app-v07.js?v=7"></script>
 </body>
 </html>
