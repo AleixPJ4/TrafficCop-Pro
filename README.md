@@ -1,32 +1,15 @@
-# TrafficCop Pro CAT 0.2
+# TrafficCop Pro v0.4 FUNCIONAL
 
-Aplicación PWA instalable en iPhone y Android.
+Esta versión corrige el error de carga de la base de datos en GitHub Pages.
 
-## Ya funciona
-- Buscador instantáneo y por voz.
-- Filtros por norma, puntos y estado jurídico.
-- Favoritos y recientes.
-- Modo oscuro.
-- Copiar y compartir.
-- Uso offline.
-- Importación y exportación de bases JSON.
-- Instalación como app desde Safari o Chrome.
+## Importante
+Todos los archivos deben subirse a la raíz del repositorio:
+- index.html
+- styles.css
+- app.js
+- manifest.webmanifest
+- service-worker.js
+- infracciones.json
+- README.md
 
-## Probar en ordenador
-Dentro de esta carpeta:
-
-    python -m http.server 8000
-
-Abre `http://localhost:8000`.
-
-## Instalar en móvil
-La carpeta debe publicarse bajo HTTPS.
-
-- iPhone: Safari → Compartir → Añadir a pantalla de inicio.
-- Android: Chrome → menú → Instalar aplicación.
-
-## Advertencia
-La base incluida es DEMO. La interfaz es utilizable, pero no debe emplearse para formular denuncias hasta cargar una base oficial revisada.
-
-## Base de datos
-Usa `data/plantilla_schema.json` como referencia. Desde Herramientas puedes importar un JSON sin recompilar la aplicación.
+La base incluida contiene solo fichas DEMO.

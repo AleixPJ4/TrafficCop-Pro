@@ -1,11 +1,11 @@
 {
-  "name": "TrafficCop Pro CAT",
+  "name": "TrafficCop Pro",
   "short_name": "TrafficCop",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#06101d",
+  "background_color": "#06101c",
   "theme_color": "#07111f",
-  "description": "Consulta profesional offline de infracciones de tráfico.",
+  "description": "Prototipo profesional de consulta de infracciones de tráfico.",
   "icons": []
 }

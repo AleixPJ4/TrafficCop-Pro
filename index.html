@@ -6,33 +6,46 @@
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="TrafficCop">
-  <title>TrafficCop Pro CAT</title>
+  <meta name="apple-mobile-web-app-title" content="TrafficCop Pro">
+  <title>TrafficCop Pro</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="appbar">
+  <header class="topbar">
     <div>
-      <div class="kicker">POLICÍA LOCAL · TRÁFICO</div>
-      <h1>TrafficCop <span>Pro CAT</span></h1>
+      <p class="eyebrow">HERRAMIENTA POLICIAL · TRÁFICO</p>
+      <h1>TrafficCop <span>Pro</span></h1>
     </div>
-    <button id="theme" class="round" aria-label="Cambiar tema">◐</button>
+    <button id="themeButton" class="round" aria-label="Cambiar tema">◐</button>
   </header>
 
   <main>
     <section class="hero">
+      <p class="version">v0.4 · FUNCIONAL</p>
+      <h2>Busca una infracción en segundos</h2>
+      <p class="subtitle">Prototipo instalable en iPhone y Android.</p>
+
       <div class="searchbox">
         <span>⌕</span>
-        <input id="q" type="search" placeholder="Móvil, ITV, matrícula, artículo, opción…" autocomplete="off">
-        <button id="voice" title="Búsqueda por voz">🎙</button>
+        <input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, VMP…" autocomplete="off">
+        <button id="voiceButton" aria-label="Buscar por voz">🎙</button>
       </div>
 
-      <div id="quick" class="chips"></div>
+      <div id="chips" class="chips"></div>
+    </section>
 
+    <section class="shortcuts">
+      <button data-query="móvil"><b>📱</b><span>Móvil</span></button>
+      <button data-query="ITV"><b>🧾</b><span>ITV</span></button>
+      <button data-query="VMP"><b>🛴</b><span>VMP</span></button>
+      <button data-query="matrícula"><b>🔢</b><span>Matrículas</span></button>
+    </section>
+
+    <section class="controls">
       <div class="filters">
-        <select id="norma"><option value="">Todas las normas</option></select>
-        <select id="puntos">
+        <select id="normFilter"><option value="">Todas las normas</option></select>
+        <select id="pointsFilter">
           <option value="">Todos los puntos</option>
           <option value="0">0 puntos</option>
           <option value="2">2 puntos</option>
@@ -40,76 +53,62 @@
           <option value="4">4 puntos</option>
           <option value="6">6 puntos</option>
         </select>
-        <select id="estado">
-          <option value="">Todos los estados</option>
-          <option value="verificada">Verificadas</option>
-          <option value="pendiente">Pendientes</option>
-          <option value="demo">Demo</option>
-        </select>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-view="all">Todas</button>
+        <button class="tab" data-view="favorites">★ Favoritos</button>
+        <button class="tab" data-view="recent">Recientes</button>
+        <span id="count"></span>
       </div>
     </section>
 
-    <section class="toolbar">
-      <button data-view="all" class="tab active">Todas</button>
-      <button data-view="fav" class="tab">★ Favoritos</button>
-      <button data-view="recent" class="tab">Recientes</button>
-      <span id="count"></span>
-    </section>
-
-    <section id="notice" class="notice">
-      <strong>Versión de prueba.</strong> La estructura ya es funcional, pero la base incluida contiene fichas DEMO.
-      No debe utilizarse para formular denuncias hasta cargar un codificado oficial revisado.
+    <section class="warning">
+      <strong>Versión de prueba:</strong> estas fichas son DEMO y no deben utilizarse para formular denuncias reales.
     </section>
 
     <section id="results" class="results"></section>
   </main>
 
-  <nav class="bottom">
-    <button id="homeBtn">⌕<small>Buscar</small></button>
-    <button id="favBtn">★<small>Favoritos</small></button>
-    <button id="toolsBtn">⚙<small>Herramientas</small></button>
+  <nav class="bottomnav">
+    <button class="active" data-view="all">⌕<small>Buscar</small></button>
+    <button data-view="favorites">★<small>Favoritos</small></button>
+    <button id="installButton">⬇<small>Instalar</small></button>
   </nav>
 
-  <dialog id="tools">
-    <form method="dialog" class="sheet">
-      <div class="sheethead"><h2>Herramientas</h2><button class="round">×</button></div>
-      <div class="toolgrid">
-        <button type="button" id="importBtn">Importar base JSON</button>
-        <button type="button" id="exportBtn">Exportar base</button>
-        <button type="button" id="clearLocalBtn">Restaurar DEMO</button>
-        <button type="button" id="installBtn">Instalar aplicación</button>
-      </div>
-      <input type="file" id="fileInput" accept=".json,application/json" hidden>
-      <p class="muted">La base importada queda guardada localmente en el dispositivo. No se envían datos a ningún servidor.</p>
-    </form>
-  </dialog>
-
-  <template id="tpl">
+  <template id="cardTemplate">
     <article class="card">
-      <div class="topline">
-        <div><span class="badge norm"></span><span class="badge status"></span></div>
-        <button class="star" aria-label="Favorito">☆</button>
+      <div class="cardhead">
+        <div>
+          <span class="badge norm"></span>
+          <span class="badge status"></span>
+        </div>
+        <button class="favorite">☆</button>
       </div>
-      <h2 class="title"></h2>
-      <p class="desc"></p>
-      <div class="facts">
-        <div><small>Artículo</small><b class="art"></b></div>
-        <div><small>Opción</small><b class="opt"></b></div>
-        <div><small>Importe</small><b class="amount"></b></div>
-        <div><small>Puntos</small><b class="pts"></b></div>
+
+      <h3 class="title"></h3>
+      <p class="description"></p>
+
+      <div class="metrics">
+        <div><small>Artículo</small><strong class="article"></strong></div>
+        <div><small>Opción</small><strong class="option"></strong></div>
+        <div><small>Importe</small><strong class="amount"></strong></div>
+        <div><small>Puntos</small><strong class="points"></strong></div>
       </div>
+
       <details>
-        <summary>Ficha profesional</summary>
+        <summary>Ver ficha completa</summary>
         <dl>
           <dt>Norma</dt><dd class="normfull"></dd>
-          <dt>Responsable</dt><dd class="resp"></dd>
+          <dt>Responsable</dt><dd class="responsible"></dd>
           <dt>Calificación</dt><dd class="grade"></dd>
-          <dt>Reducción</dt><dd class="red"></dd>
-          <dt>Vigencia</dt><dd class="vig"></dd>
+          <dt>Reducción</dt><dd class="reduction"></dd>
+          <dt>Vigencia</dt><dd class="validity"></dd>
           <dt>Fuente</dt><dd class="source"></dd>
           <dt>Observaciones</dt><dd class="notes"></dd>
         </dl>
       </details>
+
       <div class="actions">
         <button class="copy">Copiar concepto</button>
         <button class="share">Compartir</button>
