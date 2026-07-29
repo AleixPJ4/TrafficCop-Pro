@@ -1,79 +1,123 @@
 <!doctype html>
-<html lang="es">
+<html lang="ca">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v05.css?v=5">
+  <link rel="stylesheet" href="styles-v06.css?v=6">
 </head>
 <body>
-<header>
+<header class="topbar">
   <div>
-    <small>HERRAMIENTA POLICIAL · TRÁFICO</small>
+    <p>CATÀLEG SCT · MAIG 2026</p>
     <h1>TrafficCop <span>Pro</span></h1>
   </div>
-  <button id="theme">◐</button>
+  <button id="themeButton" aria-label="Canviar tema">◐</button>
 </header>
 
 <main>
   <section class="hero">
-    <b>v0.5 · REPARADA</b>
-    <h2>Busca una infracción en segundos</h2>
-    <p>Versión de prueba funcional para iPhone y Android.</p>
+    <span class="version">v0.6 · SCT COMPLET</span>
+    <h2>Consulta el catàleg d’infraccions</h2>
+    <p>Busca per concepte, article, norma, import, punts o paraula clau.</p>
+
     <div class="search">
       <span>⌕</span>
-      <input id="q" placeholder="Móvil, ITV, matrícula, VMP…" autocomplete="off">
+      <input id="searchInput" type="search" placeholder="Mòbil, ITV, VMP, matrícula, article…" autocomplete="off">
+      <button id="clearButton" title="Esborrar">×</button>
     </div>
-    <div class="chips">
-      <button data-q="móvil">📱 Móvil</button>
-      <button data-q="ITV">🧾 ITV</button>
-      <button data-q="VMP">🛴 VMP</button>
-      <button data-q="matrícula">🔢 Matrículas</button>
+
+    <div class="quick">
+      <button data-query="mòbil">📱 Mòbil</button>
+      <button data-query="ITV">🧾 ITV</button>
+      <button data-query="VMP">🛴 VMP</button>
+      <button data-query="matrícula">🔢 Matrícula</button>
+      <button data-query="alcohol">🍺 Alcohol</button>
+      <button data-query="drogues">🧪 Drogues</button>
     </div>
+  </section>
+
+  <section class="filters">
+    <select id="normFilter"><option value="">Totes les normes</option></select>
+    <select id="natureFilter">
+      <option value="">Totes les naturaleses</option>
+      <option value="L">Lleu</option>
+      <option value="G">Greu</option>
+      <option value="MG">Molt greu</option>
+      <option value="G/MG">Greu / molt greu</option>
+    </select>
+    <select id="pointsFilter">
+      <option value="">Tots els punts</option>
+      <option value="0">0 punts</option>
+      <option value="2">2 punts</option>
+      <option value="3">3 punts</option>
+      <option value="4">4 punts</option>
+      <option value="6">6 punts</option>
+    </select>
   </section>
 
   <section class="tabs">
-    <button data-view="all" class="active">Todas</button>
-    <button data-view="fav">★ Favoritos</button>
-    <span id="count"></span>
+    <button class="active" data-view="all">Totes</button>
+    <button data-view="favorites">★ Preferides</button>
+    <span id="resultCount"></span>
   </section>
 
-  <aside><strong>Versión DEMO:</strong> las fichas no sirven todavía para formular denuncias reales.</aside>
-  <section id="results"></section>
+  <aside class="notice">
+    <strong>Font:</strong> Catàleg d’infraccions del Servei Català de Trànsit, de 20 de maig de 2026.
+    Revisa sempre que el fet concret encaixi amb el redactat abans de formular la denúncia.
+  </aside>
+
+  <section id="results" class="results"></section>
+  <button id="moreButton" class="more" hidden>Mostrar-ne més</button>
 </main>
 
-<nav>
+<nav class="bottomnav">
   <button data-view="all">⌕<small>Buscar</small></button>
-  <button data-view="fav">★<small>Favoritos</small></button>
-  <button id="install">⬇<small>Instalar</small></button>
+  <button data-view="favorites">★<small>Preferides</small></button>
+  <button id="installButton">⬇<small>Instal·lar</small></button>
 </nav>
 
-<template id="tpl">
-  <article>
-    <div class="head">
-      <span class="badge">DEMO</span>
-      <button class="star">☆</button>
+<template id="cardTemplate">
+  <article class="card">
+    <div class="cardhead">
+      <div>
+        <span class="badge norm"></span>
+        <span class="badge nature"></span>
+      </div>
+      <button class="favorite" aria-label="Afegir a preferides">☆</button>
     </div>
-    <h3></h3>
-    <p class="desc"></p>
+
+    <h3 class="concept"></h3>
+    <p class="category"></p>
+
     <div class="metrics">
-      <div><small>Artículo</small><b class="art"></b></div>
-      <div><small>Opción</small><b class="opt"></b></div>
-      <div><small>Importe</small><b class="amount"></b></div>
-      <div><small>Puntos</small><b class="pts"></b></div>
+      <div><small>Article</small><strong class="article"></strong></div>
+      <div><small>Quantia</small><strong class="amount"></strong></div>
+      <div><small>50 %</small><strong class="discount"></strong></div>
+      <div><small>Punts</small><strong class="points"></strong></div>
     </div>
+
     <details>
-      <summary>Ver ficha completa</summary>
-      <p><strong>Responsable:</strong> <span class="resp"></span></p>
-      <p><strong>Calificación:</strong> <span class="grade"></span></p>
-      <p><strong>Observaciones:</strong> <span class="notes"></span></p>
+      <summary>Veure fitxa completa</summary>
+      <dl>
+        <dt>Norma</dt><dd class="normFull"></dd>
+        <dt>Naturalesa</dt><dd class="natureFull"></dd>
+        <dt>Pàgina font</dt><dd class="page"></dd>
+        <dt>Estat</dt><dd class="status"></dd>
+        <dt>Retirada</dt><dd class="withdrawal"></dd>
+      </dl>
     </details>
-    <button class="copy">Copiar concepto</button>
+
+    <div class="actions">
+      <button class="copy">Copiar concepte</button>
+      <button class="share">Compartir</button>
+    </div>
   </article>
 </template>
 
-<script src="app-v05.js?v=5"></script>
+<script src="app-data-v06.js?v=6"></script>
+<script src="app-v06.js?v=6"></script>
 </body>
 </html>
