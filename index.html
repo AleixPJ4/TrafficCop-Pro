@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v21.css?v=21">
+  <link rel="stylesheet" href="styles-v22.css?v=22">
 </head>
 <body>
 <header class="topbar">
@@ -140,7 +140,7 @@
 
 <main>
   <section class="hero">
-    <span class="version">v2.1 · SUITE POLICIAL</span>
+    <span class="version">v2.2 · DOCUMENTOS E INFORMES</span>
     <h2>Consulta el text del catàleg d’infraccions</h2>
     <p>Cada resultat mostra el concepte, article, naturalesa, quantia, reducció i punts extrets del PDF.</p>
 
@@ -194,7 +194,43 @@
     </button>
   </section>
 
-  <section class="filters">
+  
+<section class="working-tools">
+  <div class="section-heading">
+    <div>
+      <p>HERRAMIENTAS OPERATIVAS</p>
+      <h2>Documentos e informes</h2>
+    </div>
+  </div>
+
+  <div class="working-grid">
+    <button class="working-card featured" data-suite="photo">
+      <span>📸</span>
+      <div><strong>Informe fotográfico</strong><small>Subir fotos, numerarlas, describirlas y copiar el informe</small></div>
+      <b>ABRIR</b>
+    </button>
+
+    <button class="working-card" data-document="manifestacion">
+      <span>🗣</span>
+      <div><strong>Acta de manifestación</strong><small>Formulario guiado y texto final</small></div>
+      <b>ABRIR</b>
+    </button>
+
+    <button class="working-card" data-document="ampliatorio">
+      <span>📄</span>
+      <div><strong>Informe ampliatorio</strong><small>Cabecera, hechos y conclusión</small></div>
+      <b>ABRIR</b>
+    </button>
+
+    <button class="working-card" data-document="diligencia">
+      <span>📝</span>
+      <div><strong>Diligencia básica</strong><small>Redacción estructurada para tráfico</small></div>
+      <b>ABRIR</b>
+    </button>
+  </div>
+</section>
+
+<section class="filters">
     <select id="normFilter"><option value="">Totes les normes</option></select>
     <select id="natureFilter">
       <option value="">Totes les naturaleses</option>
@@ -306,6 +342,28 @@
 </dialog>
 
 
+
+<dialog id="documentDialog">
+  <article class="document-panel">
+    <header class="document-head">
+      <div>
+        <p>GENERADOR DE DOCUMENTOS</p>
+        <h2 id="documentTitle">Documento</h2>
+      </div>
+      <button id="documentCloseButton" aria-label="Cerrar">×</button>
+    </header>
+
+    <div id="documentForm" class="document-form"></div>
+
+    <div class="action-row">
+      <button id="generateDocumentButton" class="primary-action">Generar documento</button>
+      <button id="copyDocumentButton" class="secondary-action">Copiar texto</button>
+    </div>
+
+    <textarea id="documentOutput" rows="16" placeholder="Aquí aparecerá el documento generado…"></textarea>
+  </article>
+</dialog>
+
 <dialog id="suiteDialog">
   <article class="suite-panel">
     <header class="suite-head">
@@ -319,7 +377,7 @@
   </article>
 </dialog>
 
-<script src="app-data-v21.js?v=21"></script>
-<script src="app-v21.js?v=21"></script>
+<script src="app-data-v22.js?v=22"></script>
+<script src="app-v22.js?v=22"></script>
 </body>
 </html>
