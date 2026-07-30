@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v22.css?v=22">
+  <link rel="stylesheet" href="styles-v23.css?v=23">
 </head>
 <body>
 <header class="topbar">
@@ -140,7 +140,7 @@
 
 <main>
   <section class="hero">
-    <span class="version">v2.2 · DOCUMENTOS E INFORMES</span>
+    <span class="version">v2.3 · IA PARA ACTAS</span>
     <h2>Consulta el text del catàleg d’infraccions</h2>
     <p>Cada resultat mostra el concepte, article, naturalesa, quantia, reducció i punts extrets del PDF.</p>
 
@@ -355,6 +355,14 @@
 
     <div id="documentForm" class="document-form"></div>
 
+    <div class="document-ai-bar">
+      <button id="improveDocumentButton" class="ai-improve-action">
+        <span>✨</span>
+        <span><strong>Corregir y mejorar con IA</strong><small>Ortografía, claridad y redacción técnica</small></span>
+      </button>
+      <p id="documentAiStatus"></p>
+    </div>
+
     <div class="action-row">
       <button id="generateDocumentButton" class="primary-action">Generar documento</button>
       <button id="copyDocumentButton" class="secondary-action">Copiar texto</button>
@@ -377,7 +385,7 @@
   </article>
 </dialog>
 
-<script src="app-data-v22.js?v=22"></script>
-<script src="app-v22.js?v=22"></script>
+<script src="app-data-v23.js?v=23"></script>
+<script src="app-v23.js?v=23"></script>
 </body>
 </html>

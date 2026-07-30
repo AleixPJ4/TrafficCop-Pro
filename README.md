@@ -1,27 +1,26 @@
-# TrafficCop Pro v2.2 — Documentos e informes visibles
+# TrafficCop Pro v2.3 — IA para corregir actas
 
-## Corrección principal
-El módulo de informe fotográfico ahora aparece directamente en la pantalla principal,
-dentro de “Herramientas operativas”, para que no quede oculto dentro de otros menús.
+## Nueva función
+En el generador de documentos aparece el botón:
 
-## Funciones operativas
-- Informe fotográfico:
-  - selección múltiple de imágenes;
-  - vista previa;
-  - descripción individual;
-  - numeración automática;
-  - generación del informe;
-  - copia del texto.
-- Acta de manifestación.
-- Informe ampliatorio.
-- Diligencia básica de tráfico.
-- Cronología de actuación.
-- GPS.
-- Catálogo SCT, favoritos, búsqueda y asistente local.
+**Corregir y mejorar con IA**
+
+La función:
+- corrige errores ortográficos frecuentes;
+- mejora puntuación y mayúsculas;
+- transforma frases coloquiales en una redacción más formal;
+- aplica una estructura técnica a hechos y observaciones;
+- regenera automáticamente el documento final;
+- intenta detectar si el texto está en castellano o catalán.
+
+## Importante
+Esta versión utiliza un motor lingüístico local integrado en la app. No envía
+datos personales ni policiales a servidores externos. El texto generado debe
+ser revisado siempre por el agente antes de utilizarse.
 
 ## Archivos para GitHub
 - index.html
-- styles-v22.css
-- app-data-v22.js
-- app-v22.js
+- styles-v23.css
+- app-data-v23.js
+- app-v23.js
 - README.md
