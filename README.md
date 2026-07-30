@@ -1,23 +1,21 @@
-# TrafficCop Pro v3.2.0 — Disseny professional responsive
+# TrafficCop Pro v3.2.1 — Signatura genèrica d'agent
 
-## Canvis principals
-- Disseny de la butlleta reconstruït amb HTML i CSS, no amb textos superposats sobre una fotografia.
-- Tots els textos de la butlleta utilitzen Arial.
-- Cada dada queda dins de la seva casella.
-- Vista completa d’escriptori.
-- Vista adaptada a mòbil sense desplaçament horitzontal.
-- Menú lateral professional en ordinador.
-- Navegació inferior conservada en mòbil.
-- Botons d’impressió i pantalla completa.
-- La norma, article, quantia, punts, descompte i fet denunciat es carreguen dinàmicament per a cada infracció.
+## Canvi aplicat
+S'ha eliminat el nom «Aleix» de totes les butlletes d'exemple.
 
-## Dades fictícies
-Les dades personals, vehicle, lloc, signatures i observacions són exemples orientatius.
-No s’han d’utilitzar per formular una denúncia real.
+A partir d'ara, als apartats:
+- 13. Denunciant
+- 14. Notificador/a
+
+la signatura visual mostra únicament:
+
+**Agent**
+
+Aquest canvi s'aplica tant a la versió web com a la vista mòbil.
 
 ## Fitxers per pujar a GitHub
 - index.html
-- styles-v320.css
-- app-data-v320.js
-- app-v320.js
+- styles-v321.css
+- app-data-v321.js
+- app-v321.js
 - README.md
