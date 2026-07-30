@@ -1,25 +1,6 @@
 <!doctype html>
-<html lang="ca">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#07111f">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v24.css?v=24">
-</head>
-<body>
-<header class="topbar">
-  <button id="menuButton" class="menu-button" aria-label="Obrir menú">☰</button>
-  <div class="topbar-title">
-    <p>CATÀLEG SCT · MAIG 2026</p>
-    <h1>TrafficCop <span>Pro</span></h1>
-  </div>
-  <button id="themeButton" aria-label="Canviar tema">◐</button>
-</header>
-
-
-
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v30.css?v=30"></head><body>
+<header class="topbar pro-topbar"><button id="menuButton" class="menu-button" aria-label="Abrir menú">☰</button><div class="topbar-title"><p>HERRAMIENTA POLICIAL · TRÁFICO</p><h1>TrafficCop <span>Pro</span></h1></div><div class="topbar-actions"><button id="serviceModeButton" class="service-mode-button" aria-label="Modo servicio">●</button><button id="themeButton" aria-label="Cambiar tema">◐</button></div></header>
 <div id="drawerBackdrop" class="drawer-backdrop"></div>
 
 <aside id="sideDrawer" class="side-drawer option-a" aria-hidden="true">
@@ -138,139 +119,16 @@
   </article>
 </dialog>
 
-<main>
-  <section class="hero">
-    <span class="version">v2.4 · MEJORA IA POLICIAL</span>
-    <h2>Consulta el text del catàleg d’infraccions</h2>
-    <p>Cada resultat mostra el concepte, article, naturalesa, quantia, reducció i punts extrets del PDF.</p>
 
-    <div class="search">
-      <span>⌕</span>
-      <input id="searchInput" type="search" placeholder="Mòbil, ITV, VMP, matrícula, article…" autocomplete="off">
-      <button id="voiceSearchButton" title="Cerca per veu" aria-label="Cerca per veu">🎙</button>
-      <button id="clearButton" title="Esborrar">×</button>
-    </div>
-
-    <button id="assistantOpenButton" class="assistant-launch">
-      <span>✨</span>
-      <span><strong>TrafficCop AI</strong><small>Descriu els fets parlant o escrivint</small></span>
-    </button>
-
-    <div class="quick">
-      <button data-query="mòbil">📱 Mòbil</button>
-      <button data-query="ITV">🧾 ITV</button>
-      <button data-query="VMP">🛴 VMP</button>
-      <button data-query="matrícula">🔢 Matrícula</button>
-      <button data-query="alcohol">🍺 Alcohol</button>
-      <button data-query="drogues">🧪 Drogues</button>
-    </div>
-  
-</section>
-
-  <section class="suite-dashboard">
-    <button class="suite-card" data-suite="traffic">
-      <span>🚔</span><strong>Tráfico</strong><small>Catálogo e infracciones</small>
-    </button>
-    <button class="suite-card" data-suite="ai">
-      <span>✨</span><strong>TrafficCop AI</strong><small>Voz y consulta inteligente</small>
-    </button>
-    <button class="suite-card" data-suite="documents">
-      <span>📄</span><strong>Documentos</strong><small>Actas e informes</small>
-    </button>
-    <button class="suite-card" data-suite="photo">
-      <span>📸</span><strong>Informe fotográfico</strong><small>Fotos y descripciones</small>
-    </button>
-    <button class="suite-card" data-suite="accident">
-      <span>🚗</span><strong>Accidentes</strong><small>Cronología y datos</small>
-    </button>
-    <button class="suite-card" data-suite="legal">
-      <span>📚</span><strong>Biblioteca legal</strong><small>Normativa y fuentes</small>
-    </button>
-    <button class="suite-card" data-suite="patrol">
-      <span>⏱</span><strong>Modo patrulla</strong><small>Actuación y cronómetro</small>
-    </button>
-    <button class="suite-card" data-suite="tools">
-      <span>🧮</span><strong>Herramientas</strong><small>Calculadoras y utilidades</small>
-    </button>
-  </section>
-
-  
-<section class="working-tools">
-  <div class="section-heading">
-    <div>
-      <p>HERRAMIENTAS OPERATIVAS</p>
-      <h2>Documentos e informes</h2>
-    </div>
-  </div>
-
-  <div class="working-grid">
-    <button class="working-card featured" data-suite="photo">
-      <span>📸</span>
-      <div><strong>Informe fotográfico</strong><small>Subir fotos, numerarlas, describirlas y copiar el informe</small></div>
-      <b>ABRIR</b>
-    </button>
-
-    <button class="working-card" data-document="manifestacion">
-      <span>🗣</span>
-      <div><strong>Acta de manifestación</strong><small>Formulario guiado y texto final</small></div>
-      <b>ABRIR</b>
-    </button>
-
-    <button class="working-card" data-document="ampliatorio">
-      <span>📄</span>
-      <div><strong>Informe ampliatorio</strong><small>Cabecera, hechos y conclusión</small></div>
-      <b>ABRIR</b>
-    </button>
-
-    <button class="working-card" data-document="diligencia">
-      <span>📝</span>
-      <div><strong>Diligencia básica</strong><small>Redacción estructurada para tráfico</small></div>
-      <b>ABRIR</b>
-    </button>
-  </div>
-</section>
-
-<section class="filters">
-    <select id="normFilter"><option value="">Totes les normes</option></select>
-    <select id="natureFilter">
-      <option value="">Totes les naturaleses</option>
-      <option value="L">Lleu</option>
-      <option value="G">Greu</option>
-      <option value="MG">Molt greu</option>
-      <option value="G/MG">Greu / molt greu</option>
-    </select>
-    <select id="pointsFilter">
-      <option value="">Tots els punts</option>
-      <option value="0">0 punts</option>
-      <option value="2">2 punts</option>
-      <option value="3">3 punts</option>
-      <option value="4">4 punts</option>
-      <option value="6">6 punts</option>
-    </select>
-  </section>
-
-  <section class="tabs">
-    <button class="active" data-view="all">Totes</button>
-    <button data-view="favorites">★ Preferides</button>
-    <span id="resultCount"></span>
-  </section>
-
-  <aside class="notice">
-    <strong>Transcripció del PDF SCT:</strong> la fitxa mostra el redactat del catàleg i la pàgina d’origen.
-    Abans de denunciar, comprova que els fets observats encaixen exactament amb el concepte i completa
-    les dades que el mateix redactat exigeixi.
-  </aside>
-
-  <section id="results" class="results"></section>
-  <button id="moreButton" class="more" hidden>Mostrar-ne més</button>
+<main id="homeView" class="pro-main">
+<section class="status-strip"><div><span class="status-dot"></span><strong id="serviceStatus">Modo consulta</strong></div><div class="source-chip">Fuente SCT · 20/05/2026</div></section>
+<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.0 · POLICE PRO</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
+<section class="quick-section"><div class="section-title-row"><div><p>ACCESO RÁPIDO</p><h2>Intervenciones habituales</h2></div><button id="customizeQuickButton">Editar</button></div><div class="quick pro-quick"><button data-query="mòbil">📱<span>Móvil</span></button><button data-query="ITV">🧾<span>ITV</span></button><button data-query="VMP">🛴<span>VMP</span></button><button data-query="matrícula">🔢<span>Matrícula</span></button><button data-query="alcohol">🍺<span>Alcohol</span></button><button data-query="drogues">🧪<span>Drogas</span></button><button data-query="velocitat">⚡<span>Velocidad</span></button><button data-query="cinturó">🦺<span>Cinturón</span></button></div></section>
+<section class="command-centre"><div class="section-title-row"><div><p>CENTRO OPERATIVO</p><h2>Herramientas policiales</h2></div></div><div class="command-grid"><button class="command-card primary" data-suite="traffic"><span class="command-icon">🚔</span><strong>Catálogo SCT</strong><small>Infracciones, importes y puntos</small><b>Abrir</b></button><button class="command-card" data-suite="documents"><span class="command-icon">📄</span><strong>Documentos</strong><small>Actas, informes y diligencias</small><b>Abrir</b></button><button class="command-card" data-suite="photo"><span class="command-icon">📸</span><strong>Informe fotográfico</strong><small>Numeración y texto técnico</small><b>Abrir</b></button><button class="command-card" data-suite="accident"><span class="command-icon">🚗</span><strong>Accidentes</strong><small>Cronología y datos</small><b>Abrir</b></button><button class="command-card" data-suite="legal"><span class="command-icon">📚</span><strong>Biblioteca legal</strong><small>Normativa y fuente</small><b>Abrir</b></button><button class="command-card" data-suite="tools"><span class="command-icon">🧮</span><strong>Herramientas</strong><small>GPS y accesos técnicos</small><b>Abrir</b></button></div></section>
+<section id="recentSection" class="recent-section"><div class="section-title-row"><div><p>ACTIVIDAD</p><h2>Consultas recientes</h2></div><button id="clearRecentButton">Borrar</button></div><div id="recentSearches" class="recent-list"></div></section>
+<section id="catalogSection" class="catalog-shell"><div class="catalog-header"><div><p>CATÁLOGO OFICIAL</p><h2>Resultados de infracciones</h2></div><span class="verification-badge">✓ Texto del catálogo</span></div><section class="filters pro-filters"><select id="normFilter"><option value="">Todas las normas</option></select><select id="natureFilter"><option value="">Todas las naturalezas</option><option value="L">Leve</option><option value="G">Grave</option><option value="MG">Muy grave</option><option value="G/MG">Grave / muy grave</option></select><select id="pointsFilter"><option value="">Todos los puntos</option><option value="0">0 puntos</option><option value="2">2 puntos</option><option value="3">3 puntos</option><option value="4">4 puntos</option><option value="6">6 puntos</option></select></section><section class="tabs pro-tabs"><button class="active" data-view="all">Todas</button><button data-view="favorites">★ Favoritas</button><span id="resultCount"></span></section><aside class="notice pro-notice"><strong>Uso profesional:</strong> verifica siempre que el hecho observado encaje exactamente con el concepto del catálogo.</aside><section id="results" class="results"></section><button id="moreButton" class="more" hidden>Mostrar más resultados</button></section>
 </main>
-
-<nav class="bottomnav">
-  <button data-view="all">⌕<small>Buscar</small></button>
-  <button data-view="favorites">★<small>Preferides</small></button>
-  <button id="installButton">⬇<small>Instal·lar</small></button>
-</nav>
-
+<nav class="bottomnav pro-bottomnav"><button class="active" data-pro-nav="home">⌂<small>Inicio</small></button><button data-pro-nav="search">⌕<small>Buscar</small></button><button data-pro-nav="documents">📄<small>Documentos</small></button><button data-pro-nav="more">☰<small>Más</small></button></nav>
 <template id="cardTemplate">
   <article class="card">
     <div class="cardhead">
@@ -381,7 +239,5 @@
   </article>
 </dialog>
 
-<script src="app-data-v24.js?v=24"></script>
-<script src="app-v24.js?v=24"></script>
-</body>
-</html>
+
+<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v30.js?v=30"></script><script src="app-v30.js?v=30"></script></body></html>
