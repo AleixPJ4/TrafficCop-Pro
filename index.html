@@ -6,20 +6,141 @@
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v09.css?v=9?v=8">
+  <link rel="stylesheet" href="styles-v20.css?v=20">
 </head>
 <body>
 <header class="topbar">
-  <div>
+  <button id="menuButton" class="menu-button" aria-label="Obrir menú">☰</button>
+  <div class="topbar-title">
     <p>CATÀLEG SCT · MAIG 2026</p>
     <h1>TrafficCop <span>Pro</span></h1>
   </div>
   <button id="themeButton" aria-label="Canviar tema">◐</button>
 </header>
 
+
+
+<div id="drawerBackdrop" class="drawer-backdrop"></div>
+
+<aside id="sideDrawer" class="side-drawer option-a" aria-hidden="true">
+  <section id="drawerMain" class="drawer-page active" data-page="main">
+    <div class="drawer-brand">
+      <div class="drawer-logo">TC</div>
+      <div>
+        <p>TRAFFICCOP PRO</p>
+        <h2>Assistent policial</h2>
+      </div>
+      <button id="drawerCloseButton" class="drawer-close" aria-label="Tancar menú">×</button>
+    </div>
+
+    <div class="drawer-search">
+      <span>⌕</span>
+      <input id="drawerSearchInput" type="search" placeholder="Cercar al menú…">
+    </div>
+
+    <nav class="drawer-main-nav">
+      <button class="menu-row primary" data-action="home">
+        <span class="menu-icon">⌂</span>
+        <span class="menu-copy"><strong>Inici</strong><small>Cercador d’infraccions</small></span>
+      </button>
+
+      <button class="menu-row primary" data-action="search">
+        <span class="menu-icon">⌕</span>
+        <span class="menu-copy"><strong>Cercar</strong><small>Concepte, article, import o punts</small></span>
+      </button>
+
+      <button class="menu-row primary" data-action="assistant">
+        <span class="menu-icon">✨</span>
+        <span class="menu-copy"><strong>TrafficCop AI</strong><small>Descriu els fets parlant o escrivint</small></span>
+      </button>
+
+      <button class="menu-row primary" data-action="favorites">
+        <span class="menu-icon">★</span>
+        <span class="menu-copy"><strong>Preferides</strong><small>Infraccions guardades</small></span>
+      </button>
+
+      <div class="menu-separator"></div>
+
+      <button class="menu-row submenu-trigger" data-submenu="legislation">
+        <span class="menu-icon">📚</span>
+        <span class="menu-copy"><strong>Legislació</strong><small>Normes i informació legal</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="traffic">
+        <span class="menu-icon">🚔</span>
+        <span class="menu-copy"><strong>Trànsit</strong><small>Accés ràpid per matèries</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="documents">
+        <span class="menu-icon">📄</span>
+        <span class="menu-copy"><strong>Documents</strong><small>Plantilles i actes</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="reports">
+        <span class="menu-icon">📸</span>
+        <span class="menu-copy"><strong>Informes</strong><small>Informes fotogràfics i tècnics</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="tools">
+        <span class="menu-icon">🧮</span>
+        <span class="menu-copy"><strong>Eines</strong><small>Consultes i accessos directes</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="settings">
+        <span class="menu-icon">⚙</span>
+        <span class="menu-copy"><strong>Ajustos</strong><small>Tema, informació i privacitat</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <div class="menu-separator"></div>
+
+      <button class="menu-row secondary" data-legal="version">
+        <span class="menu-icon">ⓘ</span>
+        <span class="menu-copy"><strong>Informació</strong><small>Versió i font documental</small></span>
+      </button>
+    </nav>
+
+    <footer class="drawer-footer">
+      <strong>Catàleg SCT</strong>
+      <span>20 de maig de 2026</span>
+      <small>TrafficCop Pro v2.0</small>
+    </footer>
+  </section>
+
+  <section id="drawerSubmenu" class="drawer-page submenu-page" data-page="submenu">
+    <div class="submenu-header">
+      <button id="submenuBackButton" class="submenu-back" aria-label="Tornar">‹</button>
+      <div>
+        <p id="submenuEyebrow">SECCIÓ</p>
+        <h2 id="submenuTitle">Legislació</h2>
+      </div>
+      <button id="drawerCloseButtonSecondary" class="drawer-close" aria-label="Tancar menú">×</button>
+    </div>
+    <nav id="submenuContent" class="submenu-content"></nav>
+  </section>
+</aside>
+
+<dialog id="legalDialog">
+  <article class="legal-panel">
+    <header>
+      <div>
+        <p>INFORMACIÓ LEGAL</p>
+        <h2 id="legalTitle"></h2>
+      </div>
+      <button id="legalCloseButton" aria-label="Tancar">×</button>
+    </header>
+    <div id="legalContent" class="legal-content"></div>
+  </article>
+</dialog>
+
 <main>
   <section class="hero">
-    <span class="version">v0.9 · TRANSCRIPCIÓ DEL CATÀLEG SCT</span>
+    <span class="version">v2.0 · MENÚ OPCIÓ A</span>
     <h2>Consulta el text del catàleg d’infraccions</h2>
     <p>Cada resultat mostra el concepte, article, naturalesa, quantia, reducció i punts extrets del PDF.</p>
 
@@ -156,7 +277,7 @@
   </section>
 </dialog>
 
-<script src="app-data-v09.js?v=9?v=8"></script>
-<script src="app-v09.js?v=9?v=8"></script>
+<script src="app-data-v20.js?v=20"></script>
+<script src="app-v20.js?v=20"></script>
 </body>
 </html>
