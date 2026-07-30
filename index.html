@@ -1,5 +1,28 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v311.css?v=311"></head><body>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v320.css?v=320"></head><body>
+
+<aside class="desktop-police-rail" aria-label="Navegació principal">
+  <div class="rail-brand">
+    <span class="rail-mark">TC</span>
+    <strong>TrafficCop <b>Pro</b></strong>
+    <small>Policia · Trànsit</small>
+  </div>
+
+  <nav>
+    <button data-rail-action="home" class="active"><span>⌂</span><small>Inici</small></button>
+    <button data-rail-action="catalog"><span>▣</span><small>Catàleg</small></button>
+    <button data-suite="documents"><span>▤</span><small>Documents</small></button>
+    <button data-suite="photo"><span>▧</span><small>Informe<br>fotogràfic</small></button>
+    <button data-suite="tools"><span>▦</span><small>Calculadores</small></button>
+    <button data-suite="legal"><span>▥</span><small>Biblioteca<br>legal</small></button>
+    <button data-rail-action="ai"><span>✦</span><small>IA policial</small></button>
+    <button data-suite="accident"><span>▱</span><small>Accidents</small></button>
+    <button data-rail-action="more"><span>⚙</span><small>Eines</small></button>
+  </nav>
+
+  <button class="rail-help" data-legal="instructions"><span>?</span><small>Ajuda</small></button>
+</aside>
+
 <header class="topbar pro-topbar"><button id="menuButton" class="menu-button" aria-label="Abrir menú">☰</button><div class="topbar-title"><p>HERRAMIENTA POLICIAL · TRÁFICO</p><h1>TrafficCop <span>Pro</span></h1></div><div class="topbar-actions"><button id="serviceModeButton" class="service-mode-button" aria-label="Modo servicio">●</button><button id="themeButton" aria-label="Cambiar tema">◐</button></div></header>
 <div id="drawerBackdrop" class="drawer-backdrop"></div>
 
@@ -122,7 +145,7 @@
 
 <main id="homeView" class="pro-main">
 <section class="status-strip"><div><span class="status-dot"></span><strong id="serviceStatus">Modo consulta</strong></div><div class="source-chip">Fuente SCT · 20/05/2026</div></section>
-<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.1.1 · BUTLLETA REAL SCT</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
+<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.2.0 · DISSENY PRO</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
 <section class="quick-section"><div class="section-title-row"><div><p>ACCESO RÁPIDO</p><h2>Intervenciones habituales</h2></div><button id="customizeQuickButton">Editar</button></div><div class="quick pro-quick"><button data-query="mòbil">📱<span>Móvil</span></button><button data-query="ITV">🧾<span>ITV</span></button><button data-query="VMP">🛴<span>VMP</span></button><button data-query="matrícula">🔢<span>Matrícula</span></button><button data-query="alcohol">🍺<span>Alcohol</span></button><button data-query="drogues">🧪<span>Drogas</span></button><button data-query="velocitat">⚡<span>Velocidad</span></button><button data-query="cinturó">🦺<span>Cinturón</span></button></div></section>
 <section class="command-centre"><div class="section-title-row"><div><p>CENTRO OPERATIVO</p><h2>Herramientas policiales</h2></div></div><div class="command-grid"><button class="command-card primary" data-suite="traffic"><span class="command-icon">🚔</span><strong>Catálogo SCT</strong><small>Infracciones, importes y puntos</small><b>Abrir</b></button><button class="command-card" data-suite="documents"><span class="command-icon">📄</span><strong>Documentos</strong><small>Actas, informes y diligencias</small><b>Abrir</b></button><button class="command-card" data-suite="photo"><span class="command-icon">📸</span><strong>Informe fotográfico</strong><small>Numeración y texto técnico</small><b>Abrir</b></button><button class="command-card" data-suite="accident"><span class="command-icon">🚗</span><strong>Accidentes</strong><small>Cronología y datos</small><b>Abrir</b></button><button class="command-card" data-suite="legal"><span class="command-icon">📚</span><strong>Biblioteca legal</strong><small>Normativa y fuente</small><b>Abrir</b></button><button class="command-card" data-suite="tools"><span class="command-icon">🧮</span><strong>Herramientas</strong><small>GPS y accesos técnicos</small><b>Abrir</b></button></div></section>
 <section id="recentSection" class="recent-section"><div class="section-title-row"><div><p>ACTIVIDAD</p><h2>Consultas recientes</h2></div><button id="clearRecentButton">Borrar</button></div><div id="recentSearches" class="recent-list"></div></section>
@@ -203,62 +226,190 @@
 
 
 
-<dialog id="ticketDialog">
-  <article class="real-ticket-modal">
-    <header class="real-ticket-head">
-      <div>
-        <p>EXEMPLE VISUAL DE DENÚNCIA</p>
-        <h2 id="ticketTitle">Butlleta del Servei Català de Trànsit</h2>
+<dialog id="ticketDialog" class="ticket-dialog-pro">
+  <article class="ticket-page-pro">
+    <header class="ticket-page-header">
+      <div class="ticket-page-title">
+        <button id="ticketBackButton" class="ticket-back" aria-label="Tornar">←</button>
+        <div>
+          <div class="ticket-title-line">
+            <h2>Butlleta SCT completa</h2>
+            <span>Exemple orientatiu</span>
+          </div>
+          <p>Butlleta SCT emplenada amb les dades corresponents a aquesta infracció. Les dades personals, del vehicle i del lloc són fictícies.</p>
+        </div>
       </div>
-      <div class="real-ticket-actions">
-        <button id="ticketPrintButton">Imprimir / PDF</button>
-        <button id="ticketCloseButton" aria-label="Tancar">×</button>
+
+      <div class="ticket-page-actions">
+        <button id="ticketPrintButton">▣ Imprimir / PDF</button>
+        <button id="ticketFullscreenButton">↗ Pantalla completa</button>
+        <button id="ticketCloseButton" class="ticket-close" aria-label="Tancar">×</button>
       </div>
     </header>
 
-    <div class="real-ticket-scroll">
-      <section id="realTicketCanvas" class="real-ticket-canvas">
-        <img src="butlleta-sct-real.png" alt="Butlleta oficial en blanc del Servei Català de Trànsit">
+    <section class="ticket-paper-wrap">
+      <div id="sctTicket" class="sct-ticket">
+        <section class="sct-top-row">
+          <div class="sct-logo-cell">
+            <div class="sct-logo-symbol">↗</div>
+            <div><small>servei català de</small><strong>Trànsit</strong></div>
+          </div>
 
-        <span id="rtCheckRGC" class="rt-check rt-rgc">X</span>
-        <span id="rtCheckRGV" class="rt-check rt-rgv">X</span>
-        <span id="rtCheckRGCond" class="rt-check rt-rgcond">X</span>
-        <span id="rtCheckAOV" class="rt-check rt-aov">X</span>
-        <span id="rtOtherNorm" class="rt-write rt-other-norm"></span>
+          <div class="sct-exp-cell">
+            <b>1. NÚMERO DE L’EXPEDIENT</b>
+            <strong>01710123481-7</strong>
+          </div>
 
-        <span id="rtPoints" class="rt-write rt-points"></span>
-        <span id="rtArticle" class="rt-write rt-article"></span>
-        <span id="rtAmount" class="rt-write rt-amount"></span>
+          <div class="sct-date-cell">
+            <b>2. DATA DE LA DENÚNCIA</b>
+            <div class="sct-date-grid">
+              <span>DIA<strong>21</strong></span>
+              <span>MES<strong>03</strong></span>
+              <span>ANY<strong>2024</strong></span>
+              <span>HORA<strong>23:45</strong></span>
+            </div>
+          </div>
+        </section>
 
-        <span class="rt-write rt-place">CARRER D'EXEMPLE</span>
-        <span class="rt-check rt-street">X</span>
-        <span class="rt-write rt-town">POBLACIÓ</span>
+        <section class="sct-law-location-row">
+          <div class="sct-law-box">
+            <b>3. NORMA INFRINGIDA</b>
+            <div class="sct-check-grid">
+              <span id="sctRGC" class="sct-check"><i></i>RGC</span>
+              <span id="sctRGV" class="sct-check"><i></i>RGV</span>
+              <span id="sctTRLSV" class="sct-check"><i></i>TRLSV</span>
+              <span id="sctRGCond" class="sct-check"><i></i>RGCond</span>
+              <span id="sctAOV" class="sct-check"><i></i>AOV</span>
+              <span id="sctOther" class="sct-check"><i></i><em id="sctOtherLabel">Altres</em></span>
+            </div>
+          </div>
 
-        <span class="rt-write rt-plate">0000 ABC</span>
-        <span class="rt-write rt-country">E</span>
-        <span class="rt-write rt-brand">MARCA</span>
-        <span class="rt-write rt-model">MODEL</span>
+          <div class="sct-points-box">
+            <b>6. PUNTS</b>
+            <strong id="sctPoints">—</strong>
+          </div>
 
-        <div id="rtFact" class="rt-write rt-fact"></div>
+          <div class="sct-location-box">
+            <b>7. LLOC DE LA DENÚNCIA</b>
+            <div class="sct-location-checks">
+              <span class="sct-check"><i></i>VIA</span>
+              <span class="sct-check checked"><i></i>CARRER</span>
+              <span class="sct-check"><i></i>KM / NÚM.</span>
+              <span class="sct-check"><i></i>EN SENTIT A</span>
+              <span class="sct-check checked"><i></i>POBLACIÓ</span>
+            </div>
+            <div class="sct-location-values">
+              <strong>HORT DEL CONVENT, 15</strong>
+              <strong>MÓRA D’EBRE</strong>
+            </div>
+          </div>
+        </section>
 
-        <span class="rt-write rt-id">00000000X</span>
-        <span class="rt-write rt-license">B</span>
-        <span class="rt-write rt-surname">COGNOMS D'EXEMPLE</span>
-        <span class="rt-write rt-name">NOM</span>
-        <span class="rt-write rt-nationality">ESPANYOLA</span>
+        <section class="sct-article-row">
+          <div><b>4. ARTICLE</b><strong id="sctArticle">—</strong></div>
+          <div><b>5. QUANTIA</b><strong id="sctAmount">—</strong></div>
+          <div class="sct-article-spacer"></div>
+        </section>
 
-        <span class="rt-write rt-officer">TIP 0000</span>
-        <span class="rt-write rt-notifier">TIP 0000</span>
-        <div class="rt-write rt-observations">EXEMPLE ORIENTATIU. LES OBSERVACIONS DEPENEN DELS FETS COMPROVATS PER L'AGENT.</div>
+        <section class="sct-vehicle-row">
+          <b>8. DADES DEL VEHICLE</b>
+          <div>
+            <span>Matrícula: <strong>8965 JPV</strong></span>
+            <span>País: <strong>E</strong></span>
+            <span>Marca: <strong>SEAT</strong></span>
+            <span>Model: <strong>LEÓN</strong></span>
+          </div>
+        </section>
 
-        <span id="rtDiscount" class="rt-write rt-discount"></span>
-      </section>
-    </div>
+        <section class="sct-fact-speed-row">
+          <div class="sct-fact-box">
+            <b>9. FET DENUNCIAT</b>
+            <p id="sctFact">—</p>
+          </div>
 
-    <p class="real-ticket-note">
-      Exemple orientatiu: les dades personals, el vehicle, el lloc i les observacions són fictícies.
-      La norma, l’article, la quantia, els punts i el fet denunciat provenen de la fitxa seleccionada.
-    </p>
+          <div class="sct-speed-box">
+            <p>Circular a ........................ Km/h quan la velocitat estava limitada a ........................ Km/h.</p>
+            <p>Limitació:</p>
+            <div class="sct-speed-checks">
+              <span class="sct-check"><i></i>Genèrica via urbana o travessera</span>
+              <span class="sct-check"><i></i>Genèrica via interurbana</span>
+              <span class="sct-check"><i></i>Específica fixada per senyal</span>
+            </div>
+            <p>Cinemòmetre: .................................... &nbsp; Antena: ....................................</p>
+            <p>Model aprovat d’acord amb l’ordre ministerial de data: ....................................</p>
+            <p>Per a la graduació de la sanció s’han tingut en compte els marges d’error admesos reglamentàriament.</p>
+          </div>
+        </section>
+
+        <section class="sct-person-payment-row">
+          <div class="sct-person-box">
+            <b>10. DADES DE LA PERSONA CONDUCTORA O INFRACTORA</b>
+            <div class="person-line"><span>Permís de conduir / DNI / NIE / Passaport:</span><strong>47851234X</strong></div>
+            <div class="person-line split"><span>Classe: <strong>B</strong></span><span>Data d’expedició: <strong>10/06/2015</strong></span></div>
+            <div class="person-line"><span>Cognoms:</span><strong>GARCÍA MARTÍNEZ</strong></div>
+            <div class="person-line"><span>Nom:</span><strong>ALEJANDRO</strong></div>
+            <div class="person-line split"><span>Data de naixement: <strong>15/08/1992</strong></span><span>Nacionalitat: <strong>ESPANYOLA</strong></span></div>
+            <div class="person-line split"><span>Domicili: <strong>C/ MAJOR, 23</strong></span><span>Núm.: <strong>23</strong> &nbsp; Pis: <strong>2º-1ª</strong></span></div>
+            <div class="person-line split"><span>Població: <strong>MÓRA D’EBRE</strong></span><span>C.P.: <strong>43740</strong></span></div>
+          </div>
+
+          <div class="sct-payment-box">
+            <b>11. DILIGÈNCIA DE DIPÒSIT I/O COBRAMENT</b>
+            <p>Faig constar que la persona denunciada fa efectiva, en concepte de dipòsit/cobrament de la sanció, la quantitat següent (en lletres):</p>
+            <div class="sct-payment-options">
+              <span class="sct-check checked"><i></i>en metàl·lic</span>
+              <span class="sct-check"><i></i>amb targeta núm. ............................</span>
+            </div>
+            <div class="sct-payment-digits"><span>0</span><span>5</span><span>0</span><b>,</b><span>0</span><span>0</span><b>€</b></div>
+            <div class="sct-signatures"><span>SIGNATURA DENUNCIAT</span><span>SIGNATURA AGENT</span></div>
+          </div>
+        </section>
+
+        <section class="sct-bottom-row">
+          <div class="sct-reported-box">
+            <b>12. DENUNCIAT/ADA</b>
+            <p>NO IMPLICA LA MEVA CONFORMITAT</p>
+            <p>NO DESITJA SIGNAR</p>
+            <p>ES LLIURA CÒPIA</p>
+            <small>SIGNATURA</small>
+          </div>
+
+          <div class="sct-officer-box">
+            <b>13. DENUNCIANT</b>
+            <p>IDENTIFICACIÓ PL. 16523</p>
+            <p>TIP 5020</p>
+            <div class="fake-signature">Aleix</div>
+            <small>SIGNATURA</small>
+          </div>
+
+          <div class="sct-notifier-box">
+            <b>14. NOTIFICADOR/A</b>
+            <p>IDENTIFICACIÓ TIP 16523</p>
+            <div class="fake-signature">Agent</div>
+            <small>SIGNATURA</small>
+          </div>
+
+          <div class="sct-observations-box">
+            <b>15. OBSERVACIONS</b>
+            <p>REALITZADA CONSULTA AL REGISTRE NACIONAL DE VEHICLES. LA PERSONA DENUNCIADA ES NEGA A IDENTIFICAR-SE.</p>
+            <div class="fake-line"></div>
+          </div>
+        </section>
+
+        <footer class="sct-footer">
+          <div class="generalitat-mark">▥ <strong>Generalitat<br>de Catalunya</strong></div>
+          <div class="barcode"><span></span><small>905140585004350800084234194290</small></div>
+          <div class="sct-ref">RIN F5 &nbsp; Emissora / Sufix &nbsp; <strong>058S0043 S08</strong> &nbsp; Referència: <strong>01710123481-7</strong></div>
+          <div class="sct-deadline">DATA LÍMIT: <strong>10 | 04 | 24</strong></div>
+          <div class="sct-final-amount">IMPORT A PAGAR<br>AMB DESCOMPTE <strong id="sctDiscount">—</strong></div>
+        </footer>
+      </div>
+    </section>
+
+    <aside class="ticket-info-note">
+      <strong>Informació</strong>
+      <p>Butlleta SCT orientativa emplenada amb les dades corresponents a la infracció seleccionada.</p>
+    </aside>
   </article>
 </dialog>
 
@@ -301,4 +452,4 @@
 </dialog>
 
 
-<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v311.js?v=311"></script><script src="app-v311.js?v=311"></script></body></html>
+<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v320.js?v=320"></script><script src="app-v320.js?v=320"></script></body></html>
