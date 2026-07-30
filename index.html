@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v20.css?v=20">
+  <link rel="stylesheet" href="styles-v21.css?v=21">
 </head>
 <body>
 <header class="topbar">
@@ -140,7 +140,7 @@
 
 <main>
   <section class="hero">
-    <span class="version">v2.0 · MENÚ OPCIÓ A</span>
+    <span class="version">v2.1 · SUITE POLICIAL</span>
     <h2>Consulta el text del catàleg d’infraccions</h2>
     <p>Cada resultat mostra el concepte, article, naturalesa, quantia, reducció i punts extrets del PDF.</p>
 
@@ -164,6 +164,34 @@
       <button data-query="alcohol">🍺 Alcohol</button>
       <button data-query="drogues">🧪 Drogues</button>
     </div>
+  
+</section>
+
+  <section class="suite-dashboard">
+    <button class="suite-card" data-suite="traffic">
+      <span>🚔</span><strong>Tráfico</strong><small>Catálogo e infracciones</small>
+    </button>
+    <button class="suite-card" data-suite="ai">
+      <span>✨</span><strong>TrafficCop AI</strong><small>Voz y consulta inteligente</small>
+    </button>
+    <button class="suite-card" data-suite="documents">
+      <span>📄</span><strong>Documentos</strong><small>Actas e informes</small>
+    </button>
+    <button class="suite-card" data-suite="photo">
+      <span>📸</span><strong>Informe fotográfico</strong><small>Fotos y descripciones</small>
+    </button>
+    <button class="suite-card" data-suite="accident">
+      <span>🚗</span><strong>Accidentes</strong><small>Cronología y datos</small>
+    </button>
+    <button class="suite-card" data-suite="legal">
+      <span>📚</span><strong>Biblioteca legal</strong><small>Normativa y fuentes</small>
+    </button>
+    <button class="suite-card" data-suite="patrol">
+      <span>⏱</span><strong>Modo patrulla</strong><small>Actuación y cronómetro</small>
+    </button>
+    <button class="suite-card" data-suite="tools">
+      <span>🧮</span><strong>Herramientas</strong><small>Calculadoras y utilidades</small>
+    </button>
   </section>
 
   <section class="filters">
@@ -277,7 +305,21 @@
   </section>
 </dialog>
 
-<script src="app-data-v20.js?v=20"></script>
-<script src="app-v20.js?v=20"></script>
+
+<dialog id="suiteDialog">
+  <article class="suite-panel">
+    <header class="suite-head">
+      <div>
+        <p>TRAFFICCOP PRO</p>
+        <h2 id="suiteTitle">Módulo</h2>
+      </div>
+      <button id="suiteCloseButton" aria-label="Cerrar">×</button>
+    </header>
+    <div id="suiteContent"></div>
+  </article>
+</dialog>
+
+<script src="app-data-v21.js?v=21"></script>
+<script src="app-v21.js?v=21"></script>
 </body>
 </html>

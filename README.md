@@ -1,24 +1,42 @@
-# TrafficCop Pro v2.0 — Menú Opción A
+# TrafficCop Pro v2.1 — Suite policial
 
-Nueva navegación lateral estilo ChatGPT / Notion:
+## Incorporado en esta versión
+- Dashboard con todos los niveles previstos.
+- Nivel 1:
+  - buscador;
+  - TrafficCop AI local;
+  - favoritos;
+  - biblioteca legal;
+  - accesos de modo patrulla.
+- Nivel 4 inicial:
+  - constructor de informe fotográfico;
+  - carga múltiple de fotografías;
+  - descripciones editables;
+  - generación y copia del informe;
+  - cronología de actuación.
+- GPS para capturar coordenadas.
+- Arquitectura y menús para:
+  - documentos;
+  - accidentes;
+  - croquis;
+  - jurisprudencia;
+  - escáner documental;
+  - calculadoras;
+  - chat jurídico.
 
-- Menú principal limpio y jerárquico.
-- Submenús deslizantes de segundo nivel.
-- Legislación.
-- Tráfico.
-- Documentos.
-- Informes.
-- Herramientas.
-- Ajustes.
-- Buscador dentro del menú.
-- Accesos directos a TrafficCop AI y favoritos.
-- Elementos futuros claramente marcados como «Próximamente».
+## Funciones marcadas «Próximamente»
+Requieren desarrollo adicional, permisos del dispositivo, servicios externos o backend seguro:
+- OCR documental.
+- IA visual.
+- Chat jurídico en la nube.
+- Jurisprudencia actualizada.
+- Exportación PDF/Word.
+- Croquis visual avanzado.
+- Sincronización entre agentes.
 
-## Archivos para subir a GitHub
+## Archivos para GitHub
 - index.html
-- styles-v20.css
-- app-data-v20.js
-- app-v20.js
+- styles-v21.css
+- app-data-v21.js
+- app-v21.js
 - README.md
-
-Los archivos anteriores pueden permanecer en el repositorio. El nuevo index.html solo carga los archivos v2.0.
