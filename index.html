@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07111f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>TrafficCop Pro</title>
-  <link rel="stylesheet" href="styles-v23.css?v=23">
+  <link rel="stylesheet" href="styles-v24.css?v=24">
 </head>
 <body>
 <header class="topbar">
@@ -140,7 +140,7 @@
 
 <main>
   <section class="hero">
-    <span class="version">v2.3 · IA PARA ACTAS</span>
+    <span class="version">v2.4 · MEJORA IA POLICIAL</span>
     <h2>Consulta el text del catàleg d’infraccions</h2>
     <p>Cada resultat mostra el concepte, article, naturalesa, quantia, reducció i punts extrets del PDF.</p>
 
@@ -355,18 +355,14 @@
 
     <div id="documentForm" class="document-form"></div>
 
-    <div class="document-ai-bar">
-      <button id="improveDocumentButton" class="ai-improve-action">
-        <span>✨</span>
-        <span><strong>Corregir y mejorar con IA</strong><small>Ortografía, claridad y redacción técnica</small></span>
-      </button>
-      <p id="documentAiStatus"></p>
-    </div>
-
-    <div class="action-row">
+    <div class="document-actions-three">
       <button id="generateDocumentButton" class="primary-action">Generar documento</button>
+      <button id="improveDocumentButton" class="ai-primary-action">
+        <span>✨</span> Mejorar con IA
+      </button>
       <button id="copyDocumentButton" class="secondary-action">Copiar texto</button>
     </div>
+    <p id="documentAiStatus" class="document-ai-status"></p>
 
     <textarea id="documentOutput" rows="16" placeholder="Aquí aparecerá el documento generado…"></textarea>
   </article>
@@ -385,7 +381,7 @@
   </article>
 </dialog>
 
-<script src="app-data-v23.js?v=23"></script>
-<script src="app-v23.js?v=23"></script>
+<script src="app-data-v24.js?v=24"></script>
+<script src="app-v24.js?v=24"></script>
 </body>
 </html>

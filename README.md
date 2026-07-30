@@ -1,26 +1,28 @@
-# TrafficCop Pro v2.3 — IA para corregir actas
+# TrafficCop Pro v2.4 — Botón “Mejorar con IA”
 
-## Nueva función
-En el generador de documentos aparece el botón:
+## Cambio solicitado
+En el generador de actas y documentos aparecen ahora tres botones, uno junto al otro:
 
-**Corregir y mejorar con IA**
+- Generar documento
+- Mejorar con IA
+- Copiar texto
 
-La función:
-- corrige errores ortográficos frecuentes;
-- mejora puntuación y mayúsculas;
-- transforma frases coloquiales en una redacción más formal;
-- aplica una estructura técnica a hechos y observaciones;
-- regenera automáticamente el documento final;
-- intenta detectar si el texto está en castellano o catalán.
+En móviles se apilan verticalmente para que sean fáciles de pulsar.
 
-## Importante
-Esta versión utiliza un motor lingüístico local integrado en la app. No envía
-datos personales ni policiales a servidores externos. El texto generado debe
-ser revisado siempre por el agente antes de utilizarse.
+## Qué hace “Mejorar con IA”
+- corrige ortografía y puntuación;
+- mejora frases coloquiales;
+- transforma los hechos en una redacción más formal;
+- da un tono más técnico policial;
+- mejora el apartado de observaciones;
+- regenera automáticamente el documento final.
+
+## Seguridad
+Esta versión usa un motor local integrado y no envía datos personales ni policiales a servidores externos. El texto debe revisarse siempre por el agente antes de utilizarlo.
 
 ## Archivos para GitHub
 - index.html
-- styles-v23.css
-- app-data-v23.js
-- app-v23.js
+- styles-v24.css
+- app-data-v24.js
+- app-v24.js
 - README.md
