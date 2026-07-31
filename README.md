@@ -1,22 +1,18 @@
-# TrafficCop Pro v3.2.3 — Menú corregit definitivament
+# TrafficCop Pro v3.2.4 — Menú d'escriptori net
 
-## Causa real del problema
-La correcció anterior aplicava els estils a `#drawer`, però el menú real de l'aplicació
-té l'identificador `#sideDrawer`. Per això els canvis no tenien efecte.
+## Correcció definitiva
+En ordinador s'ha eliminat completament el menú blanc superposat.
 
-## Correcció aplicada
-- Els estils ara s'apliquen al menú real `#sideDrawer`.
-- En ordinador, en obrir el menú, la barra lateral blava queda amagada.
-- Només es mostra un únic menú, sense superposicions.
-- El menú apareix complet des de l'esquerra.
-- El fons fosc cobreix tota la pantalla.
-- El contingut té desplaçament vertical.
-- En mòbil es manté el comportament correcte.
-- Es pot tancar amb la tecla Escape.
+Ara:
+- només es mostra la barra lateral blava;
+- el botó de menú plega o desplega aquesta barra;
+- no apareix cap segon menú al fons;
+- no hi ha capa grisa ni contingut duplicat;
+- en mòbil es manté el menú desplegable habitual.
 
 ## Fitxers per pujar a GitHub
 - index.html
-- styles-v323.css
-- app-data-v323.js
-- app-v323.js
+- styles-v324.css
+- app-data-v324.js
+- app-v324.js
 - README.md
