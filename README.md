@@ -1,21 +1,22 @@
-# TrafficCop Pro v3.2.2 — Menú reparat
+# TrafficCop Pro v3.2.3 — Menú corregit definitivament
 
-## Error corregit
-A la vista d'ordinador, el menú desplegable quedava situat sota la barra lateral blava.
-Això provocava que part del contingut quedés ocult, tallat i difícil d'utilitzar.
+## Causa real del problema
+La correcció anterior aplicava els estils a `#drawer`, però el menú real de l'aplicació
+té l'identificador `#sideDrawer`. Per això els canvis no tenien efecte.
 
-## Correccions
-- El menú ara s'obre a la dreta de la barra lateral.
-- El fons fosc comença després de la barra lateral.
-- El menú té amplada completa i no queda retallat.
-- El contingut interior disposa de desplaçament vertical.
+## Correcció aplicada
+- Els estils ara s'apliquen al menú real `#sideDrawer`.
+- En ordinador, en obrir el menú, la barra lateral blava queda amagada.
+- Només es mostra un únic menú, sense superposicions.
+- El menú apareix complet des de l'esquerra.
+- El fons fosc cobreix tota la pantalla.
+- El contingut té desplaçament vertical.
+- En mòbil es manté el comportament correcte.
 - Es pot tancar amb la tecla Escape.
-- En mòbil continua obrint-se des de l'esquerra.
-- S'ha corregit l'ordre de capes perquè cap element tapi el menú.
 
 ## Fitxers per pujar a GitHub
 - index.html
-- styles-v322.css
-- app-data-v322.js
-- app-v322.js
+- styles-v323.css
+- app-data-v323.js
+- app-v323.js
 - README.md
