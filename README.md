@@ -1,13 +1,26 @@
-# TrafficCop Pro v3.7.2 — Policía Administrativa, archivo único
+# TrafficCop Pro v3.7.3 — Botones de Policía Administrativa reparados
 
-Esta versión elimina el problema de archivos descoordinados y caché:
+La apertura del módulo funcionaba, pero el inicializador general de la aplicación se detenía antes de conectar los botones internos.
 
-- Todo el CSS está integrado dentro de `index.html`.
-- Toda la base de datos JavaScript está integrada dentro de `index.html`.
-- Toda la lógica JavaScript está integrada dentro de `index.html`.
-- El botón ADM utiliza una función independiente que abre el módulo aunque falle el resto de la aplicación.
-- El botón de Atestados aparece en color morado.
-- En la esquina inferior derecha debe verse `v3.7.2`.
+Esta versión incorpora un controlador independiente que conecta directamente:
 
-## Subida a GitHub
-Sube `index.html` y todos los PDF incluidos. Puedes eliminar los antiguos archivos `styles-v*.css`, `app-v*.js` y `app-data-v*.js`, porque esta versión ya no los necesita.
+- Inicio y navegación lateral.
+- Actas e inspecciones.
+- Listas de comprobación.
+- Biblioteca operativa.
+- Revisión del acta.
+- Ámbitos de actuación.
+- Plantillas rápidas.
+- Materiales PDF.
+- Generar.
+- Copiar para NIPal.
+- Mejorar redacción.
+- Imprimir/PDF.
+- Guardar.
+- Volver a Tráfico.
+- Menú móvil.
+
+Cuando el módulo esté correctamente iniciado, aparecerá abajo a la derecha:
+`● MÓDULO OPERATIVO`
+
+Sube `index.html`, `service-worker.js` y todos los PDF incluidos.
