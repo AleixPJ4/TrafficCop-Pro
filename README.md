@@ -1,25 +1,28 @@
-# TrafficCop Pro v3.6.1 — Seguridad Ciudadana + Catálogo de armas
+# TrafficCop Pro v3.7.0 — Policía Administrativa
 
-## Corrección del menú
-El botón **4/2015 Seguridad ciudadana** se ha situado inmediatamente después de Documentos y antes de Atestados.
-La barra lateral ahora tiene desplazamiento vertical en pantallas de poca altura.
+## Nuevo módulo
+Espacio de trabajo completo de Policía Administrativa, visible en la barra lateral, menú móvil y centro operativo.
 
-## Catálogo de armas prohibidas
-Se incluye el PDF completo `catalogo-armas-prohibidas.pdf` y una consulta integrada con:
-- buscador por nombre, artículo o palabra clave;
-- filtros de armas de fuego, armas blancas, armas ocultas y de impacto;
-- acceso directo a cada ficha del PDF;
-- apertura del PDF completo;
-- apertura externa para teléfonos;
-- copia rápida de la referencia normativa.
+### Ámbitos
+- Inspección y acta administrativa.
+- Espectáculos públicos y actividades recreativas.
+- Seguridad privada.
+- Juego.
+- Actividades relevantes para la seguridad ciudadana.
+- Comercio y consumo.
+- Medidas cautelares.
 
-El documento se presenta como material policial/formativo y requiere revisión de la normativa y del procedimiento aplicable.
+### Plantillas iniciales
+A10 general, inspección de bar musical, actividad distinta de la autorizada, A46 horario, A47 espectáculos, A03 seguridad privada, control de acceso, seguro RC, menores, derecho de admisión, fiesta no autorizada, juego, hospedaje, objetos usados, joyas/metales, venta ambulante y medidas cautelares.
 
-## Archivos para subir a GitHub
-- index.html
-- styles-v361.css
-- app-data-v361.js
-- app-v361.js
-- service-worker.js
-- catalogo-armas-prohibidas.pdf
-- README.md
+### Funciones
+- Formularios guiados.
+- Texto editable para NIPal.
+- Copiar, guardar, mejorar e imprimir.
+- Listas de comprobación por ámbito.
+- Biblioteca operativa.
+- Revisión automática básica.
+- Materiales PDF integrados.
+- Interfaz completa en ordenador y simplificada en móvil.
+
+Los contenidos son modelos de apoyo y material formativo. Deben revisarse conforme a los formularios oficiales, la normativa vigente, las instrucciones del cuerpo y los hechos comprobados.
