@@ -1,27 +1,19 @@
-# TrafficCop Pro v4.0.0 — Rebuild Professional
+# TrafficCop Pro v3.7.5 — Restauración estable
 
-Esta versión incorpora una capa estructural unificada para toda la plataforma.
+Esta versión revierte la capa estructural v4.0 que alteró los márgenes y los módulos.
 
-## Cambios principales
-- Una única barra lateral para toda la aplicación.
-- Una única barra superior.
-- Un único sistema de márgenes y anchuras.
-- Navegación centralizada para Atestados, Seguridad Ciudadana y Policía Administrativa.
-- Botones de regreso conectados a la página principal.
-- Los módulos profesionales ocupan el 100 % de la ventana.
-- Escritorio, tableta y móvil utilizan reglas responsive comunes.
+## Qué se restaura
+- Estructura estable de la versión 3.7.3.
+- Controlador funcional de Policía Administrativa.
+- Diseño independiente original de Policía Administrativa.
+- Diseño independiente original de Seguridad Ciudadana.
+- Diseño independiente original de Atestados.
+- Menú lateral compacto.
+- Cabecera y contenido principal sin huecos superiores.
 - Barra inferior solo en móvil.
-- Colores diferenciados:
-  - Seguridad Ciudadana: azul.
-  - Policía Administrativa: dorado.
-  - Atestados: morado.
-- Limpieza automática de estados antiguos del menú.
-- Eliminación de cachés de versiones anteriores.
+- Regreso correcto a la página de Tráfico.
+- Eliminación de indicadores de depuración.
 
-## Instalación
-1. Elimina los archivos antiguos del repositorio.
-2. Sube todos los archivos incluidos en este ZIP.
-3. Abre la web con `?v=400`.
-4. Ejecuta `Ctrl + F5`.
-
-Esta versión mantiene los contenidos y módulos existentes, pero unifica su estructura visual y su navegación.
+## Importante
+Elimina del repositorio el index.html de v4.0 y sustituye todos los archivos por los de este paquete.
+Después abre la web con `?v=375` y pulsa Ctrl + F5.
