@@ -1,15 +1,15 @@
-# TrafficCop Pro v3.6.2 — Parche directo
+# TrafficCop Pro v3.6.3 — Policía Administrativa Pro
 
-Este paquete conserva exactamente los nombres de archivo de la versión estable v3.6.1:
-- index.html
-- styles-v361.css
-- app-v361.js
-- app-data-v361.js
+Actualización conservadora sobre la base estable.
 
-Por tanto, al subirlos a GitHub se sustituyen directamente los archivos que ya utiliza la web.
+El módulo independiente de Policía Administrativa incorpora:
+- Menú lateral profesional.
+- Manual operativo por ámbitos.
+- Listas de comprobación.
+- Generador de actas y ejemplos.
+- Copia directa para NIPal.
+- Plantillas A10 y A46.
+- Materiales PDF integrados.
+- Diseño adaptado a ordenador y móvil.
 
-Añade:
-- botón ADM Policía Administrativa en dorado;
-- Atestados en morado;
-- acceso desde menú lateral, menú desplegable y centro operativo;
-- página independiente de Policía Administrativa y sus PDF.
+No se modifican los márgenes ni la estructura principal de TrafficCop Pro.

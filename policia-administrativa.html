@@ -2,67 +2,174 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Policía Administrativa · TrafficCop Pro</title>
 <style>
-:root{--navy:#061d34;--panel:#10263a;--line:#2b455c;--gold:#a56f15;--text:#eef5fb;--muted:#a8bbca}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#081522;color:var(--text)}
-.top{height:64px;display:flex;align-items:center;gap:12px;padding:0 18px;background:#06131f;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-.back{border:1px solid #d69b2b;background:#8d6012;color:#fff;border-radius:8px;padding:10px 13px;font-weight:800;cursor:pointer}
-.logo{width:42px;height:42px;border-radius:10px;background:#6c4a10;display:grid;place-items:center;font-weight:900}.top strong,.top small{display:block}.top small{font-size:9px;color:#d6b566;letter-spacing:.1em}
-.main{max-width:1420px;margin:auto;padding:20px}.hero{display:flex;justify-content:space-between;gap:16px;align-items:center;background:linear-gradient(120deg,#152d40,#6a4a13);border:1px solid #9a6c1c;border-radius:16px;padding:22px}.hero h1{margin:5px 0;font-size:27px}.hero p{margin:0;color:#d8e3eb}.hero button{border:1px solid #dfad43;background:#9a6a16;color:#fff;padding:11px 13px;border-radius:8px;font-weight:800}
-.grid{display:grid;grid-template-columns:1.3fr .9fr;gap:12px;margin-top:12px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px}.panel h2{margin:4px 0 14px}.eyebrow{font-size:8px;color:#dfb75d;font-weight:900;letter-spacing:.12em}
-.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.area{border:1px solid var(--line);background:#193247;color:#fff;border-radius:10px;padding:13px;text-align:left;cursor:pointer}.area b,.area span{display:block}.area b{font-size:15px;margin-bottom:6px}.area span{font-size:10px;color:var(--muted);line-height:1.4}
-.list{display:grid;gap:7px}.doc{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);background:#142b3f;color:#fff;border-radius:9px;padding:11px;text-decoration:none}.doc b,.doc small{display:block}.doc small{color:var(--muted);margin-top:3px}.doc em{font-style:normal;color:#ffd37a}
-.checks{padding-left:20px;color:#cedbe5;line-height:1.55}.checks li{margin:8px 0}
-.notice{margin-top:12px;border-left:4px solid #d79b2c;background:#302717;padding:11px;color:#efd28f;font-size:11px;line-height:1.45}
-@media(max-width:800px){.top{height:auto;padding:8px}.main{padding:10px}.hero{display:block}.hero button{margin-top:12px}.grid{grid-template-columns:1fr}.areas{grid-template-columns:1fr}}
+:root{
+ --bg:#081522;--nav:#071c30;--panel:#10263a;--panel2:#183349;--line:#2b455c;
+ --gold:#a66f16;--gold2:#d7a23b;--text:#eef5fb;--muted:#9eb3c4;--green:#2aaa71;
+ --sidebar:255px;--top:62px;
+}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select,textarea{font:inherit}.app{min-height:100vh}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar);background:linear-gradient(180deg,#061829,#0a263d);border-right:1px solid var(--line);padding:12px;overflow:auto;z-index:20}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 5px 13px;border-bottom:1px solid rgba(255,255,255,.12)}
+.brand .mark{width:44px;height:44px;border-radius:11px;background:#725018;display:grid;place-items:center;font-weight:900}.brand strong,.brand small{display:block}.brand small{font-size:9px;color:#d8b669;letter-spacing:.08em}
+.back{width:100%;margin:11px 0;border:1px solid #d6a03b;background:#8c6013;color:#fff;border-radius:8px;padding:10px;font-weight:900;cursor:pointer}
+.nav-title{font-size:8px;color:#7893a9;letter-spacing:.12em;font-weight:900;margin:16px 7px 6px}
+.nav-btn{width:100%;display:grid;grid-template-columns:34px 1fr;align-items:center;gap:8px;border:1px solid transparent;background:transparent;color:#e7f1f8;padding:8px;border-radius:8px;text-align:left;margin:3px 0;cursor:pointer}
+.nav-btn:hover,.nav-btn.active{background:#6c4b13;border-color:#b88124}.nav-btn b{height:30px;display:grid;place-items:center;border-radius:6px;background:rgba(255,255,255,.07);font-size:11px}.nav-btn span{font-size:10px}.version{font-size:8px;color:#718ba0;margin:16px 8px}
+.topbar{position:fixed;left:var(--sidebar);right:0;top:0;height:var(--top);background:#06131f;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 16px;z-index:15}.menu{display:none}.topbar h1{font-size:17px;margin:0}.topbar small{font-size:8px;color:#d7b56c;letter-spacing:.1em}.search{margin-left:auto;width:min(430px,45vw);display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:#0f2233;border-radius:7px;padding:8px 10px}.search input{width:100%;border:0;outline:0;background:transparent;color:#fff}
+.main{margin-left:var(--sidebar);padding:calc(var(--top) + 16px) 16px 30px}.view{max-width:1500px;margin:auto}.hero{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:20px;background:linear-gradient(120deg,#1a3042,#6a4b15);border:1px solid #9c6e20;border-radius:15px}.eyebrow{font-size:8px;color:#e0b85c;letter-spacing:.13em;font-weight:900}.hero h2{font-size:27px;margin:5px 0}.hero p{margin:0;color:#d7e3eb}.hero-actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:#173249;color:#fff;border-radius:7px;padding:10px 12px;font-weight:800;cursor:pointer}.btn.primary{background:#a66f16;border-color:#d5a13e}.btn.green{background:#197f52;border-color:#34a972}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:10px 0}.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px}.stat strong,.stat span{display:block}.stat strong{font-size:21px}.stat span{font-size:9px;color:var(--muted);margin-top:4px}
+.grid{display:grid;grid-template-columns:1.35fr .8fr;gap:10px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}.panel h3{margin:4px 0 13px;font-size:20px}.area-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.area{border:1px solid var(--line);background:var(--panel2);color:#fff;border-radius:9px;padding:13px;text-align:left;cursor:pointer;min-height:110px}.area:hover{border-color:#b37e26}.area strong,.area small{display:block}.area strong{margin:9px 0 5px}.area small{font-size:9px;color:var(--muted);line-height:1.45}.area .icon{font-size:22px}
+.quality{padding-left:19px;color:#cbd8e2;line-height:1.5}.quality li{margin:8px 0}
+.toolbar{display:flex;gap:8px;margin-bottom:10px}.toolbar input,.toolbar select{border:1px solid var(--line);background:#102539;color:#fff;border-radius:7px;padding:9px}.toolbar input{flex:1}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px}.card h4{margin:5px 0 8px}.card small{color:#d7b565}.check{display:flex;gap:7px;padding:6px 0;border-bottom:1px solid #273f53;font-size:10px;color:#cbd7e0}.check:last-child{border:0}
+.library{display:grid;grid-template-columns:250px 1fr;gap:10px}.index{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:10px}.index button{width:100%;border:0;background:#142e43;color:#fff;text-align:left;border-radius:6px;padding:9px;margin:3px 0;cursor:pointer}.index button.active{background:#755218}.article{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:16px;line-height:1.55;color:#d4e0e8}.article h3{color:#fff}.article h4{color:#e1bb66;margin-top:20px}
+.templates{display:grid;grid-template-columns:290px 1fr 290px;gap:9px}.template-list,.editor,.guide{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px}.template-item{width:100%;display:grid;grid-template-columns:42px 1fr;gap:8px;border:1px solid transparent;background:#142e43;color:#fff;border-radius:7px;padding:8px;margin:4px 0;text-align:left;cursor:pointer}.template-item.active{background:#725018;border-color:#c18b2e}.template-item b{display:grid;place-items:center;background:#5e4216;border-radius:5px;font-size:9px}.template-item strong,.template-item small{display:block}.template-item small{color:var(--muted);font-size:8px;margin-top:3px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:8px}.form label{display:grid;gap:4px;font-size:9px;color:#aebfcd}.form label.full{grid-column:1/-1}.form input,.form textarea,.form select{width:100%;border:1px solid var(--line);background:#102539;color:#fff;border-radius:6px;padding:9px}.form textarea{min-height:90px;resize:vertical}
+.output{width:100%;min-height:300px;margin-top:10px;border:1px solid #6e8496;border-radius:7px;padding:12px;background:#fff;color:#111;line-height:1.5;font-family:Arial,Helvetica,sans-serif}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.guide ul{padding-left:18px;color:#cbd8e1;line-height:1.45}.guide li{margin:7px 0}.warning{border-left:4px solid #d29a31;background:#302717;color:#efd18b;padding:9px;font-size:9px;line-height:1.45}
+.materials{display:grid;gap:7px}.doc{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);background:#142e43;color:#fff;text-decoration:none;border-radius:8px;padding:11px}.doc strong,.doc small{display:block}.doc small{font-size:9px;color:var(--muted);margin-top:3px}.doc em{font-style:normal;color:#ffd276}
+.hidden{display:none!important}.mobile-backdrop{display:none}
+@media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}.templates{grid-template-columns:250px 1fr}.guide{display:none}}
+@media(max-width:800px){
+ :root{--sidebar:280px;--top:60px}.sidebar{transform:translateX(-105%);transition:.2s}.sidebar.open{transform:none}.topbar{left:0}.menu{display:block}.main{margin-left:0;padding:calc(var(--top) + 10px) 10px 20px}.search{display:none}.hero{display:block}.hero-actions{margin-top:12px}.stats{grid-template-columns:1fr 1fr}.grid,.library,.templates{display:block}.panel,.index,.article,.template-list,.editor{margin-bottom:9px}.area-grid,.cards{grid-template-columns:1fr}.form{grid-template-columns:1fr}.form label.full{grid-column:auto}.mobile-backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:18}
+}
 </style>
 </head>
 <body>
-<header class="top">
-  <button class="back" onclick="location.href='index.html?v=362'">← VOLVER A TRAFFICCOP</button>
-  <div class="logo">ADM</div><div><strong>TrafficCop Pro</strong><small>POLICÍA ADMINISTRATIVA</small></div>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="mark">ADM</div><div><strong>TrafficCop Pro</strong><small>POLICÍA ADMINISTRATIVA</small></div></div>
+ <button class="back" onclick="location.href='index.html?v=363'">← VOLVER A TRAFFICCOP</button>
+ <div class="nav-title">PANEL PRINCIPAL</div>
+ <button class="nav-btn active" data-view="dashboard"><b>⌂</b><span>Inicio</span></button>
+ <div class="nav-title">GESTIÓN OPERATIVA</div>
+ <button class="nav-btn" data-view="templates"><b>A10</b><span>Actas y ejemplos</span></button>
+ <button class="nav-btn" data-view="checklists"><b>☑</b><span>Listas de comprobación</span></button>
+ <button class="nav-btn" data-view="library"><b>▥</b><span>Manual operativo</span></button>
+ <div class="nav-title">ÁMBITOS DE ACTUACIÓN</div>
+ <button class="nav-btn" data-area="inspeccion"><b>📋</b><span>Inspección administrativa</span></button>
+ <button class="nav-btn" data-area="espectaculos"><b>🎵</b><span>Espectáculos y recreativas</span></button>
+ <button class="nav-btn" data-area="seguridad"><b>🛡</b><span>Seguridad privada</span></button>
+ <button class="nav-btn" data-area="juego"><b>🎰</b><span>Juego</span></button>
+ <button class="nav-btn" data-area="relevantes"><b>🏨</b><span>Actividades relevantes</span></button>
+ <button class="nav-btn" data-area="comercio"><b>🛍</b><span>Comercio y consumo</span></button>
+ <div class="nav-title">MATERIAL APORTADO</div>
+ <button class="nav-btn" data-view="materials"><b>PDF</b><span>Documentos integrados</span></button>
+ <div class="version">TrafficCop Pro · v3.6.3</div>
+</aside>
+<div class="mobile-backdrop" id="backdrop"></div>
+<header class="topbar">
+ <button class="btn menu" id="menuButton">☰</button>
+ <div><small id="eyebrow">MÓDULO OPERATIVO</small><h1 id="pageTitle">Policía administrativa</h1></div>
+ <div class="search"><span>⌕</span><input id="globalSearch" placeholder="Buscar materia, acta o comprobación..."></div>
 </header>
 <main class="main">
-  <section class="hero">
-    <div><span class="eyebrow">MÓDULO OPERATIVO</span><h1>Policía administrativa</h1><p>Consulta de ámbitos, actas A10, seguridad privada, espectáculos y material formativo.</p></div>
-    <button onclick="document.getElementById('materiales').scrollIntoView({behavior:'smooth'})">ABRIR MATERIALES</button>
-  </section>
-  <div class="grid">
-    <section class="panel">
-      <span class="eyebrow">ÁMBITOS DE ACTUACIÓN</span><h2>Acceso operativo</h2>
-      <div class="areas">
-        <button class="area"><b>📋 Inspección administrativa</b><span>Comprobaciones generales y específicas, acta, encabezamiento, cuerpo, cierre y medidas cautelares.</span></button>
-        <button class="area"><b>🎵 Espectáculos y recreativas</b><span>Licencias, seguro, aforo, horarios, seguridad, menores, admisión y control de acceso.</span></button>
-        <button class="area"><b>🛡️ Seguridad privada</b><span>Empresas, personal, TIP, uniforme, distintivos, funciones, medios y servicios.</span></button>
-        <button class="area"><b>🎰 Juego</b><span>Máquinas, autorizaciones, acceso, apuestas y posibles actividades de juego ilegal.</span></button>
-        <button class="area"><b>🏨 Actividades relevantes</b><span>Hospedaje, objetos usados, joyas, alquiler, registros y comunicaciones.</span></button>
-        <button class="area"><b>🛍️ Comercio y consumo</b><span>Venta ambulante, autorizaciones, productos, horarios y ocupación de vía pública.</span></button>
-      </div>
-    </section>
-    <section class="panel">
-      <span class="eyebrow">CONTROL DE CALIDAD</span><h2>Antes de tramitar</h2>
-      <ul class="checks">
-        <li>Recoger únicamente hechos objetivos y comprobados.</li>
-        <li>Separar observaciones policiales y manifestaciones.</li>
-        <li>Identificar responsables, testigos y personal.</li>
-        <li>Detallar documentación requerida y aportada.</li>
-        <li>Indicar medidas adoptadas y hora de finalización.</li>
-        <li>Revisar el formulario oficial y las instrucciones del cuerpo.</li>
-      </ul>
-    </section>
-  </div>
-  <section class="panel" id="materiales" style="margin-top:12px">
-    <span class="eyebrow">MATERIAL INTEGRADO</span><h2>Documentos de Policía Administrativa</h2>
-    <div class="list">
-      <a class="doc" target="_blank" href="policia-administrativa-uf62.pdf"><span><b>UF 6.2 · Ámbitos de actuación en policía administrativa</b><small>Temario de inspección, actas, espectáculos, seguridad privada, juego y actividades relevantes.</small></span><em>ABRIR PDF</em></a>
-      <a class="doc" target="_blank" href="a10-seguridad-privada.pdf"><span><b>A10 · Seguridad privada</b><small>Ejemplo práctico de denuncia en materia de seguridad privada.</small></span><em>ABRIR PDF</em></a>
-      <a class="doc" target="_blank" href="a10-venta-alcohol-menor.pdf"><span><b>A10 · Venta de alcohol a menor</b><small>Ejemplo práctico de actuación administrativa en establecimiento.</small></span><em>ABRIR PDF</em></a>
-      <a class="doc" target="_blank" href="resumen-oac-a10.pdf"><span><b>Resumen OAC y A10</b><small>Conceptos, funciones, diligencias y pautas de trabajo.</small></span><em>ABRIR PDF</em></a>
-    </div>
-    <div class="notice"><b>Importante:</b> los modelos y materiales son de consulta y apoyo. Antes de tramitar, deben verificarse el formulario vigente, la competencia, la normativa aplicable y los hechos comprobados.</div>
-  </section>
+
+<section id="dashboardView" class="view">
+ <div class="hero"><div><span class="eyebrow">MÓDULO OPERATIVO</span><h2>Policía administrativa</h2><p>Consulta rápida, inspección guiada y ejemplos para redactar actas A10.</p></div><div class="hero-actions"><button class="btn primary" data-view="templates">＋ NUEVA A10</button><button class="btn" data-view="checklists">ABRIR COMPROBACIONES</button></div></div>
+ <div class="stats"><div class="stat"><strong>6</strong><span>ámbitos operativos</span></div><div class="stat"><strong>8</strong><span>modelos iniciales</span></div><div class="stat"><strong>4</strong><span>documentos integrados</span></div><div class="stat"><strong>100%</strong><span>texto editable</span></div></div>
+ <div class="grid">
+  <section class="panel"><span class="eyebrow">ÁMBITOS DE ACTUACIÓN</span><h3>Acceso operativo</h3><div class="area-grid">
+   <button class="area" data-area="inspeccion"><span class="icon">📋</span><strong>Inspección administrativa</strong><small>Acta, encabezamiento, cuerpo, cierre, documentación y medidas cautelares.</small></button>
+   <button class="area" data-area="espectaculos"><span class="icon">🎵</span><strong>Espectáculos y recreativas</strong><small>Licencias, aforo, seguro, horarios, menores, admisión, ruido y seguridad.</small></button>
+   <button class="area" data-area="seguridad"><span class="icon">🛡️</span><strong>Seguridad privada</strong><small>Empresa, TIP, uniforme, funciones, medios, servicios y alarmas.</small></button>
+   <button class="area" data-area="juego"><span class="icon">🎰</span><strong>Juego</strong><small>Acceso prohibido, máquinas recreativas y posible juego ilegal.</small></button>
+   <button class="area" data-area="relevantes"><span class="icon">🏨</span><strong>Actividades relevantes</strong><small>Hospedaje, objetos usados, joyas, alquiler, registros y comunicaciones.</small></button>
+   <button class="area" data-area="comercio"><span class="icon">🛍️</span><strong>Comercio y consumo</strong><small>Establecimientos, venta ambulante, productos, autorizaciones y horarios.</small></button>
+  </div></section>
+  <section class="panel"><span class="eyebrow">CALIDAD DEL ACTA</span><h3>Antes de tramitar</h3><ul class="quality"><li>Recoger hechos objetivos y directamente comprobados.</li><li>Separar observaciones policiales y manifestaciones.</li><li>Identificar responsable, testigos y personal relacionado.</li><li>Detallar la documentación requerida y aportada.</li><li>Indicar medidas adoptadas, destino y hora de finalización.</li><li>Revisar formulario, competencia y normativa vigente.</li></ul></section>
+ </div>
+</section>
+
+<section id="checklistsView" class="view hidden">
+ <div class="toolbar"><input id="checkSearch" placeholder="Buscar comprobación..."><select id="checkArea"><option value="all">Todos los ámbitos</option><option value="espectaculos">Espectáculos</option><option value="seguridad">Seguridad privada</option><option value="juego">Juego</option><option value="relevantes">Actividades relevantes</option><option value="comercio">Comercio</option></select></div>
+ <div id="checkGrid" class="cards"></div>
+</section>
+
+<section id="libraryView" class="view hidden">
+ <div class="library"><aside id="libraryIndex" class="index"></aside><article id="libraryArticle" class="article"></article></div>
+</section>
+
+<section id="templatesView" class="view hidden">
+ <div class="templates">
+  <aside class="template-list"><span class="eyebrow">MODELOS</span><h3>Actas y ejemplos</h3><div id="templateList"></div></aside>
+  <section class="editor"><span class="eyebrow">GENERADOR</span><h3 id="templateTitle">A10 · Acta administrativa</h3><div id="formFields" class="form"></div><textarea id="output" class="output" placeholder="Aquí aparecerá el texto generado..."></textarea><div class="actions"><button class="btn primary" id="generate">GENERAR ACTA</button><button class="btn green" id="copy">COPIAR PARA NIPAL</button><button class="btn" id="improve">ORDENAR REDACCIÓN</button><button class="btn" id="clear">BORRAR</button></div></section>
+  <aside class="guide"><span class="eyebrow">GUÍA DEL MODELO</span><h3 id="guideTitle">A10</h3><div id="guideContent"></div><div class="warning"><b>Revisión obligatoria:</b> adapta el ejemplo a los hechos observados y comprueba el formulario y la normativa aplicable.</div></aside>
+ </div>
+</section>
+
+<section id="materialsView" class="view hidden">
+ <section class="panel"><span class="eyebrow">MATERIAL INTEGRADO</span><h3>Documentos de Policía Administrativa</h3><div class="materials">
+  <a class="doc" target="_blank" href="policia-administrativa-uf62.pdf"><span><strong>UF 6.2 · Ámbitos de actuación</strong><small>Inspección, acta administrativa, espectáculos, seguridad privada, juego y comercio.</small></span><em>ABRIR PDF</em></a>
+  <a class="doc" target="_blank" href="a10-seguridad-privada.pdf"><span><strong>A10 · Seguridad privada</strong><small>Ejemplo práctico de vigilante no habilitado.</small></span><em>ABRIR PDF</em></a>
+  <a class="doc" target="_blank" href="a10-venta-alcohol-menor.pdf"><span><strong>A10 · Venta de alcohol a menor</strong><small>Ejemplo práctico en establecimiento abierto al público.</small></span><em>ABRIR PDF</em></a>
+  <a class="doc" target="_blank" href="resumen-oac-a10.pdf"><span><strong>Resumen OAC y A10</strong><small>Conceptos, funciones, diligencias y pautas de trabajo.</small></span><em>ABRIR PDF</em></a>
+ </div></section>
+</section>
+
 </main>
+<script>
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const LIBRARY=[
+ {id:"inspeccion",title:"Inspección y acta administrativa",html:`<h3>Inspección y acta administrativa</h3><p>La inspección debe comprobar los requisitos generales y los específicos de la actividad. El acta debe permitir que el órgano competente conozca qué se comprobó, qué documentación se requirió y qué hechos fueron observados.</p><h4>Estructura rápida</h4><ol><li>Encabezamiento: lugar, fecha, hora, agentes, destino y motivo.</li><li>Identificación del establecimiento, actividad y responsable.</li><li>Documentación requerida y resultado.</li><li>Hechos objetivos y manifestaciones separadas.</li><li>Medidas adoptadas, destino y hora de finalización.</li></ol><h4>Medidas cautelares</h4><p>Cuando procedan, deben quedar motivadas, ser necesarias y proporcionadas y no presentarse como resolución definitiva.</p>`},
+ {id:"espectaculos",title:"Espectáculos y recreativas",html:`<h3>Espectáculos y actividades recreativas</h3><p>La consulta operativa debe abarcar obligaciones documentales, rótulos, seguridad, asistencia sanitaria, higiene, medidas provisionales, horarios, menores, derecho de admisión, hojas de reclamación, seguridad privada y control de acceso.</p><h4>Comprobaciones esenciales</h4><ul><li>Licencia, comunicación o autorización y actividad permitida.</li><li>Seguro de responsabilidad civil y cobertura.</li><li>Aforo, horarios, rótulos, salidas y evacuación.</li><li>Menores, venta de alcohol y derecho de admisión.</li><li>Actividad realmente observada: música, pista, DJ, escenario, público y servicio.</li></ul>`},
+ {id:"seguridad",title:"Seguridad privada",html:`<h3>Seguridad privada</h3><p>Debe identificarse empresa, servicio, personal, TIP, uniforme, distintivos, funciones y medios portados. Cuando una persona carezca de habilitación, es esencial describir de forma completa los hechos que demuestren que realizaba funciones propias del personal de seguridad.</p><h4>Datos a reflejar</h4><ul><li>Lugar y servicio prestado.</li><li>Identidad y habilitación profesional.</li><li>Uniforme, anagramas, placa y distintivos.</li><li>Defensa, manillas y otros medios.</li><li>Funciones, horario, empresa y manifestaciones.</li><li>Intervención de efectos y remisión a la unidad competente.</li></ul>`},
+ {id:"juego",title:"Juego",html:`<h3>Juego</h3><p>El control comprende personas con acceso prohibido, documentación de máquinas recreativas y posibles actividades de juego ilegal.</p><ul><li>Autorización del establecimiento.</li><li>Máquinas, distintivos y documentación.</li><li>Control de acceso y personas presentes.</li><li>Apuestas, importes, organizador y beneficiarios.</li><li>Medidas adoptadas y efectos intervenidos.</li></ul>`},
+ {id:"relevantes",title:"Actividades relevantes",html:`<h3>Actividades relevantes para la seguridad ciudadana</h3><p>Incluye actividades con obligaciones especiales de registro y comunicación, como hospedaje, compraventa de objetos usados, joyas, alquiler y otras actividades sujetas a trazabilidad.</p><ul><li>Titular y responsable.</li><li>Libro o sistema de registro.</li><li>Identificación de personas intervinientes.</li><li>Descripción y trazabilidad de objetos u operaciones.</li><li>Comunicaciones realizadas y omisiones detectadas.</li></ul>`},
+ {id:"comercio",title:"Comercio y consumo",html:`<h3>Comercio y consumo</h3><p>El control puede referirse a establecimientos comerciales, venta ambulante, autorizaciones, productos, horarios, información al consumidor y ocupación de vía pública.</p><ul><li>Autorización y titular.</li><li>Ubicación, puesto o establecimiento.</li><li>Productos, procedencia y documentación.</li><li>Horarios y condiciones aplicables.</li><li>Medidas adoptadas y organismo destinatario.</li></ul>`}
+];
+const CHECKS=[
+ {area:"espectaculos",title:"Documentación del local",items:["Licencia, autorización o comunicación previa","Actividad autorizada y titular","Seguro RC y recibo en vigor","Cobertura y aforo autorizado","Hojas de reclamación","Rótulos y placas obligatorias"]},
+ {area:"espectaculos",title:"Seguridad y funcionamiento",items:["Salidas y vías de evacuación libres","Iluminación y señalización de emergencia","Aforo y estimación de asistentes","Asistencia sanitaria","Higiene y salubridad","Horario de cierre"]},
+ {area:"espectaculos",title:"Menores y alcohol",items:["Edad e identificación del menor","Datos del responsable del local","Licencia municipal","Rótulos de prohibición","Dispensación observada directamente","Datos del menor en informe separado","Requerimiento y resultado"]},
+ {area:"seguridad",title:"Seguridad privada",items:["Empresa y servicio","Identidad y TIP","Uniforme y distintivos","Defensa, manillas y otros medios","Funciones realizadas","Horario y manifestaciones","Documentación del servicio","Medidas cautelares"]},
+ {area:"juego",title:"Juego y máquinas",items:["Autorización","Documentación de máquinas","Homologación y distintivos","Control de acceso","Personas con acceso prohibido","Apuestas e importes","Organizador","Posible juego ilegal"]},
+ {area:"relevantes",title:"Hospedaje y registros",items:["Titular y responsable","Sistema de registro","Identificación de usuarios","Comunicación de datos","Período comprobado","Omisiones o retrasos"]},
+ {area:"relevantes",title:"Objetos usados y joyas",items:["Libro o registro","Identidad de transmitentes","Descripción de objetos","Número de serie o peso","Procedencia","Comunicación policial","Medidas de seguridad"]},
+ {area:"comercio",title:"Comercio y venta ambulante",items:["Autorización municipal","Titular y responsable","Ubicación y ocupación","Productos y procedencia","Horarios","Información al consumidor","Medidas adoptadas"]}
+];
+const TEMPLATES=[
+ {id:"a10-general",code:"A10",title:"Acta administrativa abierta",category:"General",guide:["Situar fecha, hora, municipio y agentes.","Identificar lugar, actividad y responsable.","Separar documentación, hechos y manifestaciones.","Indicar medidas, destino y cierre."],fields:[["fecha","Fecha","date"],["hora","Hora","time"],["municipio","Municipio y comarca","text"],["agentes","Agentes / TIP","text"],["lugar","Lugar y establecimiento","text"],["actividad","Actividad","text"],["responsable","Responsable","text"],["documento","Documento identificativo","text"],["documentacion","Documentación requerida y aportada","textarea","full"],["hechos","Hechos observados","textarea","full"],["manifestaciones","Manifestaciones","textarea","full"],["medidas","Medidas adoptadas","textarea","full"],["destino","Organismo destinatario","text"],["hora_fin","Hora de finalización","time"]]},
+ {id:"seguridad",code:"A10",title:"Seguridad privada: persona no habilitada",category:"Seguridad privada",guide:["Describir lugar y servicio.","Comprobar TIP y empresa.","Describir uniforme, distintivos y medios.","Dejar claros los actos propios de vigilancia observados.","Relacionar intervención y remisión."],fields:[["fecha","Fecha","date"],["hora","Hora","time"],["lugar","Lugar del servicio","text"],["empresa","Empresa de seguridad","text"],["persona","Persona inspeccionada","text"],["documento","DNI / NIE","text"],["tip","TIP o resultado de la comprobación","text"],["uniforme","Uniforme, anagramas y distintivos","textarea","full"],["medios","Defensa, manillas y otros medios","textarea","full"],["funciones","Funciones realmente realizadas","textarea","full"],["manifestaciones","Manifestaciones de la persona","textarea","full"],["intervencion","Objetos intervenidos y actas asociadas","textarea","full"],["destino","Unidad u organismo destinatario","text"]]},
+ {id:"alcohol-menor",code:"A10",title:"Venta de alcohol a menor",category:"Espectáculos",guide:["La dispensación debe describirse como observada por los agentes.","Identificar actividad, responsable y licencia.","Consignar bebida, volumen y graduación.","Datos del menor en informe separado.","Indicar rótulos y traslado al organismo competente."],fields:[["fecha","Fecha","date"],["hora","Hora","time"],["establecimiento","Establecimiento y dirección","text"],["actividad","Actividad","text"],["responsable","Responsable / titular","text"],["licencia","Licencia municipal","text"],["menor","Edad acreditada del menor","text"],["bebida","Bebida, volumen y graduación","text"],["rotulos","Rótulos existentes","textarea","full"],["hechos","Dispensación observada y hechos","textarea","full"],["manifestaciones","Manifestaciones del responsable","textarea","full"],["destino","Organismo destinatario","text"],["hora_fin","Hora final","time"]]},
+ {id:"actividad-distinta",code:"A10",title:"Actividad distinta de la autorizada",category:"Espectáculos",guide:["Diferenciar actividad autorizada y observada.","Describir DJ, pista, tarima, iluminación, humo y público.","Comprobar licencia, seguro, aforo y horario.","No limitarse a una conclusión jurídica."],fields:[["fecha","Fecha","date"],["hora","Hora","time"],["local","Local y dirección","text"],["responsable","Responsable","text"],["autorizada","Actividad autorizada","text"],["observada","Actividad observada","text"],["elementos","Elementos objetivos observados","textarea","full"],["documentacion","Documentación aportada","textarea","full"],["publico","Aforo estimado y conducta del público","textarea","full"],["medidas","Requerimientos y medidas","textarea","full"]]},
+ {id:"control-acceso",code:"A10",title:"Personal de control de acceso",category:"Espectáculos",guide:["Comprobar habilitación y distintivo.","Diferenciar controlador y vigilante.","Describir funciones realizadas.","Recoger motivo de denegación y versiones."],fields:[["fecha","Fecha","date"],["hora","Hora","time"],["local","Local","text"],["controlador","Persona inspeccionada","text"],["acreditacion","Carnet y distintivo","text"],["funciones","Funciones observadas","textarea","full"],["incidente","Incidente o denegación de acceso","textarea","full"],["manifestaciones","Manifestaciones","textarea","full"],["medidas","Medidas adoptadas","textarea","full"]]},
+ {id:"horario",code:"A46",title:"Incumplimiento de horario",category:"Espectáculos",guide:["Indicar horario aplicable y hora real.","Describir si seguía abierto, con clientes, música o servicio.","Identificar responsable y actividad.","Recoger requerimientos y cierre."],fields:[["fecha","Fecha","date"],["hora","Hora comprobada","time"],["local","Local","text"],["actividad","Actividad","text"],["responsable","Responsable","text"],["horario","Horario autorizado","text"],["hechos","Hechos observados","textarea","full"],["clientes","Personas presentes","text"],["requerimiento","Requerimientos y resultado","textarea","full"]]},
+ {id:"juego",code:"A10",title:"Inspección de juego o máquinas",category:"Juego",guide:["Identificar establecimiento y autorización.","Relacionar máquinas y documentación.","Comprobar acceso y personas presentes.","Describir apuestas y posible juego ilegal."],fields:[["fecha","Fecha","date"],["hora","Hora","time"],["local","Local","text"],["responsable","Responsable","text"],["autorizacion","Autorización","textarea","full"],["maquinas","Máquinas y documentación","textarea","full"],["acceso","Control de acceso","textarea","full"],["juego","Actividad observada","textarea","full"],["medidas","Medidas adoptadas","textarea","full"]]},
+ {id:"venta-ambulante",code:"A10",title:"Venta ambulante",category:"Comercio",guide:["Identificar vendedor y autorización.","Describir ubicación y ocupación.","Relacionar productos y procedencia.","Indicar intervención o requerimiento."],fields:[["fecha","Fecha","date"],["hora","Hora","time"],["lugar","Lugar y puesto","text"],["persona","Persona responsable","text"],["documento","Documento","text"],["autorizacion","Autorización municipal","textarea","full"],["productos","Productos y procedencia","textarea","full"],["hechos","Hechos observados","textarea","full"],["medidas","Medidas adoptadas","textarea","full"]]}
+];
+let current=TEMPLATES[0];
+function showView(name){
+ $$(".view").forEach(v=>v.classList.add("hidden")); $("#"+name+"View").classList.remove("hidden");
+ $$(".nav-btn[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===name));
+ const titles={dashboard:["MÓDULO OPERATIVO","Policía administrativa"],templates:["ACTAS Y EJEMPLOS","Generador A10"],checklists:["INSPECCIÓN GUIADA","Listas de comprobación"],library:["MANUAL OPERATIVO","Consulta rápida"],materials:["DOCUMENTACIÓN","Material integrado"]};
+ $("#eyebrow").textContent=titles[name][0];$("#pageTitle").textContent=titles[name][1];closeMenu();
+}
+function closeMenu(){$("#sidebar").classList.remove("open");$("#backdrop").classList.remove("show")}
+function renderLibrary(id="inspeccion"){
+ $("#libraryIndex").innerHTML="";LIBRARY.forEach(x=>{const b=document.createElement("button");b.textContent=x.title;b.classList.toggle("active",x.id===id);b.onclick=()=>renderLibrary(x.id);$("#libraryIndex").appendChild(b)});
+ $("#libraryArticle").innerHTML=(LIBRARY.find(x=>x.id===id)||LIBRARY[0]).html;
+}
+function openArea(id){showView("library");renderLibrary(id)}
+function renderChecks(){
+ const q=($("#checkSearch").value||"").toLowerCase(),area=$("#checkArea").value;$("#checkGrid").innerHTML="";
+ CHECKS.filter(c=>(area==="all"||c.area===area)&&(!q||(c.title+" "+c.items.join(" ")).toLowerCase().includes(q))).forEach(c=>{$("#checkGrid").insertAdjacentHTML("beforeend",`<article class="card"><small>${c.area.toUpperCase()}</small><h4>${c.title}</h4>${c.items.map(i=>`<label class="check"><input type="checkbox"><span>${i}</span></label>`).join("")}</article>`)});
+}
+function renderTemplates(){
+ $("#templateList").innerHTML="";TEMPLATES.forEach(t=>{const b=document.createElement("button");b.className="template-item"+(t.id===current.id?" active":"");b.innerHTML=`<b>${t.code}</b><span><strong>${t.title}</strong><small>${t.category}</small></span>`;b.onclick=()=>selectTemplate(t.id);$("#templateList").appendChild(b)});
+}
+function selectTemplate(id){current=TEMPLATES.find(t=>t.id===id)||TEMPLATES[0];$("#templateTitle").textContent=`${current.code} · ${current.title}`;$("#guideTitle").textContent=current.title;$("#guideContent").innerHTML=`<ul>${current.guide.map(x=>`<li>${x}</li>`).join("")}</ul>`;$("#formFields").innerHTML="";current.fields.forEach(([name,label,type,cls])=>{const l=document.createElement("label");if(cls)l.className=cls;l.textContent=label;const e=type==="textarea"?document.createElement("textarea"):document.createElement("input");if(type!=="textarea")e.type=type;e.name=name;e.dataset.label=label;l.appendChild(e);$("#formFields").appendChild(l)});$("#output").value="";renderTemplates()}
+function buildText(){const lines=[`${current.code} · ${current.title.toUpperCase()}`,""];current.fields.forEach(([name,label,type])=>{const e=$(`[name="${name}"]`);let v=e?.value?.trim()||"__________";if(type==="date"&&v)v=v.split("-").reverse().join("/");lines.push(`${label.toUpperCase()}: ${v}`,"")});lines.push("CIERRE","Se hace constar que el contenido anterior refleja las comprobaciones y circunstancias documentadas por los agentes actuantes, sin perjuicio de su revisión y remisión al órgano administrativo competente.");return lines.join("\n")}
+async function copyOutput(){if(!$("#output").value.trim())$("#output").value=buildText();try{await navigator.clipboard.writeText($("#output").value);alert("Texto copiado para NIPal.")}catch{$("#output").select();document.execCommand("copy")}}
+$$("[data-view]").forEach(b=>b.onclick=()=>showView(b.dataset.view));$$("[data-area]").forEach(b=>b.onclick=()=>openArea(b.dataset.area));
+$("#menuButton").onclick=()=>{$("#sidebar").classList.toggle("open");$("#backdrop").classList.toggle("show")};$("#backdrop").onclick=closeMenu;
+$("#checkSearch").oninput=renderChecks;$("#checkArea").onchange=renderChecks;$("#generate").onclick=()=>$("#output").value=buildText();$("#copy").onclick=copyOutput;$("#improve").onclick=()=>$("#output").value=($("#output").value||buildText()).replace(/[ \t]+/g," ").replace(/\n{3,}/g,"\n\n").trim();$("#clear").onclick=()=>{if(confirm("¿Borrar el contenido?"))$("#output").value=""};
+$("#globalSearch").oninput=e=>{const q=e.target.value.toLowerCase();if(!q)return;const lib=LIBRARY.find(x=>(x.title+" "+x.html).toLowerCase().includes(q));if(lib)openArea(lib.id)};
+renderLibrary();renderChecks();renderTemplates();selectTemplate("a10-general");
+</script>
 </body>
 </html>
