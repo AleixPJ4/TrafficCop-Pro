@@ -1,33 +1,24 @@
-# TrafficCop Pro v3.4.0 - Gestor de diligencias y atestados
+# TrafficCop Pro v3.4.1 — Gestor fullscreen y móvil simplificado
 
-Al pulsar **Atestados**, la aplicación cambia a un espacio de trabajo completo inspirado en el diseño facilitado:
+## Cambios
+- En ordenador, el gestor ocupa el 100 % de la ventana.
+- Las tres columnas aprovechan todo el ancho disponible.
+- El documento central crece según el tamaño del monitor.
+- En móvil, la vista se transforma en una única columna enfocada al trabajo.
+- Perfil editable y guardado local.
+- Ajustes del gestor.
+- Ventana funcional para añadir diligencias.
+- Ordenación de diligencias.
+- Guardado automático opcional.
+- Historial local básico.
+- Mejor funcionamiento de botones principales.
 
-- menú específico de atestados;
-- expediente activo;
-- listado ordenado de diligencias;
-- editor de texto;
-- biblioteca de plantillas;
-- buscador y categorías;
-- plantillas recomendadas;
-- guardado local;
-- duplicado y eliminación;
-- vista previa;
-- exportación a TXT;
-- adaptación a móvil.
+## Limitación importante
+Perfiles compartidos, firmas digitales reales, sincronización entre dispositivos y control de usuarios requieren una base de datos y autenticación en servidor. Esta versión funciona localmente en cada navegador.
 
-## Base documental inicial
-Las categorías y avisos se han estructurado con los materiales formativos aportados:
-- gestión e instrucción de atestados;
-- derecho penal y procesal;
-- delitos contra la seguridad vial;
-- salud pública;
-- violencia de género y doméstica.
-
-Las plantillas son orientativas y no sustituyen los modelos oficiales del cuerpo, la revisión del instructor ni la normativa vigente.
-
-## Archivos para GitHub
+## Archivos
 - index.html
-- styles-v340.css
-- app-data-v340.js
-- app-v340.js
+- styles-v341.css
+- app-data-v341.js
+- app-v341.js
 - README.md
