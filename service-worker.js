@@ -1,6 +1,11 @@
+const CACHE='trafficcop-v400';
 self.addEventListener('install',event=>self.skipWaiting());
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
   for(const key of await caches.keys()) await caches.delete(key);
   await self.clients.claim();
 })()));
-self.addEventListener('fetch',()=>{});
+self.addEventListener('fetch',event=>{
+  if(event.request.method==='GET'){
+    event.respondWith(fetch(event.request,{cache:'no-store'}).catch(()=>caches.match(event.request)));
+  }
+});
