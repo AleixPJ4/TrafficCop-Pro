@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v360.css?v=360"></head><body>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v361.css?v=361"></head><body>
 
 <aside class="desktop-police-rail" aria-label="Navegació principal">
   <div class="rail-brand">
@@ -11,7 +11,7 @@
   <nav>
     <button data-rail-action="home" class="active"><span>⌂</span><small>Inici</small></button>
     <button data-rail-action="catalog"><span>▣</span><small>Catàleg</small></button>
-    <button data-suite="documents"><span>▤</span><small>Documents</small></button><button data-atestados-open><span>⚖</span><small>Atestats</small></button><button data-sc-open><span>4/15</span><small>Seguretat<br>ciutadana</small></button>
+    <button data-suite="documents"><span>▤</span><small>Documents</small></button><button data-sc-open class="rail-sc-button"><span>4/15</span><small>Seguretat<br>ciutadana</small></button><button data-atestados-open><span>⚖</span><small>Atestats</small></button>
     <button data-suite="photo"><span>▧</span><small>Informe<br>fotogràfic</small></button>
     <button data-suite="tools"><span>▦</span><small>Calculadores</small></button>
     <button data-suite="legal"><span>▥</span><small>Biblioteca<br>legal</small></button>
@@ -145,7 +145,7 @@
 
 <main id="homeView" class="pro-main">
 <section class="status-strip"><div><span class="status-dot"></span><strong id="serviceStatus">Modo consulta</strong></div><div class="source-chip">Fuente SCT · 20/05/2026</div></section>
-<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.6.0 · NIPAL ATESTATS PRO</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
+<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.6.1 · NIPAL ATESTATS PRO</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
 <section class="quick-section"><div class="section-title-row"><div><p>ACCESO RÁPIDO</p><h2>Intervenciones habituales</h2></div><button id="customizeQuickButton">Editar</button></div><div class="quick pro-quick"><button data-query="mòbil">📱<span>Móvil</span></button><button data-query="ITV">🧾<span>ITV</span></button><button data-query="VMP">🛴<span>VMP</span></button><button data-query="matrícula">🔢<span>Matrícula</span></button><button data-query="alcohol">🍺<span>Alcohol</span></button><button data-query="drogues">🧪<span>Drogas</span></button><button data-query="velocitat">⚡<span>Velocidad</span></button><button data-query="cinturó">🦺<span>Cinturón</span></button></div></section>
 <section class="command-centre"><div class="section-title-row"><div><p>CENTRO OPERATIVO</p><h2>Herramientas policiales</h2></div></div><div class="command-grid"><button class="command-card primary" data-suite="traffic"><span class="command-icon">🚔</span><strong>Catálogo SCT</strong><small>Infracciones, importes y puntos</small><b>Abrir</b></button><button class="command-card" data-suite="documents"><span class="command-icon">📄</span><strong>Documentos</strong><small>Actas, informes y diligencias</small><b>Abrir</b></button><button class="command-card" data-atestados-open><span class="command-icon">⚖️</span><strong>Atestados</strong><small>Diligencias, comparecencias y trámites</small><b>Abrir</b></button><button class="command-card sc-command-card" data-sc-open><span class="command-icon">🛡️</span><strong>4/2015 Seguridad ciudadana</strong><small>D10, D10b, A10 y gestión operativa</small><b>Abrir</b></button><button class="command-card" data-suite="photo"><span class="command-icon">📸</span><strong>Informe fotográfico</strong><small>Numeración y texto técnico</small><b>Abrir</b></button><button class="command-card" data-suite="accident"><span class="command-icon">🚗</span><strong>Accidentes</strong><small>Cronología y datos</small><b>Abrir</b></button><button class="command-card" data-suite="legal"><span class="command-icon">📚</span><strong>Biblioteca legal</strong><small>Normativa y fuente</small><b>Abrir</b></button><button class="command-card" data-suite="tools"><span class="command-icon">🧮</span><strong>Herramientas</strong><small>GPS y accesos técnicos</small><b>Abrir</b></button></div></section>
 <section id="recentSection" class="recent-section"><div class="section-title-row"><div><p>ACTIVIDAD</p><h2>Consultas recientes</h2></div><button id="clearRecentButton">Borrar</button></div><div id="recentSearches" class="recent-list"></div></section>
@@ -206,7 +206,7 @@
       <button data-sc-view="forms">▤ <span>Actas y formularios</span></button>
       <button data-sc-view="library">▥ <span>Biblioteca de supuestos</span></button>
       <button data-sc-view="guide">ⓘ <span>Guía operativa</span></button>
-      <button data-sc-view="review">✓ <span>Revisión del acta</span></button>
+      <button data-sc-view="review">✓ <span>Revisión del acta</span></button><button data-sc-view="weapons" class="sc-weapons-menu">⚔ <span>Catálogo de armas prohibidas</span></button>
     </section>
     <section>
       <p>ACCESO RÁPIDO</p>
@@ -225,7 +225,7 @@
       <button data-sc-template="g16">G16 <span>Minuta con detenido</span></button>
       <button data-sc-template="g17">G17 <span>Minuta sin detenido</span></button>
     </section>
-    <small>© TrafficCop Pro v3.6.0</small>
+    <small>© TrafficCop Pro v3.6.1</small>
   </aside>
 
   <main class="sc-main">
@@ -247,7 +247,7 @@
             <button data-sc-template="d10"><b>D10</b><strong>Denuncia LO 4/2015</strong><small>Drogas, armas, desobediencia, faltas de respeto y otros supuestos.</small></button>
             <button data-sc-template="d10b"><b>D10b</b><strong>Intervención temporal</strong><small>Objetos peligrosos susceptibles de causar riesgo. No utilizar para armas.</small></button>
             <button data-sc-template="a10"><b>A10</b><strong>Acta abierta</strong><small>Constatación de hechos, intervenciones y circunstancias no cubiertas por un modelo específico.</small></button>
-            <button data-sc-view="guide"><b>GUÍA</b><strong>Operativa LO 4/2015</strong><small>Identificación, menores, drogas, armas y control de calidad.</small></button>
+            <button data-sc-view="guide"><b>GUÍA</b><strong>Operativa LO 4/2015</strong><small>Identificación, menores, drogas, armas y control de calidad.</small></button><button data-sc-view="weapons" class="sc-weapons-card"><b>ARMAS</b><strong>Catálogo de armas prohibidas</strong><small>Identificación visual, artículos, riesgos y actuación legal.</small></button>
           </div>
         </article>
         <article class="sc-panel">
@@ -309,7 +309,58 @@
       </section>
     </section>
 
-    <section id="scReviewView" class="sc-view" hidden>
+    
+    <section id="scWeaponsView" class="sc-view" hidden>
+      <header class="sc-view-header sc-weapons-header">
+        <div>
+          <p>CATÁLOGO OPERATIVO</p>
+          <h1>Armas prohibidas</h1>
+          <span>Identificación visual y consulta rápida conforme al Reglamento de Armas.</span>
+        </div>
+        <div class="sc-weapons-actions">
+          <button id="scOpenWeaponsPdf">ABRIR PDF COMPLETO</button>
+          <button id="scWeaponsFullscreen">PANTALLA COMPLETA</button>
+        </div>
+      </header>
+
+      <div class="sc-weapons-layout">
+        <aside class="sc-weapons-index">
+          <div class="sc-weapons-search">
+            <span>⌕</span>
+            <input id="scWeaponsSearch" placeholder="Buscar: puño americano, navaja, bastón...">
+          </div>
+          <div class="sc-weapons-filters">
+            <button class="active" data-weapons-filter="all">Todas</button>
+            <button data-weapons-filter="fuego">Fuego</button>
+            <button data-weapons-filter="blanca">Blancas</button>
+            <button data-weapons-filter="oculta">Ocultas</button>
+            <button data-weapons-filter="impacto">Impacto</button>
+          </div>
+          <div id="scWeaponsList" class="sc-weapons-list"></div>
+        </aside>
+
+        <section class="sc-weapons-viewer">
+          <header>
+            <div>
+              <span id="scWeaponArticle">ART. 4.1.a)</span>
+              <h2 id="scWeaponTitle">Armas de fuego fabricadas o modificadas ilícitamente</h2>
+            </div>
+            <button id="scCopyWeaponRule">COPIAR NORMATIVA</button>
+          </header>
+          <div class="sc-weapons-notice">
+            <strong>Documento de uso policial.</strong>
+            <span>El catálogo tiene finalidad identificativa y formativa. La actuación concreta debe revisarse conforme a la normativa vigente y al procedimiento del cuerpo.</span>
+          </div>
+          <iframe id="scWeaponsFrame" title="Catálogo de armas prohibidas" src="catalogo-armas-prohibidas.pdf#page=5&view=FitH"></iframe>
+          <div class="sc-weapons-mobile-fallback">
+            <p>En algunos teléfonos el visor PDF puede no mostrarse dentro de la app.</p>
+            <button id="scOpenWeaponPageMobile">ABRIR FICHA EN EL NAVEGADOR</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+<section id="scReviewView" class="sc-view" hidden>
       <header class="sc-view-header"><div><p>CONTROL DE CALIDAD</p><h1>Revisión del acta</h1></div><button id="scRunReview">REVISAR AHORA</button></header>
       <div id="scReviewResults" class="sc-review-results">
         <p>Abre un modelo, genera el texto y pulsa «Revisar ahora».</p>
@@ -375,7 +426,7 @@
       <button id="awSettingsButton">⚙ <span>Configuración</span></button>
       <button id="awBackToApp">? <span>Volver a TrafficCop</span></button>
     </section>
-    <small class="aw-version">© TrafficCop-Pro v3.6.0</small>
+    <small class="aw-version">© TrafficCop-Pro v3.6.1</small>
   </aside>
 
   <main class="aw-main">
@@ -807,4 +858,4 @@
 </dialog>
 
 
-<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v360.js?v=360"></script><script src="app-v360.js?v=360"></script></body></html>
+<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v361.js?v=361"></script><script src="app-v361.js?v=361"></script></body></html>

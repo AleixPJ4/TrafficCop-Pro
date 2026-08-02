@@ -1,30 +1,25 @@
-# TrafficCop Pro v3.6.0 — Seguridad Ciudadana 4/2015
+# TrafficCop Pro v3.6.1 — Seguridad Ciudadana + Catálogo de armas
 
-## Nuevo módulo
-Se incorpora un espacio de trabajo completo llamado **4/2015 Seguridad ciudadana**.
+## Corrección del menú
+El botón **4/2015 Seguridad ciudadana** se ha situado inmediatamente después de Documentos y antes de Atestados.
+La barra lateral ahora tiene desplazamiento vertical en pantallas de poca altura.
 
-### Modelos iniciales
-- D10: denuncia por infracciones a la LO 4/2015.
-- D10b: intervención temporal de objetos peligrosos (no armas).
-- A10: acta abierta.
-- G31: minuta de delito leve de hurto.
-- D24: denuncia de hurto en establecimiento.
-- A57: persona perjudicada.
-- A56: reconocimiento y entrega de efectos.
-- N09: información de derechos JIDL.
-- N10: citación JIDL.
-- G16: minuta con detenido.
-- G17: minuta sin detenido.
+## Catálogo de armas prohibidas
+Se incluye el PDF completo `catalogo-armas-prohibidas.pdf` y una consulta integrada con:
+- buscador por nombre, artículo o palabra clave;
+- filtros de armas de fuego, armas blancas, armas ocultas y de impacto;
+- acceso directo a cada ficha del PDF;
+- apertura del PDF completo;
+- apertura externa para teléfonos;
+- copia rápida de la referencia normativa.
 
-### Funciones
-- Formularios guiados.
-- Texto editable para NIPal.
-- Copiar al portapapeles.
-- Impresión/PDF.
-- Guardado local.
-- Biblioteca de supuestos LO 4/2015.
-- Guía operativa.
-- Revisión básica de campos y variables.
-- Vista completa en ordenador y simplificada en móvil.
+El documento se presenta como material policial/formativo y requiere revisión de la normativa y del procedimiento aplicable.
 
-Los modelos son orientativos y deben adaptarse a los formularios vigentes, a los hechos comprobados y a las instrucciones del cuerpo policial.
+## Archivos para subir a GitHub
+- index.html
+- styles-v361.css
+- app-data-v361.js
+- app-v361.js
+- service-worker.js
+- catalogo-armas-prohibidas.pdf
+- README.md
