@@ -1,19 +1,27 @@
-# TrafficCop Pro v3.7.5 — Restauración estable
+# TrafficCop Pro v5.0.0 — Arquitectura limpia
 
-Esta versión revierte la capa estructural v4.0 que alteró los márgenes y los módulos.
+## Qué cambia
+La plataforma se ha dividido en módulos independientes cargados dentro de una aplicación principal:
 
-## Qué se restaura
-- Estructura estable de la versión 3.7.3.
-- Controlador funcional de Policía Administrativa.
-- Diseño independiente original de Policía Administrativa.
-- Diseño independiente original de Seguridad Ciudadana.
-- Diseño independiente original de Atestados.
-- Menú lateral compacto.
-- Cabecera y contenido principal sin huecos superiores.
-- Barra inferior solo en móvil.
-- Regreso correcto a la página de Tráfico.
-- Eliminación de indicadores de depuración.
+- Inicio
+- Tráfico
+- Atestados
+- LO 4/2015 Seguridad Ciudadana
+- Policía Administrativa
+- Catálogo de armas
+- Documentación
 
-## Importante
-Elimina del repositorio el index.html de v4.0 y sustituye todos los archivos por los de este paquete.
-Después abre la web con `?v=375` y pulsa Ctrl + F5.
+Cada módulo funciona de forma aislada, por lo que su CSS y JavaScript no pueden alterar los márgenes o botones del resto.
+
+## Estructura
+- `index.html`: aplicación principal
+- `assets/app.css`: diseño global
+- `assets/app.js`: navegación global
+- `modules/traffic.html`
+- `modules/atestados.html`
+- `modules/seguridad.html`
+- `modules/administrativa.html`
+- `docs/`: PDF integrados
+
+## Instalación en GitHub
+Se recomienda limpiar el repositorio o crear una rama nueva y subir exactamente esta estructura.
