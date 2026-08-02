@@ -1,27 +1,25 @@
-# TrafficCop Pro v5.0.0 — Arquitectura limpia
+# TrafficCop Pro v3.6.1 — Seguridad Ciudadana + Catálogo de armas
 
-## Qué cambia
-La plataforma se ha dividido en módulos independientes cargados dentro de una aplicación principal:
+## Corrección del menú
+El botón **4/2015 Seguridad ciudadana** se ha situado inmediatamente después de Documentos y antes de Atestados.
+La barra lateral ahora tiene desplazamiento vertical en pantallas de poca altura.
 
-- Inicio
-- Tráfico
-- Atestados
-- LO 4/2015 Seguridad Ciudadana
-- Policía Administrativa
-- Catálogo de armas
-- Documentación
+## Catálogo de armas prohibidas
+Se incluye el PDF completo `catalogo-armas-prohibidas.pdf` y una consulta integrada con:
+- buscador por nombre, artículo o palabra clave;
+- filtros de armas de fuego, armas blancas, armas ocultas y de impacto;
+- acceso directo a cada ficha del PDF;
+- apertura del PDF completo;
+- apertura externa para teléfonos;
+- copia rápida de la referencia normativa.
 
-Cada módulo funciona de forma aislada, por lo que su CSS y JavaScript no pueden alterar los márgenes o botones del resto.
+El documento se presenta como material policial/formativo y requiere revisión de la normativa y del procedimiento aplicable.
 
-## Estructura
-- `index.html`: aplicación principal
-- `assets/app.css`: diseño global
-- `assets/app.js`: navegación global
-- `modules/traffic.html`
-- `modules/atestados.html`
-- `modules/seguridad.html`
-- `modules/administrativa.html`
-- `docs/`: PDF integrados
-
-## Instalación en GitHub
-Se recomienda limpiar el repositorio o crear una rama nueva y subir exactamente esta estructura.
+## Archivos para subir a GitHub
+- index.html
+- styles-v361.css
+- app-data-v361.js
+- app-v361.js
+- service-worker.js
+- catalogo-armas-prohibidas.pdf
+- README.md

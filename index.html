@@ -1,74 +1,861 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071d34">
-<title>TrafficCop Pro 5.0</title>
-<link rel="stylesheet" href="assets/app.css?v=500">
-</head>
-<body>
-<div class="app-shell">
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-      <div class="brand-mark">TC</div>
-      <div><strong>TrafficCop <span>Pro</span></strong><small>Plataforma policial</small></div>
-    </div>
-    <nav id="mainNav">
-      <button class="nav-item active" data-route="home"><b>⌂</b><span>Inicio</span></button>
-      <p>TRÁFICO</p>
-      <button class="nav-item" data-route="traffic"><b>▣</b><span>Catálogo y herramientas</span></button>
-      <p>MÓDULOS</p>
-      <button class="nav-item blue" data-route="seguridad"><b>4/15</b><span>Seguridad ciudadana</span></button>
-      <button class="nav-item gold" data-route="administrativa"><b>ADM</b><span>Policía administrativa</span></button>
-      <button class="nav-item purple" data-route="atestados"><b>⚖</b><span>Atestados y diligencias</span></button>
-      <p>RECURSOS</p>
-      <button class="nav-item" data-route="weapons"><b>⚔</b><span>Armas prohibidas</span></button>
-      <button class="nav-item" data-route="docs"><b>▤</b><span>Documentación</span></button>
-    </nav>
-    <div class="sidebar-footer">TrafficCop Pro · v5.0.0</div>
-  </aside>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v361.css?v=361"></head><body>
 
-  <header class="topbar">
-    <button id="menuToggle" aria-label="Abrir menú">☰</button>
-    <div>
-      <small id="sectionEyebrow">PANEL PRINCIPAL</small>
-      <h1 id="sectionTitle">Inicio</h1>
+<aside class="desktop-police-rail" aria-label="Navegació principal">
+  <div class="rail-brand">
+    <span class="rail-mark">TC</span>
+    <strong>TrafficCop <b>Pro</b></strong>
+    <small>Policia · Trànsit</small>
+  </div>
+
+  <nav>
+    <button data-rail-action="home" class="active"><span>⌂</span><small>Inici</small></button>
+    <button data-rail-action="catalog"><span>▣</span><small>Catàleg</small></button>
+    <button data-suite="documents"><span>▤</span><small>Documents</small></button><button data-sc-open class="rail-sc-button"><span>4/15</span><small>Seguretat<br>ciutadana</small></button><button data-atestados-open><span>⚖</span><small>Atestats</small></button>
+    <button data-suite="photo"><span>▧</span><small>Informe<br>fotogràfic</small></button>
+    <button data-suite="tools"><span>▦</span><small>Calculadores</small></button>
+    <button data-suite="legal"><span>▥</span><small>Biblioteca<br>legal</small></button>
+    <button data-rail-action="ai"><span>✦</span><small>IA policial</small></button>
+    <button data-suite="accident"><span>▱</span><small>Accidents</small></button>
+    <button data-rail-action="more"><span>⚙</span><small>Eines</small></button>
+  </nav>
+
+  <button class="rail-help" data-legal="instructions"><span>?</span><small>Ajuda</small></button>
+</aside>
+
+<header class="topbar pro-topbar"><button id="menuButton" class="menu-button" aria-label="Abrir menú">☰</button><div class="topbar-title"><p>HERRAMIENTA POLICIAL · TRÁFICO</p><h1>TrafficCop <span>Pro</span></h1></div><div class="topbar-actions"><button id="serviceModeButton" class="service-mode-button" aria-label="Modo servicio">●</button><button id="themeButton" aria-label="Cambiar tema">◐</button></div></header>
+<div id="drawerBackdrop" class="drawer-backdrop"></div>
+
+<aside id="sideDrawer" class="side-drawer option-a" aria-hidden="true">
+  <section id="drawerMain" class="drawer-page active" data-page="main">
+    <div class="drawer-brand">
+      <div class="drawer-logo">TC</div>
+      <div>
+        <p>TRAFFICCOP PRO</p>
+        <h2>Assistent policial</h2>
+      </div>
+      <button id="drawerCloseButton" class="drawer-close" aria-label="Tancar menú">×</button>
     </div>
-    <div class="status"><span></span> Plataforma operativa</div>
+
+    <div class="drawer-search">
+      <span>⌕</span>
+      <input id="drawerSearchInput" type="search" placeholder="Cercar al menú…">
+    </div>
+
+    <nav class="drawer-main-nav">
+      <button class="menu-row primary" data-action="home">
+        <span class="menu-icon">⌂</span>
+        <span class="menu-copy"><strong>Inici</strong><small>Cercador d’infraccions</small></span>
+      </button>
+
+      <button class="menu-row primary" data-action="search">
+        <span class="menu-icon">⌕</span>
+        <span class="menu-copy"><strong>Cercar</strong><small>Concepte, article, import o punts</small></span>
+      </button>
+
+      <button class="menu-row primary" data-action="assistant">
+        <span class="menu-icon">✨</span>
+        <span class="menu-copy"><strong>TrafficCop AI</strong><small>Descriu els fets parlant o escrivint</small></span>
+      </button>
+
+      <button class="menu-row primary" data-action="favorites">
+        <span class="menu-icon">★</span>
+        <span class="menu-copy"><strong>Preferides</strong><small>Infraccions guardades</small></span>
+      </button>
+
+      <div class="menu-separator"></div>
+
+      <button class="menu-row submenu-trigger" data-submenu="legislation">
+        <span class="menu-icon">📚</span>
+        <span class="menu-copy"><strong>Legislació</strong><small>Normes i informació legal</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="traffic">
+        <span class="menu-icon">🚔</span>
+        <span class="menu-copy"><strong>Trànsit</strong><small>Accés ràpid per matèries</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row" data-atestados-open><span class="menu-icon">⚖</span><span class="menu-copy"><strong>Atestats</strong><small>Diligències i tràmits</small></span><span class="chevron">›</span></button><button class="menu-row" data-sc-open><span class="menu-icon">4/15</span><span class="menu-copy"><strong>4/2015 Seguretat ciutadana</strong><small>D10, D10b, A10 i formularis</small></span><span class="chevron">›</span></button><button class="menu-row submenu-trigger" data-submenu="documents">
+        <span class="menu-icon">📄</span>
+        <span class="menu-copy"><strong>Documents</strong><small>Plantilles i actes</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="reports">
+        <span class="menu-icon">📸</span>
+        <span class="menu-copy"><strong>Informes</strong><small>Informes fotogràfics i tècnics</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="tools">
+        <span class="menu-icon">🧮</span>
+        <span class="menu-copy"><strong>Eines</strong><small>Consultes i accessos directes</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <button class="menu-row submenu-trigger" data-submenu="settings">
+        <span class="menu-icon">⚙</span>
+        <span class="menu-copy"><strong>Ajustos</strong><small>Tema, informació i privacitat</small></span>
+        <span class="chevron">›</span>
+      </button>
+
+      <div class="menu-separator"></div>
+
+      <button class="menu-row secondary" data-legal="version">
+        <span class="menu-icon">ⓘ</span>
+        <span class="menu-copy"><strong>Informació</strong><small>Versió i font documental</small></span>
+      </button>
+    </nav>
+
+    <footer class="drawer-footer">
+      <strong>Catàleg SCT</strong>
+      <span>20 de maig de 2026</span>
+      <small>TrafficCop Pro v2.0</small>
+    </footer>
+  </section>
+
+  <section id="drawerSubmenu" class="drawer-page submenu-page" data-page="submenu">
+    <div class="submenu-header">
+      <button id="submenuBackButton" class="submenu-back" aria-label="Tornar">‹</button>
+      <div>
+        <p id="submenuEyebrow">SECCIÓ</p>
+        <h2 id="submenuTitle">Legislació</h2>
+      </div>
+      <button id="drawerCloseButtonSecondary" class="drawer-close" aria-label="Tancar menú">×</button>
+    </div>
+    <nav id="submenuContent" class="submenu-content"></nav>
+  </section>
+</aside>
+
+<dialog id="legalDialog">
+  <article class="legal-panel">
+    <header>
+      <div>
+        <p>INFORMACIÓ LEGAL</p>
+        <h2 id="legalTitle"></h2>
+      </div>
+      <button id="legalCloseButton" aria-label="Tancar">×</button>
+    </header>
+    <div id="legalContent" class="legal-content"></div>
+  </article>
+</dialog>
+
+
+<main id="homeView" class="pro-main">
+<section class="status-strip"><div><span class="status-dot"></span><strong id="serviceStatus">Modo consulta</strong></div><div class="source-chip">Fuente SCT · 20/05/2026</div></section>
+<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.6.1 · NIPAL ATESTATS PRO</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
+<section class="quick-section"><div class="section-title-row"><div><p>ACCESO RÁPIDO</p><h2>Intervenciones habituales</h2></div><button id="customizeQuickButton">Editar</button></div><div class="quick pro-quick"><button data-query="mòbil">📱<span>Móvil</span></button><button data-query="ITV">🧾<span>ITV</span></button><button data-query="VMP">🛴<span>VMP</span></button><button data-query="matrícula">🔢<span>Matrícula</span></button><button data-query="alcohol">🍺<span>Alcohol</span></button><button data-query="drogues">🧪<span>Drogas</span></button><button data-query="velocitat">⚡<span>Velocidad</span></button><button data-query="cinturó">🦺<span>Cinturón</span></button></div></section>
+<section class="command-centre"><div class="section-title-row"><div><p>CENTRO OPERATIVO</p><h2>Herramientas policiales</h2></div></div><div class="command-grid"><button class="command-card primary" data-suite="traffic"><span class="command-icon">🚔</span><strong>Catálogo SCT</strong><small>Infracciones, importes y puntos</small><b>Abrir</b></button><button class="command-card" data-suite="documents"><span class="command-icon">📄</span><strong>Documentos</strong><small>Actas, informes y diligencias</small><b>Abrir</b></button><button class="command-card" data-atestados-open><span class="command-icon">⚖️</span><strong>Atestados</strong><small>Diligencias, comparecencias y trámites</small><b>Abrir</b></button><button class="command-card sc-command-card" data-sc-open><span class="command-icon">🛡️</span><strong>4/2015 Seguridad ciudadana</strong><small>D10, D10b, A10 y gestión operativa</small><b>Abrir</b></button><button class="command-card" data-suite="photo"><span class="command-icon">📸</span><strong>Informe fotográfico</strong><small>Numeración y texto técnico</small><b>Abrir</b></button><button class="command-card" data-suite="accident"><span class="command-icon">🚗</span><strong>Accidentes</strong><small>Cronología y datos</small><b>Abrir</b></button><button class="command-card" data-suite="legal"><span class="command-icon">📚</span><strong>Biblioteca legal</strong><small>Normativa y fuente</small><b>Abrir</b></button><button class="command-card" data-suite="tools"><span class="command-icon">🧮</span><strong>Herramientas</strong><small>GPS y accesos técnicos</small><b>Abrir</b></button></div></section>
+<section id="recentSection" class="recent-section"><div class="section-title-row"><div><p>ACTIVIDAD</p><h2>Consultas recientes</h2></div><button id="clearRecentButton">Borrar</button></div><div id="recentSearches" class="recent-list"></div></section>
+<section id="catalogSection" class="catalog-shell"><div class="catalog-header"><div><p>CATÁLOGO OFICIAL</p><h2>Resultados de infracciones</h2></div><span class="verification-badge">✓ Texto del catálogo</span></div><section class="filters pro-filters"><select id="normFilter"><option value="">Todas las normas</option></select><select id="natureFilter"><option value="">Todas las naturalezas</option><option value="L">Leve</option><option value="G">Grave</option><option value="MG">Muy grave</option><option value="G/MG">Grave / muy grave</option></select><select id="pointsFilter"><option value="">Todos los puntos</option><option value="0">0 puntos</option><option value="2">2 puntos</option><option value="3">3 puntos</option><option value="4">4 puntos</option><option value="6">6 puntos</option></select></section><section class="tabs pro-tabs"><button class="active" data-view="all">Todas</button><button data-view="favorites">★ Favoritas</button><span id="resultCount"></span></section><aside class="notice pro-notice"><strong>Uso profesional:</strong> verifica siempre que el hecho observado encaje exactamente con el concepto del catálogo.</aside><section id="results" class="results"></section><button id="moreButton" class="more" hidden>Mostrar más resultados</button></section>
+</main>
+
+
+<dialog id="awProfileDialog" class="aw-mini-dialog">
+  <form method="dialog" class="aw-mini-card">
+    <header><div><p>PERFIL POLICIAL</p><h3>Mi perfil</h3></div><button value="cancel">×</button></header>
+    <label>Nombre visible<input id="awProfileName" value="Agente"></label>
+    <label>TIP / número profesional<input id="awProfileTip" value="1070"></label>
+    <label>Categoría profesional<input id="awProfileRole" value="Agente instructor"></label>
+    <label>Unidad o cuerpo<input id="awProfileUnit" value="Policía Local"></label>
+    <footer><button id="awProfileSave" type="button" class="primary">Guardar perfil</button></footer>
+  </form>
+</dialog>
+
+<dialog id="awSettingsDialog" class="aw-mini-dialog">
+  <form method="dialog" class="aw-mini-card">
+    <header><div><p>CONFIGURACIÓN</p><h3>Ajustes del gestor</h3></div><button value="cancel">×</button></header>
+    <label><span>Guardado automático</span><input id="awAutoSave" type="checkbox" checked></label>
+    <label><span>Mostrar variables destacadas</span><input id="awHighlightVars" type="checkbox" checked></label>
+    <label><span>Modo compacto en móvil</span><input id="awCompactMobile" type="checkbox" checked></label>
+    <footer><button id="awSettingsSave" type="button" class="primary">Guardar ajustes</button></footer>
+  </form>
+</dialog>
+
+<dialog id="awAddDialog" class="aw-mini-dialog">
+  <form method="dialog" class="aw-mini-card">
+    <header><div><p>NUEVA DILIGENCIA</p><h3>Añadir al atestado</h3></div><button value="cancel">×</button></header>
+    <label>Plantilla<select id="awAddTemplateSelect"></select></label>
+    <label>Título personalizado<input id="awAddCustomTitle" placeholder="Opcional"></label>
+    <footer><button id="awConfirmAdd" type="button" class="primary">Añadir diligencia</button></footer>
+  </form>
+</dialog>
+
+
+<section id="scWorkspace" class="sc-workspace" hidden>
+  <header class="sc-topbar">
+    <div class="sc-brand">
+      <button id="scMenuButton" aria-label="Menú">☰</button>
+      <span class="sc-badge">4/15</span>
+      <div><strong>TrafficCop Pro</strong><small>SEGURIDAD CIUDADANA</small></div>
+      <button id="scBackButton" class="sc-back-button">← VOLVER A TRÁFICO</button>
+    </div>
+    <div class="sc-top-search"><span>⌕</span><input id="scGlobalSearch" placeholder="Buscar acta, artículo o supuesto..."><kbd>Ctrl + K</kbd></div>
+    <div class="sc-top-actions"><button id="scHelpButton">?</button><button id="scSaveButton">▣ GUARDAR</button></div>
   </header>
 
-  <main class="main">
-    <section id="homeDashboard" class="dashboard">
-      <div class="hero">
-        <div><small>TRAFFICCOP PRO 5.0</small><h2>¿Qué necesitas gestionar?</h2><p>Acceso centralizado a tráfico, atestados, seguridad ciudadana y policía administrativa.</p></div>
-        <div class="hero-badge">TC</div>
+  <aside class="sc-sidebar">
+    <section>
+      <p>PANEL PRINCIPAL</p>
+      <button class="active" data-sc-view="dashboard">⌂ <span>Inicio</span></button>
+    </section>
+    <section>
+      <p>LO 4/2015</p>
+      <button data-sc-view="forms">▤ <span>Actas y formularios</span></button>
+      <button data-sc-view="library">▥ <span>Biblioteca de supuestos</span></button>
+      <button data-sc-view="guide">ⓘ <span>Guía operativa</span></button>
+      <button data-sc-view="review">✓ <span>Revisión del acta</span></button><button data-sc-view="weapons" class="sc-weapons-menu">⚔ <span>Catálogo de armas prohibidas</span></button>
+    </section>
+    <section>
+      <p>ACCESO RÁPIDO</p>
+      <button data-sc-template="d10">D10 <span>Denuncia LO 4/2015</span></button>
+      <button data-sc-template="d10b">D10b <span>Intervención temporal</span></button>
+      <button data-sc-template="a10">A10 <span>Acta abierta</span></button>
+      <button data-sc-template="g31">G31 <span>Delito leve de hurto</span></button>
+    </section>
+    <section>
+      <p>OTROS FORMULARIOS</p>
+      <button data-sc-template="d24">D24 <span>Denuncia de hurto</span></button>
+      <button data-sc-template="a57">A57 <span>Persona perjudicada</span></button>
+      <button data-sc-template="a56">A56 <span>Entrega de efectos</span></button>
+      <button data-sc-template="n09">N09 <span>Derechos JIDL</span></button>
+      <button data-sc-template="n10">N10 <span>Citación JIDL</span></button>
+      <button data-sc-template="g16">G16 <span>Minuta con detenido</span></button>
+      <button data-sc-template="g17">G17 <span>Minuta sin detenido</span></button>
+    </section>
+    <small>© TrafficCop Pro v3.6.1</small>
+  </aside>
+
+  <main class="sc-main">
+    <section id="scDashboard" class="sc-view">
+      <div class="sc-hero">
+        <div><p>MÓDULO OPERATIVO</p><h1>LO 4/2015 · Seguridad ciudadana</h1><span>Selecciona un modelo, completa los datos y copia el texto para NIPal.</span></div>
+        <div class="sc-hero-actions"><button data-sc-template="d10" class="primary">＋ NUEVA D10</button><button data-sc-template="a10">＋ NUEVA A10</button></div>
       </div>
-      <div class="module-grid">
-        <button data-route="traffic"><b>🚓</b><strong>Tráfico</strong><span>Catálogo SCT, documentos, informes y herramientas.</span></button>
-        <button data-route="atestados" class="purple"><b>⚖️</b><strong>Atestados</strong><span>Diligencias, plantillas y copia rápida para NIPal.</span></button>
-        <button data-route="seguridad" class="blue"><b>🛡️</b><strong>LO 4/2015</strong><span>D10, D10b, A10 y catálogo de armas.</span></button>
-        <button data-route="administrativa" class="gold"><b>🏢</b><strong>Policía administrativa</strong><span>Inspecciones, actas y listas de comprobación.</span></button>
+      <div class="sc-stats">
+        <article><strong>11</strong><span>modelos iniciales</span></article>
+        <article><strong>D10</strong><span>denuncia administrativa</span></article>
+        <article><strong>D10b</strong><span>intervención temporal</span></article>
+        <article><strong>A10</strong><span>acta abierta</span></article>
       </div>
-      <section class="info-card">
-        <h3>Arquitectura limpia</h3>
-        <p>Cada módulo funciona en un espacio aislado. Los estilos y botones de un apartado ya no pueden romper los demás.</p>
+      <section class="sc-dashboard-grid">
+        <article class="sc-panel">
+          <header><div><p>MODELOS PRINCIPALES</p><h2>Actuación en vía pública</h2></div></header>
+          <div class="sc-quick-grid">
+            <button data-sc-template="d10"><b>D10</b><strong>Denuncia LO 4/2015</strong><small>Drogas, armas, desobediencia, faltas de respeto y otros supuestos.</small></button>
+            <button data-sc-template="d10b"><b>D10b</b><strong>Intervención temporal</strong><small>Objetos peligrosos susceptibles de causar riesgo. No utilizar para armas.</small></button>
+            <button data-sc-template="a10"><b>A10</b><strong>Acta abierta</strong><small>Constatación de hechos, intervenciones y circunstancias no cubiertas por un modelo específico.</small></button>
+            <button data-sc-view="guide"><b>GUÍA</b><strong>Operativa LO 4/2015</strong><small>Identificación, menores, drogas, armas y control de calidad.</small></button><button data-sc-view="weapons" class="sc-weapons-card"><b>ARMAS</b><strong>Catálogo de armas prohibidas</strong><small>Identificación visual, artículos, riesgos y actuación legal.</small></button>
+          </div>
+        </article>
+        <article class="sc-panel">
+          <header><div><p>AVISOS DE CALIDAD</p><h2>Antes de tramitar</h2></div></header>
+          <ul class="sc-checklist">
+            <li>Describir hechos concretos observados, no conclusiones genéricas.</li>
+            <li>Completar identificación, domicilio actual y datos de notificación.</li>
+            <li>Indicar fecha, hora, lugar específico, agentes y servicio.</li>
+            <li>Individualizar cada sustancia, arma, objeto o instrumento intervenido.</li>
+            <li>Revisar si los hechos son administrativos o presentan indicios penales.</li>
+          </ul>
+        </article>
       </section>
     </section>
 
-    <section id="frameView" class="frame-view" hidden>
-      <iframe id="moduleFrame" title="Módulo TrafficCop Pro"></iframe>
+    <section id="scFormsView" class="sc-view" hidden>
+      <header class="sc-view-header"><div><p>GESTOR DOCUMENTAL</p><h1>Actas y formularios</h1></div><button id="scNewFormButton">＋ NUEVO</button></header>
+      <div class="sc-manager-layout">
+        <aside class="sc-template-list">
+          <div class="sc-filter-row"><input id="scTemplateSearch" placeholder="Buscar modelo..."><select id="scCategoryFilter"><option value="all">Todos</option><option value="lopsc">LO 4/2015</option><option value="hurto">Hurto/JIDL</option><option value="minuta">Minutas</option></select></div>
+          <div id="scTemplateItems"></div>
+        </aside>
+        <section class="sc-form-editor">
+          <header><div><span id="scCurrentCode">D10</span><div><p id="scCurrentType">ACTA / DENUNCIA</p><h2 id="scCurrentTitle">Denuncia por infracciones a la LO 4/2015</h2></div></div><span id="scSourceStatus" class="sc-source-status">MODELO FORMATIVO</span></header>
+          <div id="scFormFields" class="sc-form-fields"></div>
+          <section class="sc-output-section">
+            <header><div><p>TEXTO PARA NIPAL</p><h3>Resultado editable</h3></div><div><button id="scGenerateButton">GENERAR</button><button id="scCopyButton" class="primary">▣ COPIAR PARA NIPAL</button></div></header>
+            <textarea id="scOutput" rows="17" spellcheck="true" placeholder="Aquí aparecerá el texto generado..."></textarea>
+            <div class="sc-output-actions"><button id="scImproveButton">✨ MEJORAR REDACCIÓN</button><button id="scPrintButton">🖨 IMPRIMIR / PDF</button><button id="scClearButton">BORRAR</button></div>
+          </section>
+        </section>
+        <aside class="sc-help-panel">
+          <header><p>GUÍA DEL MODELO</p><h3 id="scHelpTitle">D10</h3></header>
+          <div id="scHelpContent"></div>
+          <div class="sc-warning"><strong>Revisión obligatoria</strong><p>El texto debe adaptarse a los hechos realmente comprobados y a los modelos vigentes del cuerpo policial.</p></div>
+        </aside>
+      </div>
     </section>
 
-    <section id="docsView" class="docs-view" hidden>
-      <div class="docs-card">
-        <h2 id="docsTitle">Documentación</h2>
-        <div id="docsList"></div>
+    <section id="scLibraryView" class="sc-view" hidden>
+      <header class="sc-view-header"><div><p>BIBLIOTECA RÁPIDA</p><h1>Supuestos de seguridad ciudadana</h1></div></header>
+      <div class="sc-library-tools"><input id="scCaseSearch" placeholder="Buscar: drogas, desobediencia, arma, respeto..."><select id="scSeverityFilter"><option value="all">Todas</option><option value="grave">Graves</option><option value="leve">Leves</option><option value="operativa">Operativa</option></select></div>
+      <div id="scCaseGrid" class="sc-case-grid"></div>
+    </section>
+
+    <section id="scGuideView" class="sc-view" hidden>
+      <header class="sc-view-header"><div><p>GUÍA OPERATIVA</p><h1>LO 4/2015 en la calle</h1></div></header>
+      <div class="sc-guide-grid">
+        <article><h3>Identificación</h3><p>La motivación del requerimiento debe explicarse de forma inmediata y comprensible, y quedar reflejada de manera clara en la documentación.</p></article>
+        <article><h3>Menores</h3><p>Menores de 14 años: se extiende acta y se pone en conocimiento de responsables legales y, según el procedimiento, del Ministerio Fiscal. Entre 14 y 17 años: comunicar a responsables y completar los datos requeridos.</p></article>
+        <article><h3>Drogas</h3><p>Identificar, describir la sustancia, lugar exacto donde se localiza, recipiente o envoltorio, persona a quien se interviene y número de acta o precinto.</p></article>
+        <article><h3>Objetos peligrosos</h3><p>La D10b sirve para intervención temporal de objetos peligrosos o susceptibles de causar riesgo. No debe utilizarse para intervenir armas.</p></article>
+        <article><h3>A10 abierta</h3><p>Útil para constatar hechos concretos, recogida de sustancias sin propietario, intervención de documentación u otras circunstancias que necesitan un relato abierto.</p></article>
+        <article><h3>Redacción</h3><p>Tercera persona, lenguaje administrativo, relato cronológico, frases claras y distinción entre observación directa y manifestaciones de terceros.</p></article>
+      </div>
+      <section class="sc-articles">
+        <h2>Accesos rápidos por artículo</h2>
+        <div id="scArticleCards"></div>
+      </section>
+    </section>
+
+    
+    <section id="scWeaponsView" class="sc-view" hidden>
+      <header class="sc-view-header sc-weapons-header">
+        <div>
+          <p>CATÁLOGO OPERATIVO</p>
+          <h1>Armas prohibidas</h1>
+          <span>Identificación visual y consulta rápida conforme al Reglamento de Armas.</span>
+        </div>
+        <div class="sc-weapons-actions">
+          <button id="scOpenWeaponsPdf">ABRIR PDF COMPLETO</button>
+          <button id="scWeaponsFullscreen">PANTALLA COMPLETA</button>
+        </div>
+      </header>
+
+      <div class="sc-weapons-layout">
+        <aside class="sc-weapons-index">
+          <div class="sc-weapons-search">
+            <span>⌕</span>
+            <input id="scWeaponsSearch" placeholder="Buscar: puño americano, navaja, bastón...">
+          </div>
+          <div class="sc-weapons-filters">
+            <button class="active" data-weapons-filter="all">Todas</button>
+            <button data-weapons-filter="fuego">Fuego</button>
+            <button data-weapons-filter="blanca">Blancas</button>
+            <button data-weapons-filter="oculta">Ocultas</button>
+            <button data-weapons-filter="impacto">Impacto</button>
+          </div>
+          <div id="scWeaponsList" class="sc-weapons-list"></div>
+        </aside>
+
+        <section class="sc-weapons-viewer">
+          <header>
+            <div>
+              <span id="scWeaponArticle">ART. 4.1.a)</span>
+              <h2 id="scWeaponTitle">Armas de fuego fabricadas o modificadas ilícitamente</h2>
+            </div>
+            <button id="scCopyWeaponRule">COPIAR NORMATIVA</button>
+          </header>
+          <div class="sc-weapons-notice">
+            <strong>Documento de uso policial.</strong>
+            <span>El catálogo tiene finalidad identificativa y formativa. La actuación concreta debe revisarse conforme a la normativa vigente y al procedimiento del cuerpo.</span>
+          </div>
+          <iframe id="scWeaponsFrame" title="Catálogo de armas prohibidas" src="catalogo-armas-prohibidas.pdf#page=5&view=FitH"></iframe>
+          <div class="sc-weapons-mobile-fallback">
+            <p>En algunos teléfonos el visor PDF puede no mostrarse dentro de la app.</p>
+            <button id="scOpenWeaponPageMobile">ABRIR FICHA EN EL NAVEGADOR</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+<section id="scReviewView" class="sc-view" hidden>
+      <header class="sc-view-header"><div><p>CONTROL DE CALIDAD</p><h1>Revisión del acta</h1></div><button id="scRunReview">REVISAR AHORA</button></header>
+      <div id="scReviewResults" class="sc-review-results">
+        <p>Abre un modelo, genera el texto y pulsa «Revisar ahora».</p>
       </div>
     </section>
   </main>
-</div>
-<div class="backdrop" id="backdrop"></div>
-<script src="assets/app.js?v=500"></script>
-</body>
-</html>
+</section>
+<section id="atestadosWorkspace" class="atestados-workspace" hidden>
+  <header class="aw-topbar">
+    <div class="aw-brand">
+      <button id="awMenuButton" aria-label="Menú">☰</button>
+      <button id="awTopBackButton" class="aw-top-back" type="button">← VOLVER A TRÁFICO</button>
+      <span class="aw-shield">TC</span>
+      <strong>TrafficCop-Pro</strong>
+      <span class="aw-separator">‹</span>
+      <b>GESTOR DE DILIGENCIAS Y ATESTADOS</b>
+    </div>
+    <div class="aw-global-search">
+      <span>⌕</span><input id="awGlobalSearch" placeholder="Buscar diligencia, ejemplo, palabra clave...">
+      <kbd>Ctrl + K</kbd>
+    </div>
+    <div class="aw-user">
+      <button id="awTopHelp" title="Ayuda">?</button><button id="awTopSettings" title="Configuración">⚙</button>
+      <span class="aw-avatar">AG</span>
+      <div><strong>Agente</strong><small>Perfil instructor</small></div>
+    </div>
+  </header>
+
+  <aside class="aw-sidebar">
+    <section>
+      <p>PANEL PRINCIPAL</p>
+      <button data-aw-nav="home">⌂ <span>Inicio</span></button>
+    </section>
+    <section>
+      <p>ATESTADOS</p>
+      <button data-aw-nav="my-cases">▣ <span>Mis atestados</span></button>
+      <button class="active" data-aw-nav="new-case">▤ <span>Nuevo atestado</span></button>
+      <button data-aw-nav="case-templates">▧ <span>Plantillas de atestados</span></button>
+    </section>
+    <section>
+      <p>DILIGENCIAS</p>
+      <button data-aw-nav="library">▤ <span>Biblioteca de diligencias</span></button>
+      <button data-aw-nav="favorites">☆ <span>Mis favoritas</span></button>
+      <button data-aw-nav="my-templates">▧ <span>Mis plantillas</span></button>
+      <button data-aw-nav="shared">⌘ <span>Plantillas compartidas</span></button>
+    </section>
+    <section>
+      <p>GESTIÓN</p>
+      <button data-aw-tab="persons">♙ <span>Personas</span></button>
+      <button data-aw-tab="vehicles">▱ <span>Vehículos</span></button>
+      <button data-aw-tab="effects">♢ <span>Objetos / Efectos</span></button>
+      <button data-aw-tab="documents">▤ <span>Documentos</span></button>
+    </section>
+    <section>
+      <p>HERRAMIENTAS</p>
+      <button id="awAiButton">⌕ <span>Buscador inteligente</span></button>
+      <button data-suite="tools">▦ <span>Calculadoras</span></button>
+      <button data-suite="legal">ⓘ <span>Consultas legales</span></button>
+    </section>
+    <section>
+      <p>CONFIGURACIÓN</p>
+      <button id="awProfileButton">♙ <span>Mi perfil</span></button>
+      <button id="awSettingsButton">⚙ <span>Configuración</span></button>
+      <button id="awBackToApp">? <span>Volver a TrafficCop</span></button>
+    </section>
+    <small class="aw-version">© TrafficCop-Pro v3.6.1</small>
+  </aside>
+
+  <main class="aw-main">
+    <section class="aw-case-head">
+      <div>
+        <div class="aw-case-title"><h2 id="awCaseNumber">Atestado 2026/00215</h2><span>EN EDICIÓN</span></div>
+        <p>Fecha: <strong id="awMetaDate">02/08/2026</strong> · Hora: <strong id="awMetaTime">03:15</strong> · Localidad: <strong id="awMetaTown">Palamós (Girona)</strong></p>
+        <p>Instructor: <strong>Agente instructor</strong> · Secretario: <strong>Agente secretario</strong></p>
+      </div>
+      <div class="aw-case-actions">
+        <button id="awCopyNipalTop" class="nipal-action">▣ COPIAR PARA NIPAL</button>
+        <button id="awPreview">◉ VISTA PREVIA</button>
+        <button id="awExport">⇧ EXPORTAR</button>
+        <button id="awSignatures">✎ FIRMAS</button>
+        <button id="awSave" class="primary">▣ GUARDAR</button>
+      </div>
+    </section>
+
+    <nav class="aw-tabs">
+      <button data-aw-tab="cover">CARÁTULA</button>
+      <button class="active" data-aw-tab="diligences">CUERPO DEL ATESTADO <span id="awDiligenceCount">(12)</span></button>
+      <button data-aw-tab="annexes">ANEXOS <span id="awAnnexCount">(0)</span></button>
+      <button data-aw-tab="persons">PERSONAS <span>(0)</span></button>
+      <button data-aw-tab="vehicles">VEHÍCULOS <span>(0)</span></button>
+      <button data-aw-tab="effects">EFECTOS <span>(0)</span></button>
+      <button data-aw-tab="review">REVISIÓN</button>
+    </nav>
+
+    <section id="awDiligenceView" class="aw-editor-layout">
+      <aside class="aw-diligence-list">
+        <header><strong>DILIGENCIAS DEL ATESTADO</strong><button id="awAddDiligence">＋ AÑADIR</button></header>
+        <div id="awDiligenceItems"></div>
+        <button id="awAddDiligenceBottom">＋ Añadir diligencia al atestado</button>
+        <button id="awOrderDiligences">⇅ ORDENAR DILIGENCIAS</button>
+      </aside>
+
+      <section class="aw-editor">
+        <header>
+          <div><span id="awCurrentNumber">01</span><strong id="awCurrentTitle">DILIGENCIA DE INICIO</strong><button id="awFavCurrent">☆</button></div>
+          <button id="awChangeTemplate">✎ CAMBIAR PLANTILLA</button>
+        </header>
+        <div class="aw-source-note">ⓘ <span id="awSourceNote">Plantilla orientativa basada en formación de instrucción de atestados.</span></div>
+        <div class="aw-nipal-rules">
+          <span><b>PERSONAS</b> se presentan</span><span><b>OBJETOS</b> se entregan</span><span><b>DOCUMENTOS</b> se adjuntan</span>
+        </div>
+        <div id="awEditableDocument" class="aw-paper" contenteditable="true" spellcheck="true"></div>
+        <div class="aw-editor-toolbar">
+          <select><option>Párrafo</option><option>Título</option></select>
+          <button data-command="bold"><b>B</b></button>
+          <button data-command="italic"><i>I</i></button>
+          <button data-command="underline"><u>U</u></button>
+          <button data-command="insertUnorderedList">☷</button>
+          <button data-command="justifyLeft">≡</button>
+          <button data-command="justifyCenter">☰</button>
+          <button id="awInsertVariable">{ }</button>
+        </div>
+        <footer class="aw-editor-actions">
+          <button id="awCopyNipal" class="nipal-action">▣ COPIAR PARA NIPAL</button>
+          <button id="awSaveDiligence">▣ GUARDAR</button>
+          <button id="awDuplicateDiligence">▣ DUPLICAR</button>
+          <button id="awDeleteDiligence">♲ ELIMINAR</button>
+          <button id="awHistory">↶ HISTORIAL</button>
+        </footer>
+      </section>
+
+      <aside class="aw-library">
+        <nav>
+          <button class="active" data-aw-library="library">BIBLIOTECA</button>
+          <button data-aw-library="favorites">MIS FAVORITAS</button>
+          <button data-aw-library="ai">BUSCADOR IA</button>
+        </nav>
+        <div class="aw-library-search"><span>⌕</span><input id="awLibrarySearch" placeholder="Buscar diligencia o ejemplo..."></div>
+        <label>Categoría:
+          <select id="awCategorySelect">
+            <option value="all">Todas</option>
+            <option value="seguridad-vial">Seguridad vial</option>
+            <option value="procesal">Procesal</option>
+            <option value="accidentes">Accidentes</option>
+            <option value="salud-publica">Salud pública</option>
+            <option value="violencia">Violencia de género/doméstica</option>
+          </select>
+        </label>
+        <div class="aw-selected"><small>Diligencia seleccionada:</small><strong id="awSelectedLibrary">Diligencia de inicio</strong></div>
+        <h4>EJEMPLOS DISPONIBLES <span id="awExamplesCount">(10)</span></h4>
+        <div id="awExampleList" class="aw-example-list"></div>
+        <button id="awUseExample" class="aw-use-example">▤ USAR ESTE EJEMPLO</button>
+        <button id="awExamplePreview">VISTA PREVIA</button>
+        <div class="aw-template-details">
+          <h4>DETALLES DE LA PLANTILLA</h4>
+          <p><b>Uso:</b> <span id="awDetailUse">Inicio por actuación policial de oficio</span></p>
+          <p><b>Categoría:</b> <span id="awDetailCategory">Seguridad vial</span></p>
+          <p><b>Descripción:</b> <span id="awDetailDescription">Plantilla de apoyo para iniciar actuaciones policiales.</span></p>
+          <p><b>Fuente:</b> materiales formativos aportados por el usuario.</p>
+          <span class="aw-source-badge">✓ FUENTE FORMATIVA IDENTIFICADA</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="awGenericView" class="aw-generic-view" hidden>
+      <div class="aw-empty-icon">▤</div>
+      <h3 id="awGenericTitle">Módulo</h3>
+      <p id="awGenericDescription">Este apartado se incorporará progresivamente al gestor.</p>
+      <button id="awReturnDiligences">Volver a diligencias</button>
+    </section>
+
+    <section id="awReviewPanel" class="aw-review-panel" hidden>
+      <header><div><p>CONTROL DE CALIDAD</p><h3>Revisión del atestado</h3></div><button id="awRunReview">REVISAR AHORA</button></header>
+      <div id="awReviewResults" class="aw-review-results"></div>
+    </section>
+
+    <section class="aw-recommendations">
+      <header><div><strong>PLANTILLAS RECOMENDADAS PARA ESTE CASO</strong><span>IA LOCAL</span></div><button id="awSeeAll">VER TODAS →</button></header>
+      <p>Basado en un supuesto de seguridad vial. El agente debe seleccionar y revisar las diligencias necesarias.</p>
+      <div id="awRecommendedCards"></div>
+    </section>
+  </main>
+</section>
+<nav class="bottomnav pro-bottomnav"><button class="active" data-pro-nav="home">⌂<small>Inicio</small></button><button data-pro-nav="search">⌕<small>Buscar</small></button><button data-pro-nav="documents">📄<small>Documentos</small></button><button data-pro-nav="more">☰<small>Más</small></button></nav>
+<template id="cardTemplate">
+  <article class="card">
+    <div class="cardhead">
+      <div>
+        <span class="badge norm"></span>
+        <span class="badge nature"></span>
+      </div>
+      <button class="favorite" aria-label="Afegir a preferides">☆</button>
+    </div>
+
+    <h3 class="concept"></h3>
+    <p class="category"></p>
+
+    <div class="metrics">
+      <div><small>Article</small><strong class="article"></strong></div>
+      <div><small>Quantia</small><strong class="amount"></strong></div>
+      <div><small>50 %</small><strong class="discount"></strong></div>
+      <div><small>Punts</small><strong class="points"></strong></div>
+    </div>
+
+    <details>
+      <summary>Veure fitxa completa</summary>
+      <dl>
+        <dt>Norma</dt><dd class="normFull"></dd>
+        <dt>Naturalesa</dt><dd class="natureFull"></dd>
+        <dt>Pàgina font</dt><dd class="page"></dd>
+        <dt>Estat</dt><dd class="status"></dd>
+        <dt>Retirada</dt><dd class="withdrawal"></dd>
+      </dl>
+    </details>
+
+    <div class="actions card-actions-three">
+      <button class="ticket-open">📝 Veure butlleta SCT</button>
+      <button class="copy">Copiar concepte</button>
+      <button class="share">Compartir</button>
+    </div>
+  </article>
+</template>
+
+<dialog id="assistantDialog">
+  <section class="assistant-panel">
+    <header class="assistant-head">
+      <div>
+        <p>ASSISTENT INTEL·LIGENT LOCAL</p>
+        <h3>TrafficCop AI</h3>
+      </div>
+      <button id="assistantCloseButton" aria-label="Tancar">×</button>
+    </header>
+
+    <p class="assistant-help">
+      Explica el fet amb llenguatge natural. Exemple:
+      <em>«Conductor utilitzant el mòbil amb la mà»</em>.
+    </p>
+
+    <div class="assistant-input">
+      <textarea id="assistantText" rows="4" placeholder="Descriu aquí els fets observats…"></textarea>
+      <div class="assistant-actions">
+        <button id="assistantMicButton">🎙 Dictar</button>
+        <button id="assistantAnalyzeButton">✨ Analitzar</button>
+      </div>
+    </div>
+
+    <div id="assistantStatus" class="assistant-status"></div>
+    <section id="assistantResults" class="assistant-results"></section>
+
+    <p class="assistant-privacy">
+      Aquesta versió analitza el text dins del dispositiu. No envia dades personals ni fets policials a cap servidor.
+    </p>
+  </section>
+</dialog>
+
+
+
+
+<dialog id="atestadosDialog"><article class="atestados-panel"><header><div><p>MÓDULO OPERATIVO</p><h2>Atestados</h2><small>Diligencias, comparecencias y trámites de tráfico</small></div><button id="atestadosCloseButton">×</button></header><div class="atestados-search"><span>⌕</span><input id="atestadosSearchInput" placeholder="Buscar diligencia o trámite..."></div><div id="atestadosGrid" class="atestados-grid">
+<button data-atestado="comparecencia">👮<strong>Comparecencia de agentes</strong><small>Inicio y exposición de hechos</small></button>
+<button data-atestado="derechos">⚖️<strong>Información de derechos</strong><small>Investigado o detenido</small></button>
+<button data-atestado="identificacion">🪪<strong>Identificación</strong><small>Conductor y vehículo</small></button>
+<button data-atestado="inmovilizacion">🚧<strong>Inmovilización</strong><small>Motivo y medidas adoptadas</small></button>
+<button data-atestado="sintomas">👁️<strong>Síntomas externos</strong><small>Signos objetivos observados</small></button>
+<button data-atestado="pruebas">🧪<strong>Alcohol y drogas</strong><small>Resultados y horas</small></button>
+<button data-atestado="negativa">⛔<strong>Negativa a las pruebas</strong><small>Requerimientos y advertencias</small></button>
+<button data-atestado="inspeccion">📍<strong>Inspección ocular</strong><small>Vía, vestigios y medidas</small></button>
+<button data-atestado="manifestacion">🗣️<strong>Manifestación</strong><small>Implicados y testigos</small></button>
+<button data-atestado="remision">📤<strong>Remisión al juzgado</strong><small>Oficio e índice documental</small></button>
+<button data-atestado="finalizacion">✅<strong>Finalización</strong><small>Cierre y anexos</small></button>
+</div><section id="atestadoBuilder" hidden><button id="atestadoBackButton">← Volver</button><h3 id="atestadoTitle">Diligencia</h3><div id="atestadoForm" class="atestado-form"></div><div class="atestado-actions"><button id="atestadoGenerateButton">Generar</button><button id="atestadoCopyButton">Copiar</button></div><textarea id="atestadoOutput" rows="14"></textarea><p class="atestado-warning">Plantilla orientativa. Debe revisarse y adaptarse al modelo oficial del cuerpo policial.</p></section></article></dialog>
+<dialog id="ticketDialog" class="ticket-dialog-pro">
+  <article class="ticket-page-pro">
+    <header class="ticket-page-header">
+      <div class="ticket-page-title">
+        <button id="ticketBackButton" class="ticket-back" aria-label="Tornar">←</button>
+        <div>
+          <div class="ticket-title-line">
+            <h2>Butlleta SCT completa</h2>
+            <span>Exemple orientatiu</span>
+          </div>
+          <p>Butlleta SCT emplenada amb les dades corresponents a aquesta infracció. Les dades personals, del vehicle i del lloc són fictícies.</p>
+        </div>
+      </div>
+
+      <div class="ticket-page-actions">
+        <button id="ticketPrintButton">▣ Imprimir / PDF</button>
+        <button id="ticketFullscreenButton">↗ Pantalla completa</button>
+        <button id="ticketCloseButton" class="ticket-close" aria-label="Tancar">×</button>
+      </div>
+    </header>
+
+    <section class="ticket-paper-wrap">
+      <div id="sctTicket" class="sct-ticket">
+        <section class="sct-top-row">
+          <div class="sct-logo-cell">
+            <div class="sct-logo-symbol">↗</div>
+            <div><small>servei català de</small><strong>Trànsit</strong></div>
+          </div>
+
+          <div class="sct-exp-cell">
+            <b>1. NÚMERO DE L’EXPEDIENT</b>
+            <strong>01710123481-7</strong>
+          </div>
+
+          <div class="sct-date-cell">
+            <b>2. DATA DE LA DENÚNCIA</b>
+            <div class="sct-date-grid">
+              <span>DIA<strong>21</strong></span>
+              <span>MES<strong>03</strong></span>
+              <span>ANY<strong>2024</strong></span>
+              <span>HORA<strong>23:45</strong></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="sct-law-location-row">
+          <div class="sct-law-box">
+            <b>3. NORMA INFRINGIDA</b>
+            <div class="sct-check-grid">
+              <span id="sctRGC" class="sct-check"><i></i>RGC</span>
+              <span id="sctRGV" class="sct-check"><i></i>RGV</span>
+              <span id="sctTRLSV" class="sct-check"><i></i>TRLSV</span>
+              <span id="sctRGCond" class="sct-check"><i></i>RGCond</span>
+              <span id="sctAOV" class="sct-check"><i></i>AOV</span>
+              <span id="sctOther" class="sct-check"><i></i><em id="sctOtherLabel">Altres</em></span>
+            </div>
+          </div>
+
+          <div class="sct-points-box">
+            <b>6. PUNTS</b>
+            <strong id="sctPoints">—</strong>
+          </div>
+
+          <div class="sct-location-box">
+            <b>7. LLOC DE LA DENÚNCIA</b>
+            <div class="sct-location-checks">
+              <span class="sct-check"><i></i>VIA</span>
+              <span class="sct-check checked"><i></i>CARRER</span>
+              <span class="sct-check"><i></i>KM / NÚM.</span>
+              <span class="sct-check"><i></i>EN SENTIT A</span>
+              <span class="sct-check checked"><i></i>POBLACIÓ</span>
+            </div>
+            <div class="sct-location-values">
+              <strong>HORT DEL CONVENT, 15</strong>
+              <strong>MÓRA D’EBRE</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="sct-article-row">
+          <div><b>4. ARTICLE</b><strong id="sctArticle">—</strong></div>
+          <div><b>5. QUANTIA</b><strong id="sctAmount">—</strong></div>
+          <div class="sct-article-spacer"></div>
+        </section>
+
+        <section class="sct-vehicle-row">
+          <b>8. DADES DEL VEHICLE</b>
+          <div>
+            <span>Matrícula: <strong>8965 JPV</strong></span>
+            <span>País: <strong>E</strong></span>
+            <span>Marca: <strong>SEAT</strong></span>
+            <span>Model: <strong>LEÓN</strong></span>
+          </div>
+        </section>
+
+        <section class="sct-fact-speed-row">
+          <div class="sct-fact-box">
+            <b>9. FET DENUNCIAT</b>
+            <p id="sctFact">—</p>
+          </div>
+
+          <div class="sct-speed-box">
+            <p>Circular a ........................ Km/h quan la velocitat estava limitada a ........................ Km/h.</p>
+            <p>Limitació:</p>
+            <div class="sct-speed-checks">
+              <span class="sct-check"><i></i>Genèrica via urbana o travessera</span>
+              <span class="sct-check"><i></i>Genèrica via interurbana</span>
+              <span class="sct-check"><i></i>Específica fixada per senyal</span>
+            </div>
+            <p>Cinemòmetre: .................................... &nbsp; Antena: ....................................</p>
+            <p>Model aprovat d’acord amb l’ordre ministerial de data: ....................................</p>
+            <p>Per a la graduació de la sanció s’han tingut en compte els marges d’error admesos reglamentàriament.</p>
+          </div>
+        </section>
+
+        <section class="sct-person-payment-row">
+          <div class="sct-person-box">
+            <b>10. DADES DE LA PERSONA CONDUCTORA O INFRACTORA</b>
+            <div class="person-line"><span>Permís de conduir / DNI / NIE / Passaport:</span><strong>47851234X</strong></div>
+            <div class="person-line split"><span>Classe: <strong>B</strong></span><span>Data d’expedició: <strong>10/06/2015</strong></span></div>
+            <div class="person-line"><span>Cognoms:</span><strong>GARCÍA MARTÍNEZ</strong></div>
+            <div class="person-line"><span>Nom:</span><strong>ALEJANDRO</strong></div>
+            <div class="person-line split"><span>Data de naixement: <strong>15/08/1992</strong></span><span>Nacionalitat: <strong>ESPANYOLA</strong></span></div>
+            <div class="person-line split"><span>Domicili: <strong>C/ MAJOR, 23</strong></span><span>Núm.: <strong>23</strong> &nbsp; Pis: <strong>2º-1ª</strong></span></div>
+            <div class="person-line split"><span>Població: <strong>MÓRA D’EBRE</strong></span><span>C.P.: <strong>43740</strong></span></div>
+          </div>
+
+          <div class="sct-payment-box">
+            <b>11. DILIGÈNCIA DE DIPÒSIT I/O COBRAMENT</b>
+            <p>Faig constar que la persona denunciada fa efectiva, en concepte de dipòsit/cobrament de la sanció, la quantitat següent (en lletres):</p>
+            <div class="sct-payment-options">
+              <span class="sct-check checked"><i></i>en metàl·lic</span>
+              <span class="sct-check"><i></i>amb targeta núm. ............................</span>
+            </div>
+            <div class="sct-payment-digits"><span>0</span><span>5</span><span>0</span><b>,</b><span>0</span><span>0</span><b>€</b></div>
+            <div class="sct-signatures"><span>SIGNATURA DENUNCIAT</span><span>SIGNATURA AGENT</span></div>
+          </div>
+        </section>
+
+        <section class="sct-bottom-row">
+          <div class="sct-reported-box">
+            <b>12. DENUNCIAT/ADA</b>
+            <p>NO IMPLICA LA MEVA CONFORMITAT</p>
+            <p>NO DESITJA SIGNAR</p>
+            <p>ES LLIURA CÒPIA</p>
+            <small>SIGNATURA</small>
+          </div>
+
+          <div class="sct-officer-box">
+            <b>13. DENUNCIANT</b>
+            <p>IDENTIFICACIÓ PL. 16523</p>
+            <p>TIP 5020</p>
+            <div class="fake-signature">Agent</div>
+            <small>SIGNATURA</small>
+          </div>
+
+          <div class="sct-notifier-box">
+            <b>14. NOTIFICADOR/A</b>
+            <p>IDENTIFICACIÓ TIP 16523</p>
+            <div class="fake-signature">Agent</div>
+            <small>SIGNATURA</small>
+          </div>
+
+          <div class="sct-observations-box">
+            <b>15. OBSERVACIONS</b>
+            <p>REALITZADA CONSULTA AL REGISTRE NACIONAL DE VEHICLES. LA PERSONA DENUNCIADA ES NEGA A IDENTIFICAR-SE.</p>
+            <div class="fake-line"></div>
+          </div>
+        </section>
+
+        <footer class="sct-footer">
+          <div class="generalitat-mark">▥ <strong>Generalitat<br>de Catalunya</strong></div>
+          <div class="barcode"><span></span><small>905140585004350800084234194290</small></div>
+          <div class="sct-ref">RIN F5 &nbsp; Emissora / Sufix &nbsp; <strong>058S0043 S08</strong> &nbsp; Referència: <strong>01710123481-7</strong></div>
+          <div class="sct-deadline">DATA LÍMIT: <strong>10 | 04 | 24</strong></div>
+          <div class="sct-final-amount">IMPORT A PAGAR<br>AMB DESCOMPTE <strong id="sctDiscount">—</strong></div>
+        </footer>
+      </div>
+    </section>
+
+    <aside class="ticket-info-note">
+      <strong>Informació</strong>
+      <p>Butlleta SCT orientativa emplenada amb les dades corresponents a la infracció seleccionada.</p>
+    </aside>
+  </article>
+</dialog>
+
+<dialog id="documentDialog">
+  <article class="document-panel">
+    <header class="document-head">
+      <div>
+        <p>GENERADOR DE DOCUMENTOS</p>
+        <h2 id="documentTitle">Documento</h2>
+      </div>
+      <button id="documentCloseButton" aria-label="Cerrar">×</button>
+    </header>
+
+    <div id="documentForm" class="document-form"></div>
+
+    <div class="document-actions-three">
+      <button id="generateDocumentButton" class="primary-action">Generar documento</button>
+      <button id="improveDocumentButton" class="ai-primary-action">
+        <span>✨</span> Mejorar con IA
+      </button>
+      <button id="copyDocumentButton" class="secondary-action">Copiar texto</button>
+    </div>
+    <p id="documentAiStatus" class="document-ai-status"></p>
+
+    <textarea id="documentOutput" rows="16" placeholder="Aquí aparecerá el documento generado…"></textarea>
+  </article>
+</dialog>
+
+<dialog id="suiteDialog">
+  <article class="suite-panel">
+    <header class="suite-head">
+      <div>
+        <p>TRAFFICCOP PRO</p>
+        <h2 id="suiteTitle">Módulo</h2>
+      </div>
+      <button id="suiteCloseButton" aria-label="Cerrar">×</button>
+    </header>
+    <div id="suiteContent"></div>
+  </article>
+</dialog>
+
+
+<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v361.js?v=361"></script><script src="app-v361.js?v=361"></script></body></html>
