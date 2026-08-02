@@ -1,33 +1,25 @@
-# TrafficCop Pro v3.4.2 — Fullscreen real y botones operativos
+# TrafficCop Pro v3.5.0 — Atestados y copia rápida para NIPal
 
-## Corrección principal
-El gestor se fija directamente a los cuatro bordes de la ventana mediante `position: fixed` e `inset: 0`.
-El área principal queda posicionada de forma absoluta entre la cabecera, la barra lateral y el borde derecho.
+## Finalidad
+El módulo está diseñado como biblioteca y guía rápida de diligencias para revisar, copiar y pegar en NIPal.
 
-## Nuevo botón superior
-Se ha añadido **← VOLVER A TRÁFICO** en la cabecera del gestor.
+## Mejoras
+- Botón destacado **COPIAR PARA NIPAL**.
+- Conversión del editor a texto limpio conservando párrafos.
+- Estructura: Carátula, Cuerpo del atestado y Anexos.
+- Registro de personas, vehículos y efectos.
+- Control de calidad con detección de variables pendientes, inicio, remisión y anexos.
+- Nuevas diligencias: recepción, antecedentes, informe, participación, genérica, habeas corpus, dejar sin efecto detención y otrosí.
+- Regla visible: las personas se presentan, los objetos se entregan y los documentos se adjuntan.
+- Clasificación clara como plantillas orientativas/formativas.
 
-## Botones revisados
-- Vista previa.
-- Exportar.
-- Guardar.
-- Añadir diligencia.
-- Duplicar.
-- Eliminar.
-- Historial.
-- Perfil.
-- Configuración.
-- Ayuda.
-- Navegación lateral.
-- Pestañas de gestión.
-
-## Caché
-La versión intenta desregistrar service workers antiguos y borrar cachés de versiones anteriores.
+## Importante
+Las plantillas son ejemplos de apoyo. Deben revisarse y adaptarse a los hechos, al modelo corporativo, a las instrucciones internas y a la normativa aplicable antes de incorporarlas a NIPal.
 
 ## Archivos para GitHub
 - index.html
-- styles-v342.css
-- app-data-v342.js
-- app-v342.js
+- styles-v350.css
+- app-data-v350.js
+- app-v350.js
 - service-worker.js
 - README.md
