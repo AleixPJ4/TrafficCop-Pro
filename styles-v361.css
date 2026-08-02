@@ -1172,3 +1172,18 @@ html,body{width:100%;min-height:100%}
   .sc-weapons-mobile-fallback{display:block}
   .sc-weapons-actions{display:grid;margin-top:9px}
 }
+
+/* v3.6.2 - Parche directo sobre los mismos nombres de archivo */
+.rail-admin-button{
+  background:linear-gradient(180deg,#9a6812,#5f400b)!important;
+  border:1px solid #d59c2c!important;
+}
+.rail-admin-button span,.rail-admin-button small{color:#fff!important;font-weight:900!important}
+.rail-atestados-button{
+  background:linear-gradient(180deg,#713fc0,#43266f)!important;
+  border:1px solid #a177dd!important;
+}
+.rail-atestados-button span,.rail-atestados-button small{color:#fff!important;font-weight:900!important}
+.drawer-admin{border-left:4px solid #a56f15!important}
+.atestados-command-card{border-top:5px solid #7543c2!important}
+.admin-command-card{border-top:5px solid #a56f15!important}

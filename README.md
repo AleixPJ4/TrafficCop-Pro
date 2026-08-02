@@ -1,11 +1,15 @@
-# TrafficCop Pro v3.6.2 — Base estable
+# TrafficCop Pro v3.6.2 — Parche directo
 
-Actualización conservadora sobre v3.6.1.
+Este paquete conserva exactamente los nombres de archivo de la versión estable v3.6.1:
+- index.html
+- styles-v361.css
+- app-v361.js
+- app-data-v361.js
 
-Cambios:
-- Atestados destacado en morado.
-- Policía Administrativa destacada en dorado.
-- Nuevo acceso desde menú lateral, menú desplegable y centro operativo.
-- Página independiente `policia-administrativa.html`, para evitar conflictos con la app estable.
-- Materiales PDF integrados.
-- No se han cambiado márgenes, estructura ni navegación existente.
+Por tanto, al subirlos a GitHub se sustituyen directamente los archivos que ya utiliza la web.
+
+Añade:
+- botón ADM Policía Administrativa en dorado;
+- Atestados en morado;
+- acceso desde menú lateral, menú desplegable y centro operativo;
+- página independiente de Policía Administrativa y sus PDF.

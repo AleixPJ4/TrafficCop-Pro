@@ -1,4 +1,4 @@
-const CACHE='trafficcop-v362';
+const CACHE='trafficcop-v362-direct';
 self.addEventListener('install',e=>self.skipWaiting());
 self.addEventListener('activate',e=>e.waitUntil((async()=>{
   for(const key of await caches.keys()) await caches.delete(key);
