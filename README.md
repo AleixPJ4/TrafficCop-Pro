@@ -1,28 +1,18 @@
-# TrafficCop Pro v3.7.0 — Policía Administrativa
+# TrafficCop Pro v3.7.1 — Corrección del botón de Policía Administrativa
 
-## Nuevo módulo
-Espacio de trabajo completo de Policía Administrativa, visible en la barra lateral, menú móvil y centro operativo.
+## Correcciones
+- El botón **ADM · Policía administrativa** abre el módulo mediante tres mecanismos:
+  1. evento normal de la aplicación;
+  2. `onclick` directo;
+  3. delegación global de eventos como respaldo.
+- El módulo se fuerza a mostrarse aunque exista una regla CSS anterior que interfiera.
+- `paOpen` y `paClose` quedan disponibles globalmente.
+- Se limpia la caché de versiones anteriores.
 
-### Ámbitos
-- Inspección y acta administrativa.
-- Espectáculos públicos y actividades recreativas.
-- Seguridad privada.
-- Juego.
-- Actividades relevantes para la seguridad ciudadana.
-- Comercio y consumo.
-- Medidas cautelares.
+## Diseño
+- Seguridad Ciudadana: azul.
+- Policía Administrativa: dorado/naranja.
+- Atestados: morado.
 
-### Plantillas iniciales
-A10 general, inspección de bar musical, actividad distinta de la autorizada, A46 horario, A47 espectáculos, A03 seguridad privada, control de acceso, seguro RC, menores, derecho de admisión, fiesta no autorizada, juego, hospedaje, objetos usados, joyas/metales, venta ambulante y medidas cautelares.
-
-### Funciones
-- Formularios guiados.
-- Texto editable para NIPal.
-- Copiar, guardar, mejorar e imprimir.
-- Listas de comprobación por ámbito.
-- Biblioteca operativa.
-- Revisión automática básica.
-- Materiales PDF integrados.
-- Interfaz completa en ordenador y simplificada en móvil.
-
-Los contenidos son modelos de apoyo y material formativo. Deben revisarse conforme a los formularios oficiales, la normativa vigente, las instrucciones del cuerpo y los hechos comprobados.
+## Archivos para GitHub
+Subir todos los archivos del ZIP y sustituir los anteriores.
