@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v330.css?v=330"></head><body>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><meta name="apple-mobile-web-app-capable" content="yes"><title>TrafficCop Pro</title><link rel="stylesheet" href="styles-v340.css?v=340"></head><body>
 
 <aside class="desktop-police-rail" aria-label="Navegació principal">
   <div class="rail-brand">
@@ -145,12 +145,178 @@
 
 <main id="homeView" class="pro-main">
 <section class="status-strip"><div><span class="status-dot"></span><strong id="serviceStatus">Modo consulta</strong></div><div class="source-chip">Fuente SCT · 20/05/2026</div></section>
-<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.3.0 · ATESTATS</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
+<section class="hero pro-hero"><div class="hero-heading"><div><span class="version">v3.4.0 · GESTOR D’ATESTATS PRO</span><h2>¿Qué necesitas resolver?</h2><p>Busca una infracción, dicta los hechos o abre una herramienta operativa.</p></div><div class="police-shield">TC</div></div><div class="search pro-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Móvil, ITV, matrícula, artículo, puntos…" autocomplete="off"><button id="voiceSearchButton" title="Buscar por voz">🎙</button><button id="clearButton" title="Borrar">×</button></div><div class="hero-actions"><button id="assistantOpenButton" class="hero-action ai"><span>✨</span><span><strong>TrafficCop AI</strong><small>Describe los hechos</small></span></button><button class="hero-action" data-document="manifestacion"><span>🗣</span><span><strong>Crear acta</strong><small>Manifestación guiada</small></span></button><button class="hero-action" data-suite="photo"><span>📸</span><span><strong>Informe fotográfico</strong><small>Fotos y descripción</small></span></button></div></section>
 <section class="quick-section"><div class="section-title-row"><div><p>ACCESO RÁPIDO</p><h2>Intervenciones habituales</h2></div><button id="customizeQuickButton">Editar</button></div><div class="quick pro-quick"><button data-query="mòbil">📱<span>Móvil</span></button><button data-query="ITV">🧾<span>ITV</span></button><button data-query="VMP">🛴<span>VMP</span></button><button data-query="matrícula">🔢<span>Matrícula</span></button><button data-query="alcohol">🍺<span>Alcohol</span></button><button data-query="drogues">🧪<span>Drogas</span></button><button data-query="velocitat">⚡<span>Velocidad</span></button><button data-query="cinturó">🦺<span>Cinturón</span></button></div></section>
 <section class="command-centre"><div class="section-title-row"><div><p>CENTRO OPERATIVO</p><h2>Herramientas policiales</h2></div></div><div class="command-grid"><button class="command-card primary" data-suite="traffic"><span class="command-icon">🚔</span><strong>Catálogo SCT</strong><small>Infracciones, importes y puntos</small><b>Abrir</b></button><button class="command-card" data-suite="documents"><span class="command-icon">📄</span><strong>Documentos</strong><small>Actas, informes y diligencias</small><b>Abrir</b></button><button class="command-card" data-atestados-open><span class="command-icon">⚖️</span><strong>Atestados</strong><small>Diligencias, comparecencias y trámites</small><b>Abrir</b></button><button class="command-card" data-suite="photo"><span class="command-icon">📸</span><strong>Informe fotográfico</strong><small>Numeración y texto técnico</small><b>Abrir</b></button><button class="command-card" data-suite="accident"><span class="command-icon">🚗</span><strong>Accidentes</strong><small>Cronología y datos</small><b>Abrir</b></button><button class="command-card" data-suite="legal"><span class="command-icon">📚</span><strong>Biblioteca legal</strong><small>Normativa y fuente</small><b>Abrir</b></button><button class="command-card" data-suite="tools"><span class="command-icon">🧮</span><strong>Herramientas</strong><small>GPS y accesos técnicos</small><b>Abrir</b></button></div></section>
 <section id="recentSection" class="recent-section"><div class="section-title-row"><div><p>ACTIVIDAD</p><h2>Consultas recientes</h2></div><button id="clearRecentButton">Borrar</button></div><div id="recentSearches" class="recent-list"></div></section>
 <section id="catalogSection" class="catalog-shell"><div class="catalog-header"><div><p>CATÁLOGO OFICIAL</p><h2>Resultados de infracciones</h2></div><span class="verification-badge">✓ Texto del catálogo</span></div><section class="filters pro-filters"><select id="normFilter"><option value="">Todas las normas</option></select><select id="natureFilter"><option value="">Todas las naturalezas</option><option value="L">Leve</option><option value="G">Grave</option><option value="MG">Muy grave</option><option value="G/MG">Grave / muy grave</option></select><select id="pointsFilter"><option value="">Todos los puntos</option><option value="0">0 puntos</option><option value="2">2 puntos</option><option value="3">3 puntos</option><option value="4">4 puntos</option><option value="6">6 puntos</option></select></section><section class="tabs pro-tabs"><button class="active" data-view="all">Todas</button><button data-view="favorites">★ Favoritas</button><span id="resultCount"></span></section><aside class="notice pro-notice"><strong>Uso profesional:</strong> verifica siempre que el hecho observado encaje exactamente con el concepto del catálogo.</aside><section id="results" class="results"></section><button id="moreButton" class="more" hidden>Mostrar más resultados</button></section>
 </main>
+
+<section id="atestadosWorkspace" class="atestados-workspace" hidden>
+  <header class="aw-topbar">
+    <div class="aw-brand">
+      <button id="awMenuButton" aria-label="Menú">☰</button>
+      <span class="aw-shield">TC</span>
+      <strong>TrafficCop-Pro</strong>
+      <span class="aw-separator">‹</span>
+      <b>GESTOR DE DILIGENCIAS Y ATESTADOS</b>
+    </div>
+    <div class="aw-global-search">
+      <span>⌕</span><input id="awGlobalSearch" placeholder="Buscar diligencia, ejemplo, palabra clave...">
+      <kbd>Ctrl + K</kbd>
+    </div>
+    <div class="aw-user">
+      <button title="Ayuda">?</button><button title="Configuración">⚙</button>
+      <span class="aw-avatar">AG</span>
+      <div><strong>Agente</strong><small>Perfil instructor</small></div>
+    </div>
+  </header>
+
+  <aside class="aw-sidebar">
+    <section>
+      <p>PANEL PRINCIPAL</p>
+      <button data-aw-nav="home">⌂ <span>Inicio</span></button>
+    </section>
+    <section>
+      <p>ATESTADOS</p>
+      <button data-aw-nav="my-cases">▣ <span>Mis atestados</span></button>
+      <button class="active" data-aw-nav="new-case">▤ <span>Nuevo atestado</span></button>
+      <button data-aw-nav="case-templates">▧ <span>Plantillas de atestados</span></button>
+    </section>
+    <section>
+      <p>DILIGENCIAS</p>
+      <button data-aw-nav="library">▤ <span>Biblioteca de diligencias</span></button>
+      <button data-aw-nav="favorites">☆ <span>Mis favoritas</span></button>
+      <button data-aw-nav="my-templates">▧ <span>Mis plantillas</span></button>
+      <button data-aw-nav="shared">⌘ <span>Plantillas compartidas</span></button>
+    </section>
+    <section>
+      <p>GESTIÓN</p>
+      <button data-aw-tab="persons">♙ <span>Personas</span></button>
+      <button data-aw-tab="vehicles">▱ <span>Vehículos</span></button>
+      <button data-aw-tab="effects">♢ <span>Objetos / Efectos</span></button>
+      <button data-aw-tab="documents">▤ <span>Documentos</span></button>
+    </section>
+    <section>
+      <p>HERRAMIENTAS</p>
+      <button id="awAiButton">⌕ <span>Buscador inteligente</span></button>
+      <button data-suite="tools">▦ <span>Calculadoras</span></button>
+      <button data-suite="legal">ⓘ <span>Consultas legales</span></button>
+    </section>
+    <section>
+      <p>CONFIGURACIÓN</p>
+      <button>♙ <span>Mi perfil</span></button>
+      <button>⚙ <span>Configuración</span></button>
+      <button id="awBackToApp">? <span>Volver a TrafficCop</span></button>
+    </section>
+    <small class="aw-version">© TrafficCop-Pro v3.4.0</small>
+  </aside>
+
+  <main class="aw-main">
+    <section class="aw-case-head">
+      <div>
+        <div class="aw-case-title"><h2 id="awCaseNumber">Atestado 2026/00215</h2><span>EN EDICIÓN</span></div>
+        <p>Fecha: <strong id="awMetaDate">02/08/2026</strong> · Hora: <strong id="awMetaTime">03:15</strong> · Localidad: <strong id="awMetaTown">Palamós (Girona)</strong></p>
+        <p>Instructor: <strong>Agente instructor</strong> · Secretario: <strong>Agente secretario</strong></p>
+      </div>
+      <div class="aw-case-actions">
+        <button id="awPreview">◉ VISTA PREVIA</button>
+        <button id="awExport">⇧ EXPORTAR</button>
+        <button id="awSignatures">✎ FIRMAS</button>
+        <button id="awSave" class="primary">▣ GUARDAR</button>
+      </div>
+    </section>
+
+    <nav class="aw-tabs">
+      <button data-aw-tab="general">DATOS GENERALES</button>
+      <button class="active" data-aw-tab="diligences">DILIGENCIAS <span id="awDiligenceCount">(12)</span></button>
+      <button data-aw-tab="documents">DOCUMENTOS <span>(8)</span></button>
+      <button data-aw-tab="persons">PERSONAS <span>(3)</span></button>
+      <button data-aw-tab="vehicles">VEHÍCULOS <span>(1)</span></button>
+      <button data-aw-tab="effects">EFECTOS INTERVENIDOS <span>(2)</span></button>
+      <button data-aw-tab="observations">OBSERVACIONES</button>
+    </nav>
+
+    <section id="awDiligenceView" class="aw-editor-layout">
+      <aside class="aw-diligence-list">
+        <header><strong>DILIGENCIAS DEL ATESTADO</strong><button id="awAddDiligence">＋ AÑADIR</button></header>
+        <div id="awDiligenceItems"></div>
+        <button id="awAddDiligenceBottom">＋ Añadir diligencia al atestado</button>
+        <button id="awOrderDiligences">⇅ ORDENAR DILIGENCIAS</button>
+      </aside>
+
+      <section class="aw-editor">
+        <header>
+          <div><span id="awCurrentNumber">01</span><strong id="awCurrentTitle">DILIGENCIA DE INICIO</strong><button id="awFavCurrent">☆</button></div>
+          <button id="awChangeTemplate">✎ CAMBIAR PLANTILLA</button>
+        </header>
+        <div class="aw-source-note">ⓘ <span id="awSourceNote">Plantilla orientativa basada en formación de instrucción de atestados.</span></div>
+        <div id="awEditableDocument" class="aw-paper" contenteditable="true" spellcheck="true"></div>
+        <div class="aw-editor-toolbar">
+          <select><option>Párrafo</option><option>Título</option></select>
+          <button data-command="bold"><b>B</b></button>
+          <button data-command="italic"><i>I</i></button>
+          <button data-command="underline"><u>U</u></button>
+          <button data-command="insertUnorderedList">☷</button>
+          <button data-command="justifyLeft">≡</button>
+          <button data-command="justifyCenter">☰</button>
+          <button id="awInsertVariable">{ }</button>
+        </div>
+        <footer class="aw-editor-actions">
+          <button id="awSaveDiligence">▣ GUARDAR</button>
+          <button id="awDuplicateDiligence">▣ DUPLICAR</button>
+          <button id="awDeleteDiligence">♲ ELIMINAR</button>
+          <button id="awHistory">↶ HISTORIAL</button>
+        </footer>
+      </section>
+
+      <aside class="aw-library">
+        <nav>
+          <button class="active" data-aw-library="library">BIBLIOTECA</button>
+          <button data-aw-library="favorites">MIS FAVORITAS</button>
+          <button data-aw-library="ai">BUSCADOR IA</button>
+        </nav>
+        <div class="aw-library-search"><span>⌕</span><input id="awLibrarySearch" placeholder="Buscar diligencia o ejemplo..."></div>
+        <label>Categoría:
+          <select id="awCategorySelect">
+            <option value="all">Todas</option>
+            <option value="seguridad-vial">Seguridad vial</option>
+            <option value="procesal">Procesal</option>
+            <option value="accidentes">Accidentes</option>
+            <option value="salud-publica">Salud pública</option>
+            <option value="violencia">Violencia de género/doméstica</option>
+          </select>
+        </label>
+        <div class="aw-selected"><small>Diligencia seleccionada:</small><strong id="awSelectedLibrary">Diligencia de inicio</strong></div>
+        <h4>EJEMPLOS DISPONIBLES <span id="awExamplesCount">(10)</span></h4>
+        <div id="awExampleList" class="aw-example-list"></div>
+        <button id="awUseExample" class="aw-use-example">▤ USAR ESTE EJEMPLO</button>
+        <button id="awExamplePreview">VISTA PREVIA</button>
+        <div class="aw-template-details">
+          <h4>DETALLES DE LA PLANTILLA</h4>
+          <p><b>Uso:</b> <span id="awDetailUse">Inicio por actuación policial de oficio</span></p>
+          <p><b>Categoría:</b> <span id="awDetailCategory">Seguridad vial</span></p>
+          <p><b>Descripción:</b> <span id="awDetailDescription">Plantilla de apoyo para iniciar actuaciones policiales.</span></p>
+          <p><b>Fuente:</b> materiales formativos aportados por el usuario.</p>
+          <span class="aw-source-badge">✓ FUENTE FORMATIVA IDENTIFICADA</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="awGenericView" class="aw-generic-view" hidden>
+      <div class="aw-empty-icon">▤</div>
+      <h3 id="awGenericTitle">Módulo</h3>
+      <p id="awGenericDescription">Este apartado se incorporará progresivamente al gestor.</p>
+      <button id="awReturnDiligences">Volver a diligencias</button>
+    </section>
+
+    <section class="aw-recommendations">
+      <header><div><strong>PLANTILLAS RECOMENDADAS PARA ESTE CASO</strong><span>IA LOCAL</span></div><button id="awSeeAll">VER TODAS →</button></header>
+      <p>Basado en un supuesto de seguridad vial. El agente debe seleccionar y revisar las diligencias necesarias.</p>
+      <div id="awRecommendedCards"></div>
+    </section>
+  </main>
+</section>
 <nav class="bottomnav pro-bottomnav"><button class="active" data-pro-nav="home">⌂<small>Inicio</small></button><button data-pro-nav="search">⌕<small>Buscar</small></button><button data-pro-nav="documents">📄<small>Documentos</small></button><button data-pro-nav="more">☰<small>Más</small></button></nav>
 <template id="cardTemplate">
   <article class="card">
@@ -465,4 +631,4 @@
 </dialog>
 
 
-<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v330.js?v=330"></script><script src="app-v330.js?v=330"></script></body></html>
+<dialog id="onboardingDialog"><article class="onboarding-panel"><div class="onboarding-icon">TC</div><p>BIENVENIDO A</p><h2>TrafficCop Pro</h2><p class="onboarding-copy">Herramienta de consulta y documentación diseñada para el trabajo policial de tráfico.</p><div class="onboarding-points"><div><span>⌕</span><p><strong>Consulta rápida</strong><small>Busca por hecho, artículo o palabra clave.</small></p></div><div><span>✨</span><p><strong>Asistente local</strong><small>Localiza coincidencias sin enviar datos.</small></p></div><div><span>📄</span><p><strong>Documentos</strong><small>Genera actas e informes editables.</small></p></div></div><button id="finishOnboardingButton">Empezar</button></article></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app-data-v340.js?v=340"></script><script src="app-v340.js?v=340"></script></body></html>
