@@ -1,24 +1,33 @@
-# TrafficCop Pro v3.4.1 — Gestor fullscreen y móvil simplificado
+# TrafficCop Pro v3.4.2 — Fullscreen real y botones operativos
 
-## Cambios
-- En ordenador, el gestor ocupa el 100 % de la ventana.
-- Las tres columnas aprovechan todo el ancho disponible.
-- El documento central crece según el tamaño del monitor.
-- En móvil, la vista se transforma en una única columna enfocada al trabajo.
-- Perfil editable y guardado local.
-- Ajustes del gestor.
-- Ventana funcional para añadir diligencias.
-- Ordenación de diligencias.
-- Guardado automático opcional.
-- Historial local básico.
-- Mejor funcionamiento de botones principales.
+## Corrección principal
+El gestor se fija directamente a los cuatro bordes de la ventana mediante `position: fixed` e `inset: 0`.
+El área principal queda posicionada de forma absoluta entre la cabecera, la barra lateral y el borde derecho.
 
-## Limitación importante
-Perfiles compartidos, firmas digitales reales, sincronización entre dispositivos y control de usuarios requieren una base de datos y autenticación en servidor. Esta versión funciona localmente en cada navegador.
+## Nuevo botón superior
+Se ha añadido **← VOLVER A TRÁFICO** en la cabecera del gestor.
 
-## Archivos
+## Botones revisados
+- Vista previa.
+- Exportar.
+- Guardar.
+- Añadir diligencia.
+- Duplicar.
+- Eliminar.
+- Historial.
+- Perfil.
+- Configuración.
+- Ayuda.
+- Navegación lateral.
+- Pestañas de gestión.
+
+## Caché
+La versión intenta desregistrar service workers antiguos y borrar cachés de versiones anteriores.
+
+## Archivos para GitHub
 - index.html
-- styles-v341.css
-- app-data-v341.js
-- app-v341.js
+- styles-v342.css
+- app-data-v342.js
+- app-v342.js
+- service-worker.js
 - README.md
