@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Policía Administrativa · TrafficCop Pro</title>
+<style>
+:root{--navy:#061d34;--panel:#10263a;--line:#2b455c;--gold:#a56f15;--text:#eef5fb;--muted:#a8bbca}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#081522;color:var(--text)}
+.top{height:64px;display:flex;align-items:center;gap:12px;padding:0 18px;background:#06131f;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.back{border:1px solid #d69b2b;background:#8d6012;color:#fff;border-radius:8px;padding:10px 13px;font-weight:800;cursor:pointer}
+.logo{width:42px;height:42px;border-radius:10px;background:#6c4a10;display:grid;place-items:center;font-weight:900}.top strong,.top small{display:block}.top small{font-size:9px;color:#d6b566;letter-spacing:.1em}
+.main{max-width:1420px;margin:auto;padding:20px}.hero{display:flex;justify-content:space-between;gap:16px;align-items:center;background:linear-gradient(120deg,#152d40,#6a4a13);border:1px solid #9a6c1c;border-radius:16px;padding:22px}.hero h1{margin:5px 0;font-size:27px}.hero p{margin:0;color:#d8e3eb}.hero button{border:1px solid #dfad43;background:#9a6a16;color:#fff;padding:11px 13px;border-radius:8px;font-weight:800}
+.grid{display:grid;grid-template-columns:1.3fr .9fr;gap:12px;margin-top:12px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px}.panel h2{margin:4px 0 14px}.eyebrow{font-size:8px;color:#dfb75d;font-weight:900;letter-spacing:.12em}
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.area{border:1px solid var(--line);background:#193247;color:#fff;border-radius:10px;padding:13px;text-align:left;cursor:pointer}.area b,.area span{display:block}.area b{font-size:15px;margin-bottom:6px}.area span{font-size:10px;color:var(--muted);line-height:1.4}
+.list{display:grid;gap:7px}.doc{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);background:#142b3f;color:#fff;border-radius:9px;padding:11px;text-decoration:none}.doc b,.doc small{display:block}.doc small{color:var(--muted);margin-top:3px}.doc em{font-style:normal;color:#ffd37a}
+.checks{padding-left:20px;color:#cedbe5;line-height:1.55}.checks li{margin:8px 0}
+.notice{margin-top:12px;border-left:4px solid #d79b2c;background:#302717;padding:11px;color:#efd28f;font-size:11px;line-height:1.45}
+@media(max-width:800px){.top{height:auto;padding:8px}.main{padding:10px}.hero{display:block}.hero button{margin-top:12px}.grid{grid-template-columns:1fr}.areas{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top">
+  <button class="back" onclick="location.href='index.html?v=362'">← VOLVER A TRAFFICCOP</button>
+  <div class="logo">ADM</div><div><strong>TrafficCop Pro</strong><small>POLICÍA ADMINISTRATIVA</small></div>
+</header>
+<main class="main">
+  <section class="hero">
+    <div><span class="eyebrow">MÓDULO OPERATIVO</span><h1>Policía administrativa</h1><p>Consulta de ámbitos, actas A10, seguridad privada, espectáculos y material formativo.</p></div>
+    <button onclick="document.getElementById('materiales').scrollIntoView({behavior:'smooth'})">ABRIR MATERIALES</button>
+  </section>
+  <div class="grid">
+    <section class="panel">
+      <span class="eyebrow">ÁMBITOS DE ACTUACIÓN</span><h2>Acceso operativo</h2>
+      <div class="areas">
+        <button class="area"><b>📋 Inspección administrativa</b><span>Comprobaciones generales y específicas, acta, encabezamiento, cuerpo, cierre y medidas cautelares.</span></button>
+        <button class="area"><b>🎵 Espectáculos y recreativas</b><span>Licencias, seguro, aforo, horarios, seguridad, menores, admisión y control de acceso.</span></button>
+        <button class="area"><b>🛡️ Seguridad privada</b><span>Empresas, personal, TIP, uniforme, distintivos, funciones, medios y servicios.</span></button>
+        <button class="area"><b>🎰 Juego</b><span>Máquinas, autorizaciones, acceso, apuestas y posibles actividades de juego ilegal.</span></button>
+        <button class="area"><b>🏨 Actividades relevantes</b><span>Hospedaje, objetos usados, joyas, alquiler, registros y comunicaciones.</span></button>
+        <button class="area"><b>🛍️ Comercio y consumo</b><span>Venta ambulante, autorizaciones, productos, horarios y ocupación de vía pública.</span></button>
+      </div>
+    </section>
+    <section class="panel">
+      <span class="eyebrow">CONTROL DE CALIDAD</span><h2>Antes de tramitar</h2>
+      <ul class="checks">
+        <li>Recoger únicamente hechos objetivos y comprobados.</li>
+        <li>Separar observaciones policiales y manifestaciones.</li>
+        <li>Identificar responsables, testigos y personal.</li>
+        <li>Detallar documentación requerida y aportada.</li>
+        <li>Indicar medidas adoptadas y hora de finalización.</li>
+        <li>Revisar el formulario oficial y las instrucciones del cuerpo.</li>
+      </ul>
+    </section>
+  </div>
+  <section class="panel" id="materiales" style="margin-top:12px">
+    <span class="eyebrow">MATERIAL INTEGRADO</span><h2>Documentos de Policía Administrativa</h2>
+    <div class="list">
+      <a class="doc" target="_blank" href="policia-administrativa-uf62.pdf"><span><b>UF 6.2 · Ámbitos de actuación en policía administrativa</b><small>Temario de inspección, actas, espectáculos, seguridad privada, juego y actividades relevantes.</small></span><em>ABRIR PDF</em></a>
+      <a class="doc" target="_blank" href="a10-seguridad-privada.pdf"><span><b>A10 · Seguridad privada</b><small>Ejemplo práctico de denuncia en materia de seguridad privada.</small></span><em>ABRIR PDF</em></a>
+      <a class="doc" target="_blank" href="a10-venta-alcohol-menor.pdf"><span><b>A10 · Venta de alcohol a menor</b><small>Ejemplo práctico de actuación administrativa en establecimiento.</small></span><em>ABRIR PDF</em></a>
+      <a class="doc" target="_blank" href="resumen-oac-a10.pdf"><span><b>Resumen OAC y A10</b><small>Conceptos, funciones, diligencias y pautas de trabajo.</small></span><em>ABRIR PDF</em></a>
+    </div>
+    <div class="notice"><b>Importante:</b> los modelos y materiales son de consulta y apoyo. Antes de tramitar, deben verificarse el formulario vigente, la competencia, la normativa aplicable y los hechos comprobados.</div>
+  </section>
+</main>
+</body>
+</html>
